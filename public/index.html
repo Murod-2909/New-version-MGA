@@ -9,8 +9,42 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
-  <!-- Fallback title for non-JS crawlers; every route sets its own title/description/og/twitter tags via react-helmet-async (see src/components/Seo) once JS runs. Do not add a static meta description/og/twitter here — react-helmet-async does not remove pre-existing static tags, so it would create duplicates instead of overriding them. -->
+  <!-- Fallback title for non-JS crawlers; every route sets its own title/description/og/twitter tags via src/components/Seo once JS runs. Do not add a static meta description/og/twitter here — that component only adds/updates tags, it doesn't remove pre-existing static ones, so it would create duplicates instead of overriding them. -->
   <title>MGAREKLAMA</title>
+
+  <!-- LocalBusiness structured data — helps Google's Knowledge Panel / Business Profile
+       pull an accurate name, address, phone and social links. Keep this in sync with the
+       real values in src/pages/Contact/contact.jsx and src/components/Layout/Header/header.jsx.
+       Update lat/long if the address in src/Ing/*.json ("address" key) ever changes. -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://mgareklama.com/#organization",
+      "name": "MGA Reklama",
+      "url": "https://mgareklama.com",
+      "logo": "https://mgareklama.com/logo.png",
+      "image": "https://mgareklama.com/logo.png",
+      "telephone": "+998770124004",
+      "email": "info@mgareklama.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elbek Street 61",
+        "addressLocality": "Tashkent",
+        "addressCountry": "UZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.303646,
+        "longitude": 69.322203
+      },
+      "sameAs": [
+        "https://www.facebook.com/mgareklama/",
+        "https://www.instagram.com/mgareklama/",
+        "https://www.youtube.com/@mgareklama"
+      ]
+    }
+  </script>
 </head>
 
 <body>
