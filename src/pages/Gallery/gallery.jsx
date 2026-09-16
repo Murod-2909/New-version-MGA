@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./gallery.scss";
 import { FaPlus } from "react-icons/fa";
 import PageHero from "../../components/pageHero";
@@ -63,6 +64,11 @@ const Gallery = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="container">
+          <p className="gallery__projects-link">
+            <Link to="/projects">{t("projects.listTitle")}</Link>
+          </p>
         </div>
       </section>
 

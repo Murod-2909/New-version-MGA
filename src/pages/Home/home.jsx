@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className="home">
       <Hero />
-      <AboutCompany />
+      <AboutCompany headingLevel="h1" />
       <HomeServices servicesData={services} />
     
       <Partner />

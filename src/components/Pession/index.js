@@ -4,8 +4,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 
-export default function Pession() {
+export default function Pession({ headingLevel = "h2" }) {
   const { t } = useTranslation();
+  const Heading = headingLevel;
 
   useEffect(() => {
     AOS.init({
@@ -47,9 +48,9 @@ export default function Pession() {
           <div className="pession_rows_rights">
             <section className="aboutCompany" data-aos="zoom-in">
               <div className="aboutCompany__content" data-aos="fade-up">
-                <h2 className="aboutCompany__title">
+                <Heading className="aboutCompany__title">
                   {t("aboutUs")}
-                </h2>
+                </Heading>
 
                   <p  className="text-base leading-7 text-gray-700">
                     {t("desAbout")}

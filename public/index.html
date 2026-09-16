@@ -4,36 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Professional advertising and printing services in Uzbekistan and Central Asia. Visit Mgareklama for quality and fast service." />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="stylesheet" href="styles.css?v=2">
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="MGAREKLAMA – Advertising & Printing Solutions" />
-  <meta property="og:description" content="Professional advertising and printing services in Uzbekistan and Central Asia. Quality. Speed. Trust." />
-  <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
-  <meta property="og:url" content="https://mgareklama.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MGAREKLAMA – Advertising & Printing Solutions" />
-  <meta name="twitter:description" content="Professional advertising and printing services in Uzbekistan and Central Asia." />
-  <meta name="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
-  <link rel="stylesheet" href="/bower_components/aos/dist/aos.css" />
-  <link rel="stylesheet" href="/styles.css?v=2">
 
+  <!-- Fallback title for non-JS crawlers; every route sets its own title/description/og/twitter tags via react-helmet-async (see src/components/Seo) once JS runs. Do not add a static meta description/og/twitter here — react-helmet-async does not remove pre-existing static tags, so it would create duplicates instead of overriding them. -->
   <title>MGAREKLAMA</title>
 </head>
 
 <body>
 <div id="root"></div>
-<script src="/bower_components/aos/dist/aos.js"></script>
-
-<script src="bower_components/aos/dist/aos.js"></script>
 </body>
 </html>

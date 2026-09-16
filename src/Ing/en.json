@@ -1,5 +1,10 @@
 {
   "main": "Home",
+  "hero": {
+    "tagline": "SIGNAGE • WAYFINDING • ADVERTISING PRODUCTION",
+    "subline": "Professional signage, wayfinding and advertising manufacturing in Tashkent, Uzbekistan.",
+    "facility": "2,000 m² Production Facility • Design • Manufacturing • Installation"
+  },
   "about": "About",
   "serves": "Services",
   "gallery": "Gallery",
@@ -14,7 +19,130 @@
   "work":"Our Work",
   "feel":"Feel Free to Write",
   "sends":"Send a Message",
+  "toastSuccess":"Message sent successfully!",
+  "toastError":"Failed to send message. Please try again.",
   "address":"61 Elbek Street, Tashkent",
   "footerText":"Innovative advertising & printing solutions since 2010 — now serving Central Asia.",
-  "desAbout":"Since 2010, our company has been offering innovative solutions in the advertising and printing industry in Turkey. We are continuously improving ourselves to provide services that best meet the needs of our clients. In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region. Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!"
+  "desAbout":"Since 2010, our company has been offering innovative solutions in the advertising and printing industry in Turkey. We are continuously improving ourselves to provide services that best meet the needs of our clients. In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region. Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!",
+  "seo": {
+    "home": {
+      "title": "Signage & Wayfinding Manufacturer in Tashkent, Uzbekistan | MGA Reklama",
+      "description": "MGA Reklama is a signage, wayfinding and advertising manufacturer with a 2,000 m² production facility in Tashkent. Design, manufacturing and installation."
+    },
+    "about": {
+      "title": "About MGA Reklama | Signage & Advertising Manufacturer in Tashkent",
+      "description": "Learn about MGA Reklama's 2,000 m² factory in Tashkent, Uzbekistan, and our design, manufacturing and installation capabilities."
+    },
+    "serves": {
+      "title": "Our Services | Signage, Printing & Advertising Production | MGA Reklama",
+      "description": "Explore MGA Reklama's signage and advertising production services in Tashkent, Uzbekistan — from design to manufacturing and installation."
+    },
+    "gallery": {
+      "title": "Gallery | MGA Reklama Signage & Advertising Projects",
+      "description": "Browse photos of signage, wayfinding and advertising production projects manufactured by MGA Reklama in Tashkent, Uzbekistan."
+    },
+    "contact": {
+      "title": "Contact Us | MGA Reklama, Tashkent, Uzbekistan",
+      "description": "Get in touch with MGA Reklama for signage, wayfinding and advertising production in Tashkent, Uzbekistan. Call, email or visit our factory."
+    }
+  },
+  "services": {
+    "sectionTitle": "Our Specialized Services",
+    "materialsLabel": "Materials",
+    "capabilityLabel": "Production Capability",
+    "requestQuote": "Request a Quote",
+    "items": {
+      "wayfinding-signage": {
+        "h1": "Wayfinding Signage",
+        "subtitle": "Clear navigation systems for large facilities",
+        "intro": "We design and manufacture wayfinding signage systems that help visitors navigate hotels, hospitals, business centers and public buildings with ease. Every system is engineered for clarity, consistency and durability.",
+        "materials": "Aluminum, acrylic, stainless steel and digitally printed panels, produced in-house at our 2,000 m² factory in Tashkent.",
+        "capability": "From concept design to production and on-site installation, our team manages the full wayfinding project."
+      },
+      "hotel-signage": {
+        "h1": "Hotel Signage & Wayfinding",
+        "subtitle": "Guest navigation and branding for hospitality projects",
+        "intro": "MGA Reklama manufactures room number plates, floor directories, elevator signage and full hotel wayfinding systems that match your brand identity and elevate the guest experience.",
+        "materials": "Brushed metal, brass-effect finishes, acrylic and illuminated panels.",
+        "capability": "We work directly with hotel operators and interior designers, delivering consistent signage across every floor and public area."
+      },
+      "interior-signage": {
+        "h1": "Interior Signage",
+        "subtitle": "Branded signage for offices, retail and public interiors",
+        "intro": "We produce interior signage — reception signs, office directories, wall graphics and branded panels — that reflect your company's identity indoors.",
+        "materials": "Acrylic, PVC, metal composite and printed vinyl finishes.",
+        "capability": "Custom sizes and finishes are manufactured to order and installed by our own team."
+      },
+      "outdoor-signage": {
+        "h1": "Outdoor Signage",
+        "subtitle": "Durable exterior advertising built to withstand the elements",
+        "intro": "From storefront signs to large-scale outdoor advertising structures, we design and manufacture outdoor signage engineered for Uzbekistan's climate and built to last.",
+        "materials": "Weatherproof metal, acrylic, LED illumination and digitally printed surfaces.",
+        "capability": "Our factory handles structural engineering, production and installation for outdoor projects of any scale."
+      },
+      "totem-pylon-signs": {
+        "h1": "Totem & Pylon Signs",
+        "subtitle": "Freestanding structures for maximum visibility",
+        "intro": "Totem and pylon signs give businesses, shopping centers and fuel stations strong roadside visibility. We engineer and build freestanding structures from the ground up.",
+        "materials": "Steel frames, aluminum cladding, acrylic faces and LED lighting.",
+        "capability": "Structural design, fabrication, transport and installation are all handled by our team."
+      },
+      "channel-letters": {
+        "h1": "Channel Letters",
+        "subtitle": "Illuminated dimensional lettering for storefronts",
+        "intro": "Channel letters give brands a premium, three-dimensional presence. We manufacture front-lit and back-lit letters in custom sizes for storefronts, facades and interiors.",
+        "materials": "Aluminum, acrylic faces and LED modules.",
+        "capability": "Every set of letters is custom-fabricated and installed by our production team."
+      },
+      "large-format-printing": {
+        "h1": "Large Format Printing",
+        "subtitle": "High-resolution printing for banners, wraps and displays",
+        "intro": "Our large format printing services cover banners, vehicle wraps, building wraps and exhibition graphics — produced in-house for fast turnaround.",
+        "materials": "Vinyl, mesh banner, canvas and rigid substrates.",
+        "capability": "In-house printing and finishing lets us deliver large runs quickly without third-party delays."
+      },
+      "museum-signage": {
+        "h1": "Museum Signage",
+        "subtitle": "Interpretive and wayfinding signage for cultural institutions",
+        "intro": "We manufacture interpretive panels, exhibit labels and wayfinding signage for museums and cultural spaces, balancing durability with refined presentation.",
+        "materials": "Acrylic, printed panels, metal frames and UV-stable finishes.",
+        "capability": "We coordinate closely with curators and exhibition designers on custom installations."
+      },
+      "facade-signage": {
+        "h1": "Facade Signage",
+        "subtitle": "Building-mounted and rooftop signage for maximum brand visibility",
+        "intro": "Facade and rooftop signage puts your brand on the skyline. We design, engineer and install building-mounted signs sized for visibility from a distance.",
+        "materials": "Aluminum composite panels, illuminated letters and structural steel mounts.",
+        "capability": "Our engineering team ensures every installation meets structural and safety requirements."
+      },
+      "fit-out-interior-works": {
+        "h1": "Fit-Out & Interior Works",
+        "subtitle": "Complete interior build-out for retail and commercial spaces",
+        "intro": "Beyond signage, MGA Reklama delivers full interior fit-out services — from partitions and cladding to custom joinery — for retail and commercial spaces.",
+        "materials": "Metal framing, plexiglass, laminates and custom millwork.",
+        "capability": "One team manages design, production and installation, so fit-out projects stay on one schedule."
+      }
+    }
+  },
+  "projects": {
+    "listTitle": "Our Projects",
+    "listIntro": "A closer look at completed signage and advertising production projects — real project pages are added here as work is completed.",
+    "workDoneLabel": "Work Done",
+    "viewPhotos": "View Photos",
+    "backToGallery": "See full photo gallery",
+    "items": {
+      "sample-hotel-wayfinding": {
+        "name": "Sample Project — Hotel Wayfinding",
+        "location": "Tashkent, Uzbekistan",
+        "workDone": "Full wayfinding system including room number plates, floor directories and elevator signage, matched to the hotel's brand identity.",
+        "materials": "Brushed metal, acrylic and illuminated panels."
+      },
+      "sample-outdoor-facade-signage": {
+        "name": "Sample Project — Facade & Outdoor Signage",
+        "location": "Tashkent, Uzbekistan",
+        "workDone": "Design, manufacturing and installation of illuminated facade signage and channel letters for a retail storefront.",
+        "materials": "Aluminum composite panels, channel letters and LED illumination."
+      }
+    }
+  }
 }
