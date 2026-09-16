@@ -107,6 +107,13 @@
     }
 
     .validation {
+      .input-box__error {
+        display: block;
+        color: #e74c3c;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+
       .form-group {
         display: flex;
         flex-wrap: wrap;

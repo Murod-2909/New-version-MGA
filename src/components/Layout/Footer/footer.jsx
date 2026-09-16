@@ -39,7 +39,7 @@ const Footer = () => {
               >
                 <div className="footer-widget__logo">
                   <a href="/">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="MGA Reklama logo" />
                   </a>
                 </div>
                 <div className="footer-wigdet_text-box">

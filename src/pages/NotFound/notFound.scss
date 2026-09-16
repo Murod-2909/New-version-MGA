@@ -1,0 +1,31 @@
+@import "../../assests/style/global";
+
+.not-found {
+  padding: 160px 0;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__code {
+    font-size: 96px;
+    font-weight: 900;
+    color: $ambed-base;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $ambed-gray;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    display: inline-block;
+    background-color: $ambed-base;
+    color: $ambed-white;
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
