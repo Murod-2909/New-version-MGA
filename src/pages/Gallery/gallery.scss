@@ -1,4 +1,16 @@
 .gallery {
+  &__projects-link {
+    text-align: center;
+    margin-top: -20px;
+    padding-bottom: 40px;
+
+    a {
+      color: #d25717;
+      font-weight: 700;
+      font-size: 15px;
+    }
+  }
+
   .similar-project {
     position: relative;
     display: block;

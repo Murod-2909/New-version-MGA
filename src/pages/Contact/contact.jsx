@@ -1,50 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./contact.scss";
 import PageHero from "../../components/pageHero";
+import InquiryForm from "../../components/InquiryForm";
 import contactImg from "../../assests/images/contact-page-shape-1.png";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
-import { sendContact } from "../../reduxToolkit/messageSlice";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
-
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(sendContact(form))
-      .unwrap()
-      .then(() => {
-        toast.success("Message sent successfully!");
-        setForm({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-      })
-      .catch(() => {
-        toast.error("Failed to send message. Please try again.");
-      });
-  };
 
   const title = t("contact");
 
@@ -69,77 +31,7 @@ const Contact = () => {
                   <div className="title-line"></div>
                 </div>
                 <div className="col-xl-8_cont-left_form">
-                  <form className="validation" noValidate onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <div className="col-xl-6">
-                        <div className="input-box">
-                          <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            className="commet-box"
-                            value={form.name}
-                            onChange={handleChange}
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="col-xl-6">
-                        <div className="input-box">
-                          <input
-                            type="email"
-                            name="email"
-                            placeholder="Email address"
-                            className="commet-box"
-                            value={form.email}
-                            onChange={handleChange}
-                            required
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <div className="col-xl-6">
-                        <div className="input-box">
-                          <input
-                            type="text"
-                            name="phone"
-                            placeholder="Phone Number"
-                            className="commet-box"
-                            value={form.phone}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
-                      <div className="col-xl-6">
-                        <div className="input-box">
-                          <input
-                            type="text"
-                            name="subject"
-                            placeholder="Subject"
-                            className="commet-box"
-                            value={form.subject}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="message">
-                      <textarea
-                        name="message"
-                        className="textarea"
-                        placeholder="Write a message"
-                        value={form.message}
-                        onChange={handleChange}
-                        required
-                      ></textarea>
-                    </div>
-                    <div className="btn-box">
-                      <button type="submit" className="form-btn">
-                       {t("sends")}
-                      </button>
-                    </div>
-                  </form>
+                  <InquiryForm />
                 </div>
               </div>
             </div>
@@ -190,9 +82,6 @@ const Contact = () => {
           style={{ position: "relative" }}
         ></iframe>
       </div>
-
-      {/* Toast notifications */}
-      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };

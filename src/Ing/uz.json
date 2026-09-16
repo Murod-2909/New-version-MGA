@@ -1,0 +1,148 @@
+{
+  "main": "Bosh sahifa",
+  "hero": {
+    "tagline": "TABELALAR • NAVIGATSIYA • REKLAMA ISHLAB CHIQARISH",
+    "subline": "Toshkentda, O'zbekistonda professional tabela, navigatsiya va reklama ishlab chiqarish.",
+    "facility": "2 000 m² ishlab chiqarish zavodi • Loyihalash • Ishlab chiqarish • Montaj"
+  },
+  "about": "Biz haqimizda",
+  "serves": "Xizmatlar",
+  "gallery": "Galereya",
+  "contact": "Aloqa",
+  "servies":"Bizning xizmatlarimiz",
+  "call":"Istalgan vaqtda qo'ng'iroq qiling",
+  "send":"Email yuboring",
+  "get": "Biz bilan bog'laning",
+  "sub": "Obuna bo'lish",
+  "aboutUs":"Biz haqimizda",
+  "footMenu":"Tezkor menyu",
+  "work":"Bizning ishlarimiz",
+  "feel":"Istalgan vaqtda yozing",
+  "sends":"Xabar yuborish",
+  "toastSuccess":"Xabar muvaffaqiyatli yuborildi!",
+  "toastError":"Xabarni yuborib bo'lmadi. Iltimos, qayta urinib ko'ring.",
+  "address":"Toshkent sh., Elbek ko'chasi, 61",
+  "footerText":"2010-yildan beri innovatsion reklama va poligrafiya yechimlari — endi Markaziy Osiyoda ham.",
+  "desAbout":"2010-yildan beri kompaniyamiz Turkiyada reklama va poligrafiya sohasida innovatsion yechimlar taqdim etib kelmoqda. Biz mijozlarimiz ehtiyojlarini eng yaxshi qondirish uchun doimiy ravishda takomillashib boramiz. 2022-yilda xalqaro rivojlanishimizni yangi bosqichga olib chiqib, Toshkent shahrida 2000 m² maydonni egallagan zamonaviy zavod qurdik. Yangi ishlab chiqarish bazamiz bilan biz yuqori sifatli ishlab chiqarish va tezkor xizmat ko'rsatish yondashuvimizni Markaziy Osiyo bozoriga olib kelishni, mintaqadagi mijozlarimizga professional reklama yechimlarini taqdim etishni maqsad qilganmiz. Kuchli infratuzilma va tajribali jamoa yordamida biz doimo mijozlar mamnuniyatini birinchi o'ringa qo'yamiz va sohada yetakchi rol o'ynashga intilamiz. Savollaringiz bo'lsa yoki batafsil ma'lumot olishni istasangiz, biz bilan bog'lanishdan tortinmang!",
+  "seo": {
+    "home": {
+      "title": "Toshkentda reklama va yo'naltiruvchi belgilar ishlab chiqarish | MGA Reklama",
+      "description": "MGA Reklama — Toshkentdagi 2000 m² zavodga ega tabela, yo'naltiruvchi belgilar va reklama ishlab chiqaruvchisi. Loyihalash, ishlab chiqarish va montaj."
+    },
+    "about": {
+      "title": "MGA Reklama haqida | Toshkentda tabela va reklama ishlab chiqaruvchisi",
+      "description": "MGA Reklama — Toshkentdagi 2000 m² zavod. Loyihalash, ishlab chiqarish va montajning to'liq sikli."
+    },
+    "serves": {
+      "title": "Xizmatlarimiz | Tabela va tashqi reklama ishlab chiqarish | MGA Reklama",
+      "description": "Toshkentda tabela, tashqi reklama va yo'naltiruvchi belgilar ishlab chiqarish — loyihalashdan montajgacha. MGA Reklama."
+    },
+    "gallery": {
+      "title": "Galereya | MGA Reklama tashqi reklama va tabela loyihalari",
+      "description": "MGA Reklama tomonidan Toshkentda amalga oshirilgan tashqi reklama, tabela va navigatsiya loyihalarining fotosuratlari."
+    },
+    "contact": {
+      "title": "Aloqa | MGA Reklama, Toshkent, O'zbekiston",
+      "description": "Toshkentda tabela va tashqi reklama ishlab chiqarish bo'yicha MGA Reklama bilan bog'laning. Qo'ng'iroq, email yoki zavodga tashrif."
+    }
+  },
+  "services": {
+    "sectionTitle": "Bizning ixtisoslashgan xizmatlarimiz",
+    "materialsLabel": "Materiallar",
+    "capabilityLabel": "Ishlab chiqarish imkoniyatlari",
+    "requestQuote": "Taklif olish",
+    "items": {
+      "wayfinding-signage": {
+        "h1": "Yo'naltiruvchi belgilar",
+        "subtitle": "Yirik obyektlar uchun navigatsiya tizimlari",
+        "intro": "Biz mehmonxonalar, biznes-markazlar va jamoat binolarida tashrif buyuruvchilarga yo'l topishda yordam beruvchi yo'naltiruvchi belgilar tizimlarini loyihalaymiz va ishlab chiqaramiz.",
+        "materials": "Alyuminiy, akril, zanglamaydigan po'lat va raqamli bosilgan panellar — barchasi Toshkentdagi 2000 m² zavodimizda ishlab chiqariladi.",
+        "capability": "Kontseptsiyadan tortib ishlab chiqarish va montajgacha — loyihani to'liq boshqaramiz."
+      },
+      "hotel-signage": {
+        "h1": "Mehmonxona uchun tabela va navigatsiya",
+        "subtitle": "Mehmonlar uchun yo'naltiruvchi belgilar",
+        "intro": "MGA Reklama xona raqami lavhalari, qavat ko'rsatkichlari va mehmonxonaning brendiga mos to'liq navigatsiya tizimlarini ishlab chiqaradi.",
+        "materials": "Metall, akril va yoritiladigan panellar.",
+        "capability": "Mehmonxona operatorlari va interyer dizaynerlar bilan bevosita ishlaymiz, har bir qavatda bir xil uslubni ta'minlaymiz."
+      },
+      "interior-signage": {
+        "h1": "Ichki tabela va lavhalar",
+        "subtitle": "Ofis va savdo maydonlari uchun brendlangan lavhalar",
+        "intro": "Biz resepshn lavhalari, ofis ko'rsatkichlari va brendlangan panellarni — kompaniyangiz uslubini ichki makonda aks ettiruvchi — ishlab chiqaramiz.",
+        "materials": "Akril, PVX, metall kompozit va bosilgan vinil.",
+        "capability": "Individual o'lcham va bezaklar buyurtma asosida ishlab chiqariladi va o'z jamoamiz tomonidan o'rnatiladi."
+      },
+      "outdoor-signage": {
+        "h1": "Tashqi reklama",
+        "subtitle": "Toshkent iqlimiga bardoshli tashqi reklama",
+        "intro": "Do'kon peshtoqidan tortib yirik reklama konstruksiyalarigacha — biz O'zbekiston iqlimiga mos tashqi reklamani loyihalaymiz va ishlab chiqaramiz.",
+        "materials": "Namlikka chidamli metall, akril, LED yoritish va raqamli bosilgan yuzalar.",
+        "capability": "Zavodimiz har qanday miqyosdagi tashqi reklama loyihasining muhandislik, ishlab chiqarish va montajini o'z zimmasiga oladi."
+      },
+      "totem-pylon-signs": {
+        "h1": "Reklama ustunlari (totem va pilon)",
+        "subtitle": "Maksimal ko'rinish uchun alohida turuvchi konstruksiyalar",
+        "intro": "Reklama ustunlari biznes, savdo markazlari va yoqilg'i shoxobchalariga yo'ldan yaxshi ko'rinish beradi. Biz alohida turuvchi konstruksiyalarni noldan loyihalaymiz va quramiz.",
+        "materials": "Po'lat karkas, alyuminiy qoplama, akril panellar va LED yoritish.",
+        "capability": "Konstruktiv hisob-kitob, ishlab chiqarish, tashish va montajning barchasini jamoamiz bajaradi."
+      },
+      "channel-letters": {
+        "h1": "Hajmli harflar",
+        "subtitle": "Peshtoqlar uchun yoritiladigan hajmli harflar",
+        "intro": "Hajmli harflar brendga premium, uch o'lchamli ko'rinish beradi. Biz oldindan va orqadan yoritiladigan harflarni istalgan o'lchamda ishlab chiqaramiz.",
+        "materials": "Alyuminiy, akril yuzalar va LED modullar.",
+        "capability": "Har bir harflar to'plami individual tarzda ishlab chiqariladi va jamoamiz tomonidan o'rnatiladi."
+      },
+      "large-format-printing": {
+        "h1": "Katta formatli bosma",
+        "subtitle": "Banner va ko'rgazma uchun yuqori aniqlikdagi bosma",
+        "intro": "Bizning katta formatli bosma xizmatlarimiz bannerlar, avtomobil va bino brendlashtirishi hamda ko'rgazma grafikasini o'z ichiga oladi — barchasi o'z korxonamizda ishlab chiqariladi.",
+        "materials": "Vinil, banner to'ri, brezent va qattiq asoslar.",
+        "capability": "O'z ishlab chiqarishimiz tufayli katta hajmdagi buyurtmalarni tezda, uchinchi tomon kechikishlarisiz bajaramiz."
+      },
+      "museum-signage": {
+        "h1": "Muzey lavhalari",
+        "subtitle": "Muzeylar uchun ma'lumot va navigatsiya lavhalari",
+        "intro": "Biz muzeylar va madaniy makonlar uchun ma'lumot panellari, eksponat yorliqlari va yo'naltiruvchi lavhalarni ishlab chiqaramiz.",
+        "materials": "Akril, bosilgan panellar, metall ramkalar va UV-chidamli qoplamalar.",
+        "capability": "Individual loyihalarni amalga oshirishda kuratorlar va ko'rgazma dizaynerlari bilan yaqindan hamkorlik qilamiz."
+      },
+      "facade-signage": {
+        "h1": "Fasad va tom usti tabelalari",
+        "subtitle": "Brend ko'rinishini maksimal darajada oshiruvchi bino tabelalari",
+        "intro": "Fasad va tom usti tabelalari brendingizni shahar siluetiga qo'yadi. Biz uzoqdan ko'rinadigan tabelalarni loyihalaymiz, hisoblaymiz va o'rnatamiz.",
+        "materials": "Alyuminiy kompozit panellar, yoritiladigan harflar va po'lat konstruksiyalar.",
+        "capability": "Muhandislarimiz har bir montajning mustahkamlik va xavfsizlik talablariga javob berishini ta'minlaydi."
+      },
+      "fit-out-interior-works": {
+        "h1": "Ta'mirlash va interyer ishlari",
+        "subtitle": "Savdo va tijorat maydonlari uchun to'liq interyer ishlari",
+        "intro": "Tabelalardan tashqari, MGA Reklama savdo va tijorat maydonlari uchun to'liq interyer ishlarini — bo'linmalar, qoplamalar va individual mebeldan tortib — bajaradi.",
+        "materials": "Metall karkas, organik shisha, laminat va buyurtma asosidagi mebel.",
+        "capability": "Yagona jamoa dizayn, ishlab chiqarish va montajni boshqaradi, shuning uchun loyiha bitta jadvalda davom etadi."
+      }
+    }
+  },
+  "projects": {
+    "listTitle": "Bizning loyihalarimiz",
+    "listIntro": "Tugallangan tabela va reklama ishlab chiqarish loyihalari haqida batafsil — ishlar yakunlangani sayin real loyiha sahifalari shu yerga qo'shiladi.",
+    "workDoneLabel": "Bajarilgan ishlar",
+    "viewPhotos": "Rasmlarni ko'rish",
+    "backToGallery": "To'liq galereyani ko'rish",
+    "items": {
+      "sample-hotel-wayfinding": {
+        "name": "Namuna loyiha — mehmonxona navigatsiyasi",
+        "location": "Toshkent, O'zbekiston",
+        "workDone": "Mehmonxonaning brend uslubiga mos xona raqami lavhalari, qavat ko'rsatkichlari va lift tabelalarini o'z ichiga olgan to'liq navigatsiya tizimi.",
+        "materials": "Metall, akril va yoritiladigan panellar."
+      },
+      "sample-outdoor-facade-signage": {
+        "name": "Namuna loyiha — fasad va tashqi reklama",
+        "location": "Toshkent, O'zbekiston",
+        "workDone": "Do'kon uchun yoritiladigan fasad tabelasi va hajmli harflarni loyihalash, ishlab chiqarish va o'rnatish.",
+        "materials": "Alyuminiy kompozit panellar, hajmli harflar va LED yoritish."
+      }
+    }
+  }
+}

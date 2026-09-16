@@ -36,6 +36,13 @@ const Language = () => {
       >
         RU
       </span>
+      <span className="divider">|</span>
+      <span
+        className={`lang-item ${language === "uz" ? "active" : ""}`}
+        onClick={() => handleChangeLanguage("uz")}
+      >
+        UZ
+      </span>
     </div>
   );
 };

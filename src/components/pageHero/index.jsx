@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import { useTranslation } from "react-i18next";
 
-const PageHero = ({ title }) => {
+const PageHero = ({ title, subtitle, breadcrumbLabel }) => {
    const { t } = useTranslation();
   return (
     <div className="page-header">
@@ -18,9 +18,10 @@ const PageHero = ({ title }) => {
                 <li>
                     <span>/</span>
                 </li>
-                <li className="li-pull">{title}</li>
+                <li className="li-pull">{breadcrumbLabel || title}</li>
               </ul>
-              <h2 className="title-pages">{title}</h2>
+              <h1 className="title-pages">{title}</h1>
+              {subtitle && <p className="subtitle-pages">{subtitle}</p>}
           </div>
         </div>
     </div>
