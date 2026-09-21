@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 // can drop in a working "contact us" form. presetSubject lets a page pre-fill
 // what the inquiry is about (e.g. a specific service) without any backend change —
 // it's just the free-text "subject" field on the existing /create-contact/ endpoint.
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const InquiryForm = ({ presetSubject = "" }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -20,6 +22,7 @@ const InquiryForm = ({ presetSubject = "" }) => {
     subject: presetSubject,
     message: "",
   });
+  const [errors, setErrors] = useState({});
 
   // Same route pattern (e.g. one /services/:slug page linking to another) keeps this
   // component instance mounted, so useState's initial value alone won't pick up a
@@ -29,14 +32,30 @@ const InquiryForm = ({ presetSubject = "" }) => {
   }, [presetSubject]);
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+    if (errors[name]) {
+      setErrors((prevErrors) => ({ ...prevErrors, [name]: undefined }));
+    }
+  };
+
+  const validate = () => {
+    const nextErrors = {};
+    if (!form.name.trim()) nextErrors.name = t("formErrorRequired");
+    if (!form.email.trim()) {
+      nextErrors.email = t("formErrorRequired");
+    } else if (!EMAIL_PATTERN.test(form.email.trim())) {
+      nextErrors.email = t("formErrorEmail");
+    }
+    if (!form.message.trim()) nextErrors.message = t("formErrorRequired");
+    setErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validate()) return;
+
     dispatch(sendContact(form))
       .unwrap()
       .then(() => {
@@ -48,6 +67,7 @@ const InquiryForm = ({ presetSubject = "" }) => {
           subject: presetSubject,
           message: "",
         });
+        setErrors({});
       })
       .catch(() => {
         toast.error(t("toastError"));
@@ -67,8 +87,8 @@ const InquiryForm = ({ presetSubject = "" }) => {
                 className="commet-box"
                 value={form.name}
                 onChange={handleChange}
-                required
               />
+              {errors.name && <span className="input-box__error">{errors.name}</span>}
             </div>
           </div>
           <div className="col-xl-6">
@@ -80,8 +100,8 @@ const InquiryForm = ({ presetSubject = "" }) => {
                 className="commet-box"
                 value={form.email}
                 onChange={handleChange}
-                required
               />
+              {errors.email && <span className="input-box__error">{errors.email}</span>}
             </div>
           </div>
         </div>
@@ -118,8 +138,8 @@ const InquiryForm = ({ presetSubject = "" }) => {
             placeholder="Write a message"
             value={form.message}
             onChange={handleChange}
-            required
           ></textarea>
+          {errors.message && <span className="input-box__error">{errors.message}</span>}
         </div>
         <div className="btn-box">
           <button type="submit" className="form-btn">

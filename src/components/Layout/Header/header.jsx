@@ -40,7 +40,7 @@ const Header = () => {
             <div className="main_header_top_inner clearfix">
               <div className="main_header_top_inner_logo">
                 <a href="/">
-                  <img src={logo} className="logoItem" alt="Logo images" />
+                  <img src={logo} className="logoItem" alt="MGA Reklama logo" />
                 </a>
               </div>
               <div className="main_header_top_inner_right">

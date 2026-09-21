@@ -33,7 +33,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
       >
         <div className="mobile-menu-sheet">
           <div className="mobile-menu-sheet__header">
-            <img src={logo} alt="Logo" className="logo" />
+            <img src={logo} alt="MGA Reklama logo" className="logo" />
             <button className="close-btn" onClick={() => onClose(false)}>
               <RxCross2 />
             </button>

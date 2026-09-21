@@ -2,12 +2,15 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FaTimes } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./modalImg.scss";
 
 const ModalCarousel = ({ onClose, galleryImages = [] }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="modal-gallery">
       <div className="modal-gallery__content">
@@ -27,7 +30,7 @@ const ModalCarousel = ({ onClose, galleryImages = [] }) => {
         >
           {galleryImages.map((img, index) => (
             <SwiperSlide key={index}>
-              <img src={img.image} alt={`slide-${index + 1}`} />
+              <img src={img.image} alt={`${t("galleryImageAlt")} ${index + 1}`} />
             </SwiperSlide>
           ))}
         </Swiper>

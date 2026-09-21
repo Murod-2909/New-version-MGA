@@ -15,7 +15,7 @@ const Contact = () => {
       <PageHero title={title} />
       <div className="contact-page">
         <div className="contact-page-shape-1 float-bob-x">
-          <img src={contactImg} alt="contact img" />
+          <img src={contactImg} alt="" role="presentation" />
         </div>
         <div className="container">
           <div className="contact-row">

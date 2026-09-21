@@ -14,6 +14,7 @@ const Contact = lazy(() => import("./pages/Contact/contact"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const ProjectsList = lazy(() => import("./pages/Projects/ProjectsList"));
 const ProjectDetail = lazy(() => import("./pages/Projects/ProjectDetail"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 
 const routes = [
@@ -27,7 +28,7 @@ const routes = [
     {path: "/projects", element: ProjectsList},
     {path: "/projects/:slug", element: ProjectDetail},
     {path: "/contact", element: Contact},
-
+    {path: "*", element: NotFound},
 
 ];
 const RoutesContainer = () => (
@@ -43,7 +44,6 @@ const RoutesContainer = () => (
                             <Route key={key} path={route.path} element={<RouteComponent/>}/>
                         );
                     })}
-                    {/* <Route path="*" element={<NotFound />} /> */}
                 </Routes>
             </Suspense>
         </Layout>

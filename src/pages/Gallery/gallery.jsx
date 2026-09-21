@@ -40,7 +40,7 @@ const Gallery = () => {
                   <div className="col-xl-4__imgs">
                     <img
                       src={image?.image}
-                      alt={`Brand ${index + 1}`}
+                      alt={`${t("galleryImageAlt")} ${index + 1}`}
                       className="gallery__image"
                     />
                     {hoveredIndex === index && (

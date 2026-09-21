@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./serves.scss";
 import PageHero from "../../components/pageHero";
 
 import NewLetter from "../../components/newLetter";
 import HomeServices from "../../components/HomeServies";
+import ServiceCard from "../../components/ServiceCard";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../../reduxToolkit/servesSlice";
@@ -30,15 +30,9 @@ const Serves = () => {
         <h2 className="section-serves__specialized-title">
           {t("services.sectionTitle")}
         </h2>
-        <ul className="section-serves__specialized-list">
-          {serviceSlugs.map((slug) => (
-            <li key={slug}>
-              <Link to={`/services/${slug}`}>
-                {t(`services.items.${slug}.h1`)}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {serviceSlugs.map((slug, index) => (
+          <ServiceCard key={slug} slug={slug} reverse={index % 2 === 1} />
+        ))}
       </div>
 
       <NewLetter />

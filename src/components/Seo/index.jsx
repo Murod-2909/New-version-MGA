@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const SITE_URL = "https://mgareklama.com";
-const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
 
 function upsertMeta(attr, key, content) {
   if (!content) return;

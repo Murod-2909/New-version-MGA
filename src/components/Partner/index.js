@@ -5,9 +5,11 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "./partner.scss";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { getPartner } from "../../reduxToolkit/partnerSlice";
 
 export default function Partner() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const loading = useSelector((state) => state.partnerSlice.loading);
@@ -28,7 +30,7 @@ export default function Partner() {
           <div className="rows al">
             <div className="brand-one_inner-partner_col-3">
               <div className="brand-one_inner-partner_col-3_titles">
-                <h3>REFERENCES</h3>
+                <h3>{t("referencesTitle")}</h3>
               </div>
             </div>
             <div className="brand-one_inner-partner_col-9">
@@ -94,7 +96,7 @@ export default function Partner() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <img src={img?.image} alt={`Brand ${index + 1}`} />
+                          <img src={img?.image} alt={`${t("partnerLogoAlt")} ${index + 1}`} />
                         </a>
                       </div>
                     </SwiperSlide>

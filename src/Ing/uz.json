@@ -1,5 +1,10 @@
 {
   "main": "Bosh sahifa",
+  "notFoundText": "Kechirasiz, siz qidirayotgan sahifa topilmadi.",
+  "notFoundBackHome": "Bosh sahifaga qaytish",
+  "galleryImageAlt": "Tabela va reklama loyihasi surati",
+  "partnerLogoAlt": "Hamkor logotipi",
+  "referencesTitle": "Hamkorlar",
   "hero": {
     "tagline": "TABELALAR • NAVIGATSIYA • REKLAMA ISHLAB CHIQARISH",
     "subline": "Toshkentda, O'zbekistonda professional tabela, navigatsiya va reklama ishlab chiqarish.",
@@ -21,6 +26,8 @@
   "sends":"Xabar yuborish",
   "toastSuccess":"Xabar muvaffaqiyatli yuborildi!",
   "toastError":"Xabarni yuborib bo'lmadi. Iltimos, qayta urinib ko'ring.",
+  "formErrorRequired":"Bu maydonni to'ldirish shart.",
+  "formErrorEmail":"Iltimos, to'g'ri email manzilini kiriting.",
   "address":"Toshkent sh., Elbek ko'chasi, 61",
   "footerText":"2010-yildan beri innovatsion reklama va poligrafiya yechimlari — endi Markaziy Osiyoda ham.",
   "desAbout":"2010-yildan beri kompaniyamiz Turkiyada reklama va poligrafiya sohasida innovatsion yechimlar taqdim etib kelmoqda. Biz mijozlarimiz ehtiyojlarini eng yaxshi qondirish uchun doimiy ravishda takomillashib boramiz. 2022-yilda xalqaro rivojlanishimizni yangi bosqichga olib chiqib, Toshkent shahrida 2000 m² maydonni egallagan zamonaviy zavod qurdik. Yangi ishlab chiqarish bazamiz bilan biz yuqori sifatli ishlab chiqarish va tezkor xizmat ko'rsatish yondashuvimizni Markaziy Osiyo bozoriga olib kelishni, mintaqadagi mijozlarimizga professional reklama yechimlarini taqdim etishni maqsad qilganmiz. Kuchli infratuzilma va tajribali jamoa yordamida biz doimo mijozlar mamnuniyatini birinchi o'ringa qo'yamiz va sohada yetakchi rol o'ynashga intilamiz. Savollaringiz bo'lsa yoki batafsil ma'lumot olishni istasangiz, biz bilan bog'lanishdan tortinmang!",
@@ -48,6 +55,7 @@
   },
   "services": {
     "sectionTitle": "Bizning ixtisoslashgan xizmatlarimiz",
+    "moreAboutService": "Xizmat haqida batafsil",
     "materialsLabel": "Materiallar",
     "capabilityLabel": "Ishlab chiqarish imkoniyatlari",
     "requestQuote": "Taklif olish",

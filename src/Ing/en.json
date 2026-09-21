@@ -1,5 +1,10 @@
 {
   "main": "Home",
+  "notFoundText": "Sorry, the page you're looking for doesn't exist.",
+  "notFoundBackHome": "Back to Home",
+  "galleryImageAlt": "Signage and advertising project photo",
+  "partnerLogoAlt": "Partner logo",
+  "referencesTitle": "References",
   "hero": {
     "tagline": "SIGNAGE • WAYFINDING • ADVERTISING PRODUCTION",
     "subline": "Professional signage, wayfinding and advertising manufacturing in Tashkent, Uzbekistan.",
@@ -21,6 +26,8 @@
   "sends":"Send a Message",
   "toastSuccess":"Message sent successfully!",
   "toastError":"Failed to send message. Please try again.",
+  "formErrorRequired":"This field is required.",
+  "formErrorEmail":"Please enter a valid email address.",
   "address":"61 Elbek Street, Tashkent",
   "footerText":"Innovative advertising & printing solutions since 2010 — now serving Central Asia.",
   "desAbout":"Since 2010, our company has been offering innovative solutions in the advertising and printing industry in Turkey. We are continuously improving ourselves to provide services that best meet the needs of our clients. In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region. Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!",
@@ -48,6 +55,7 @@
   },
   "services": {
     "sectionTitle": "Our Specialized Services",
+    "moreAboutService": "More about the service",
     "materialsLabel": "Materials",
     "capabilityLabel": "Production Capability",
     "requestQuote": "Request a Quote",
