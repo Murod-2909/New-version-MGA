@@ -14,16 +14,34 @@
   }
 
   &__image {
+    position: relative;
     flex: 0 0 42%;
     border-radius: 24px;
-    overflow: hidden;
+    overflow: visible;
 
     img {
       width: 100%;
       height: 320px;
       object-fit: cover;
       display: block;
+      border-radius: 24px;
     }
+  }
+
+  &__badge {
+    position: absolute;
+    left: 20px;
+    bottom: -20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #112337;
+    color: $ambed-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   }
 
   &__content {
