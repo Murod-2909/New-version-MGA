@@ -56,6 +56,7 @@
   "services": {
     "sectionTitle": "Our Specialized Services",
     "moreAboutService": "More about the service",
+    "contactAboutItem": "Contact us to learn more about this production capability.",
     "materialsLabel": "Materials",
     "capabilityLabel": "Production Capability",
     "requestQuote": "Request a Quote",
