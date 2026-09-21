@@ -55,6 +55,7 @@
   },
   "services": {
     "sectionTitle": "Наши специализированные услуги",
+    "moreAboutService": "Подробнее об услуге",
     "materialsLabel": "Материалы",
     "capabilityLabel": "Производственные возможности",
     "requestQuote": "Получить предложение",

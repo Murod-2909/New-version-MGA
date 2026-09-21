@@ -55,6 +55,7 @@
   },
   "services": {
     "sectionTitle": "Bizning ixtisoslashgan xizmatlarimiz",
+    "moreAboutService": "Xizmat haqida batafsil",
     "materialsLabel": "Materiallar",
     "capabilityLabel": "Ishlab chiqarish imkoniyatlari",
     "requestQuote": "Taklif olish",

@@ -55,6 +55,7 @@
   },
   "services": {
     "sectionTitle": "Our Specialized Services",
+    "moreAboutService": "More about the service",
     "materialsLabel": "Materials",
     "capabilityLabel": "Production Capability",
     "requestQuote": "Request a Quote",
