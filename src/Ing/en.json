@@ -153,5 +153,54 @@
         "materials": "Aluminum composite panels, channel letters and LED illumination."
       }
     }
+  },
+  "production": {
+    "items": {
+      "uv-printing": {
+        "short": "Direct UV printing on rigid and flexible materials.",
+        "intro": "Our UV printers apply ink directly onto rigid and flexible surfaces — acrylic, PVC, wood, glass and metal — curing it instantly with UV light for a durable, scratch-resistant finish.",
+        "capability": "Ideal for signage panels, decorative wall art, promotional displays and any project that needs full-color printing directly onto a rigid material without laminating a separate print."
+      },
+      "interior-printing": {
+        "short": "Interior-grade printing for indoor branding and decor.",
+        "intro": "We produce interior printing for office branding, retail decor, wall graphics and wayfinding elements, using materials and inks suited for indoor use.",
+        "capability": "Suitable for reception walls, meeting room graphics, retail interior branding and decorative panels."
+      },
+      "outdoor-printing": {
+        "short": "Weather-resistant printing for outdoor use.",
+        "intro": "Our outdoor printing uses weather-resistant inks and substrates designed to withstand sun, rain and temperature changes without fading or peeling.",
+        "capability": "Used for billboards, storefront graphics, banners and any outdoor-facing branded surface."
+      },
+      "metal-laser-cutting-machine": {
+        "short": "Precision laser cutting for metal components.",
+        "intro": "Our metal laser cutting machine cuts precise shapes and lettering out of steel, aluminum and other metals, giving clean edges without manual finishing.",
+        "capability": "Used for channel letters, metal signage frames, decorative metal panels and custom brackets."
+      },
+      "cnc-cutting": {
+        "short": "CNC-routed panels and shapes to exact dimensions.",
+        "intro": "Our CNC cutting equipment routs acrylic, wood, foam and composite panels to precise dimensions, producing consistent, repeatable shapes for large orders.",
+        "capability": "Used for sign faces, dimensional letters, display stands and custom-shaped panels."
+      },
+      "laser-plexiglass-machine": {
+        "short": "Laser-cut acrylic (plexiglass) shapes and letters.",
+        "intro": "Our laser plexiglass machine cuts and engraves acrylic sheets with clean, polished edges, suitable for both flat and illuminated signage.",
+        "capability": "Used for acrylic letters, light boxes, engraved plaques and decorative acrylic elements."
+      },
+      "letter-bending-machine": {
+        "short": "Forming dimensional letters and profiles.",
+        "intro": "Our letter bending machine shapes metal and acrylic strips into the precise profiles used for three-dimensional channel letters and border trim.",
+        "capability": "Used to build the sides (returns) of channel letters and custom dimensional lettering."
+      },
+      "laser-welding": {
+        "short": "Precision welding for clean, durable metal joints.",
+        "intro": "Our laser welding equipment joins metal components with narrow, precise welds that need little to no finishing, keeping surfaces smooth for painting or plating.",
+        "capability": "Used to assemble channel letters, metal frames and structural signage components."
+      },
+      "plotter-cutting": {
+        "short": "Vinyl cutting for lettering, decals and graphics.",
+        "intro": "Our plotter cutting equipment cuts self-adhesive vinyl into precise letters, logos and graphics for application to vehicles, windows and signage.",
+        "capability": "Used for vehicle wraps, window graphics, cut vinyl lettering and decals."
+      }
+    }
   }
 }

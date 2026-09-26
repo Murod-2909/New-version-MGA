@@ -20,6 +20,16 @@
     width: 60%;
   }
 
+  &__photo {
+    max-width: 320px;
+    width: 100%;
+    display: block;
+    margin-bottom: 24px;
+    border-radius: 16px;
+    background-color: $ambed-primary;
+    padding: 20px;
+  }
+
   &__intro {
     font-size: 16px;
     line-height: 28px;
