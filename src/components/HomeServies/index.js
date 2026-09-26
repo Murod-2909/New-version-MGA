@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import "./homeServies.scss";
-import { FaPlus } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
 import Aos from "aos";
-
 
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { ServiceCardBase } from "../ServiceCard";
 
 function HomeServices({ servicesData }) {
   const { t } = useTranslation();
@@ -26,44 +26,32 @@ function HomeServices({ servicesData }) {
         </div>
       </div>
 
-      <div className="services_show"></div>
       <div className="services_bad">
         <div className="container">
-          <div className="services_bad_double">
-              {servicesData?.map((item, index) => {
-                  const virtualId = servicesData.length - index;
-
-                  return (
-                      item.image &&
-                      item.title && (
-                          <motion.a
-                              key={virtualId}
-                              className="services_bad_double_serviceAbout"
-                              initial={{ opacity: 0, y: 50 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.5, delay: index * 0.2 }}
-                              viewport={{ once: true }}
-                              whileHover={{ scale: 1.05 }}
-                          >
-                              <div className="zoom"></div>
-                              <img
-                                  className="services_bad_double_serviceAbout_seven"
-                                  src={item.image}
-                                  alt={item?.title || "Service"}
-                              />
-                              <div className="services_bad_double_serviceAbout_laser">
-                                 {item?.title}
-                              </div>
-                              <div>
-                                  <FaPlus className="services_bad_double_serviceAbout_plus" />
-                              </div>
-                          </motion.a>
-                      )
-                  );
-              })}
-
-
-          </div>
+          {servicesData?.map(
+            (item, index) =>
+              item.image &&
+              item.title && (
+                <motion.div
+                  key={item.title + index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <ServiceCardBase
+                    image={item.image}
+                    title={item.title}
+                    description={t("services.contactAboutItem")}
+                    icon={FaTools}
+                    ctaLabel={t("services.moreAboutService")}
+                    ctaTo="/contact"
+                    ctaState={{ subject: item.title }}
+                    reverse={index % 2 === 1}
+                  />
+                </motion.div>
+              )
+          )}
         </div>
       </div>
     </div>

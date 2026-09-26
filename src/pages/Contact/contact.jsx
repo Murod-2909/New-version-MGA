@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import "./contact.scss";
 import PageHero from "../../components/pageHero";
 import InquiryForm from "../../components/InquiryForm";
@@ -7,6 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { t } = useTranslation();
+  const location = useLocation();
 
   const title = t("contact");
 
@@ -31,7 +33,7 @@ const Contact = () => {
                   <div className="title-line"></div>
                 </div>
                 <div className="col-xl-8_cont-left_form">
-                  <InquiryForm />
+                  <InquiryForm presetSubject={location.state?.subject || ""} />
                 </div>
               </div>
             </div>

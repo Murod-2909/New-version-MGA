@@ -34,28 +34,55 @@ const ICONS = {
   "fit-out-interior-works": FaTools,
 };
 
-const ServiceCard = ({ slug, reverse = false }) => {
-  const { t } = useTranslation();
-  const base = `services.items.${slug}`;
-  const Icon = ICONS[slug] || FaBuilding;
-
-  return (
-    <div className={`service-card${reverse ? " service-card--reverse" : ""}`}>
-      <div className="service-card__image">
-        <img src={placeholderImg} alt={t(`${base}.h1`)} />
+// Presentational shell shared by the 10 curated service pages (ServiceCard
+// below) and the raw backend-driven service list (see HomeServies), which
+// has no i18n slug to look up — just whatever {image, title} the API returns.
+export const ServiceCardBase = ({
+  image,
+  title,
+  description,
+  icon: Icon,
+  ctaLabel,
+  ctaTo,
+  ctaState,
+  reverse = false,
+}) => (
+  <div className={`service-card${reverse ? " service-card--reverse" : ""}`}>
+    <div className="service-card__image">
+      <img src={image} alt={title} />
+      {Icon && (
         <span className="service-card__badge">
           <Icon />
         </span>
-      </div>
-      <div className="service-card__content">
-        <h3 className="service-card__title">{t(`${base}.h1`)}</h3>
-        <p className="service-card__text">{t(`${base}.intro`)}</p>
-        <Link to={`/services/${slug}`} className="service-card__btn">
-          {t("services.moreAboutService")}
+      )}
+    </div>
+    <div className="service-card__content">
+      <h3 className="service-card__title">{title}</h3>
+      {description && <p className="service-card__text">{description}</p>}
+      {ctaTo && (
+        <Link to={ctaTo} state={ctaState} className="service-card__btn">
+          {ctaLabel}
           <FaArrowRight />
         </Link>
-      </div>
+      )}
     </div>
+  </div>
+);
+
+const ServiceCard = ({ slug, reverse = false }) => {
+  const { t } = useTranslation();
+  const base = `services.items.${slug}`;
+
+  return (
+    <ServiceCardBase
+      image={placeholderImg}
+      title={t(`${base}.h1`)}
+      description={t(`${base}.intro`)}
+      icon={ICONS[slug] || FaBuilding}
+      ctaLabel={t("services.moreAboutService")}
+      ctaTo={`/services/${slug}`}
+      reverse={reverse}
+    />
   );
 };
 
