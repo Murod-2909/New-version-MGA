@@ -93,22 +93,22 @@ const ProductionDetail = () => {
           {otherItems.length > 0 && (
             <div className="service-page__related">
               <h3>{t("servies")}</h3>
-              <ul>
+              <div className="service-page__related-grid">
                 {otherItems.map((i) => {
                   const otherSlug = getItemSlug(i);
                   return (
-                    <li key={otherSlug || i.title}>
-                      {otherSlug ? (
-                        <Link to={`/production/${otherSlug}`}>{i.title}</Link>
-                      ) : (
-                        <Link to="/contact" state={{ subject: i.title }}>
-                          {i.title}
-                        </Link>
-                      )}
-                    </li>
+                    <Link
+                      key={otherSlug || i.title}
+                      to={otherSlug ? `/production/${otherSlug}` : "/contact"}
+                      state={otherSlug ? undefined : { subject: i.title }}
+                      className="service-page__related-card"
+                    >
+                      <img src={i.image} alt={i.title} />
+                      <span>{i.title}</span>
+                    </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           )}
         </div>

@@ -43,7 +43,7 @@
     h3 {
       font-size: 18px;
       font-weight: 700;
-      color: $ambed-black;
+      color: $ambed-white;
       margin-bottom: 8px;
     }
 
@@ -140,10 +140,10 @@
     border-top: 1px solid $ambed-bdr-color;
 
     h3 {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 700;
-      color: $ambed-black;
-      margin-bottom: 16px;
+      color: $ambed-white;
+      margin-bottom: 20px;
     }
 
     ul {
@@ -153,21 +153,56 @@
       list-style: none;
       padding: 0;
       margin: 0;
+
+      a {
+        display: inline-block;
+        padding: 8px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: $ambed-white;
+        font-size: 13px;
+        transition: all 300ms ease;
+
+        &:hover {
+          background-color: $ambed-base;
+          border-color: $ambed-base;
+        }
+      }
+    }
+  }
+
+  &__related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  &__related-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 16px;
+    background-color: $ambed-white;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+
+    img {
+      width: 100%;
+      height: 110px;
+      object-fit: contain;
     }
 
-    a {
-      display: inline-block;
-      padding: 8px 18px;
-      border: 1px solid $ambed-bdr-color;
+    span {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
       color: $ambed-black;
-      font-size: 13px;
-      transition: all 300ms ease;
+    }
 
-      &:hover {
-        background-color: $ambed-base;
-        border-color: $ambed-base;
-        color: $ambed-white;
-      }
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
     }
   }
 
