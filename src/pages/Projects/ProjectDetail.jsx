@@ -39,7 +39,7 @@ const ProjectDetail = () => {
         <Seo title="MGA Reklama" path={`/projects/${slug}`} />
         <PageHero title={t("projects.listTitle")} />
         <div className="container service-page__notfound">
-          {currentError && !currentNotFound && <p>{t("projects.error")}</p>}
+          <p>{currentError && !currentNotFound ? t("projects.error") : t("notFoundText")}</p>
           <p>
             <Link to="/projects">{t("projects.listTitle")}</Link>
           </p>

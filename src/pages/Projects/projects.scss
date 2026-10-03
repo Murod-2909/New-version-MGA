@@ -54,9 +54,18 @@
     text-align: center;
 
     a {
-      color: $ambed-base;
+      display: inline-block;
+      padding: 13px 30px;
+      border: 2px solid $ambed-base;
+      border-radius: 999px;
+      color: #fff;
       font-weight: 700;
       font-size: 15px;
+      transition: background 0.2s;
+
+      &:hover {
+        background: $ambed-base;
+      }
     }
   }
 }

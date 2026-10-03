@@ -18,6 +18,7 @@ const ServicePage = () => {
         <Seo title="MGA Reklama" path={`/services/${slug}`} />
         <PageHero title={t("services.sectionTitle")} />
         <div className="container service-page__notfound">
+          <p>{t("notFoundText")}</p>
           <p>
             <Link to="/serves">{t("serves")}</Link>
           </p>
