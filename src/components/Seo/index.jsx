@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 import { LANGS, DEFAULT_LANG, withLang } from "../../serves/locale";
 
 const SITE_URL = "https://mgareklama.com";
-const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
+// 1280x720 factory shot: a better link-preview image than the logo.
+const DEFAULT_IMAGE = `${SITE_URL}/heroPoster.jpg`;
 const OG_LOCALES = { en: "en_US", ru: "ru_RU", uz: "uz_UZ" };
 
 function upsertMeta(attr, key, content) {

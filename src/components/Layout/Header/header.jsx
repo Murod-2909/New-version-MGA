@@ -24,7 +24,9 @@ const Header = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const currentPath = stripLang(location.pathname);
+  const rawPath = stripLang(location.pathname);
+  // Service and production detail pages belong to the "Services" menu item.
+  const currentPath = /^\/(services|production)\//.test(rawPath) ? "/serves" : rawPath;
 
   useEffect(() => {
     const handleScroll = () => {
