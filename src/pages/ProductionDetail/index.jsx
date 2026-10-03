@@ -7,6 +7,7 @@ import InquiryForm from "../../components/InquiryForm";
 import NewLetter from "../../components/newLetter";
 import Seo from "../../components/Seo";
 import Spinner from "../../components/Spinner";
+import WorksSlider from "../../components/WorksSlider";
 import { getServices } from "../../reduxToolkit/servesSlice";
 import { getItemSlug, getProductionSlug } from "../../data/production-content";
 import "../ServicePage/servicePage.scss";
@@ -89,6 +90,8 @@ const ProductionDetail = () => {
               <InquiryForm presetSubject={item.title} />
             </div>
           </div>
+
+          <WorksSlider works={item.works} title={item.title} />
 
           {otherItems.length > 0 && (
             <div className="service-page__related">

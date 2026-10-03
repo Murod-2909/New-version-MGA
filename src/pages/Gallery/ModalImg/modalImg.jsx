@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./modalImg.scss";
 
-const ModalCarousel = ({ onClose, galleryImages = [] }) => {
+const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
   const { t } = useTranslation();
 
   return (
@@ -22,6 +22,7 @@ const ModalCarousel = ({ onClose, galleryImages = [] }) => {
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
+          initialSlide={initialSlide}
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000 }}
