@@ -74,7 +74,12 @@ const WorksSlider = ({ works = [], title = "" }) => {
               onClick={() => setOpenIndex(index)}
               aria-label={`${title} — ${index + 1}`}
             >
-              <img src={work.image} alt={`${title} — ${index + 1}`} loading="lazy" />
+              <img
+                src={work.thumbnail || work.image}
+                alt={`${title} — ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+              />
             </button>
           </SwiperSlide>
         ))}

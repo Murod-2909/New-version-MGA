@@ -1,84 +1,65 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./gallery.scss";
-import { FaPlus } from "react-icons/fa";
-import PageHero from "../../components/pageHero";
-import ModalCarousel from "./ModalImg/modalImg";
-import NewLetter from "../../components/newLetter";
-import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import "./gallery.scss";
+import PageHero from "../../components/pageHero";
+import NewLetter from "../../components/newLetter";
+import ModalCarousel from "./ModalImg/modalImg";
+import GalleryCard from "./GalleryCard";
 import { getGallery } from "../../reduxToolkit/gallerySlice";
+
+const SKELETON_COUNT = 6;
 
 const Gallery = () => {
   const dispatch = useDispatch();
-  const [selectedImages, setSelectedImages] = useState([]);
-
   const { t } = useTranslation();
-  const galleryImages = useSelector((state) => state.gallerySlice?.galleryData);
+  const { galleryData, loading, error } = useSelector((state) => state.gallerySlice);
+  const [openGroup, setOpenGroup] = useState(null);
 
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [showModal, setShowModal] = useState(false);
-  const title = t("gallery");
   useEffect(() => {
     dispatch(getGallery());
   }, [dispatch]);
 
+  const items = Array.isArray(galleryData) ? galleryData : [];
+  const showSkeleton = loading && items.length === 0;
+
+  // A gallery entry opens as one lightbox: its cover followed by its extra photos.
+  const openItem = (item) => setOpenGroup([item, ...(item.same_images || [])]);
+  const closeLightbox = useCallback(() => setOpenGroup(null), []);
+
   return (
     <div className="gallery">
-      <PageHero title={title} />
+      <PageHero title={t("gallery")} />
 
-      <section className="similar-project">
+      <section className="gallery-section">
         <div className="container">
-          <div className="rows">
-            {galleryImages?.map((image, index) => (
-              <div className="col-xl-4" key={index}>
-                <div
-                  className="col-xl-4__single"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <div className="col-xl-4__imgs">
-                    <img
-                      src={image?.image}
-                      alt={`${t("galleryImageAlt")} ${index + 1}`}
-                      className="gallery__image"
-                    />
-                    {hoveredIndex === index && (
-                      <div className="col-xl-4__iconGallery">
-                        <button
-                          className="img-group"
-                          onClick={() => {
-                            setSelectedImages([
-                              image,
-                              ...(image.same_images || []),
-                            ]);
-                            setShowModal(true);
-                          }}
-                        >
-                          <FaPlus />
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+          {error && items.length === 0 && (
+            <p className="gallery-state">{t("galleryPage.error")}</p>
+          )}
+
+          {!error && !loading && items.length === 0 && (
+            <p className="gallery-state">{t("galleryPage.empty")}</p>
+          )}
+
+          <div className="gallery-grid">
+            {showSkeleton &&
+              Array.from({ length: SKELETON_COUNT }, (_, i) => (
+                <div key={i} className="gallery-card gallery-card--skeleton" aria-hidden="true" />
+              ))}
+
+            {items.map((item, index) => (
+              <GalleryCard key={item.id ?? index} item={item} index={index} onOpen={openItem} />
             ))}
           </div>
-        </div>
-        <div className="container">
+
           <p className="gallery__projects-link">
             <Link to="/projects">{t("projects.listTitle")}</Link>
           </p>
         </div>
       </section>
 
-      {/* MODAL */}
-      {showModal && (
-        <ModalCarousel
-          onClose={() => setShowModal(false)}
-          galleryImages={selectedImages}
-        />
-      )}
+      {openGroup && <ModalCarousel onClose={closeLightbox} galleryImages={openGroup} />}
 
       <NewLetter />
     </div>
