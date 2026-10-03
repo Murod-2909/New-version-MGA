@@ -205,11 +205,16 @@
               align-items: center;
               gap: 70px;
 
-              .current {
+              // Every item gets the padding, not just .current — on pages where no
+              // item is current (/production/*, /services/*, /projects/*) the links
+              // would otherwise collapse to the top of the bar.
+              li {
                 padding-top: 20px;
                 padding-bottom: 20px;
                 position: relative;
+              }
 
+              .current {
                 &_items {
                   color: white;
                   font-weight: 500;
