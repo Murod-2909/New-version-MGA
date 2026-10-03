@@ -6,7 +6,7 @@ import Aos from "aos";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ServiceCardBase } from "../ServiceCard";
-import { getProductionSlug } from "../../data/production-content";
+import { getItemSlug, getProductionSlug } from "../../data/production-content";
 
 function HomeServices({ servicesData }) {
   const { t, i18n } = useTranslation();
@@ -32,11 +32,17 @@ function HomeServices({ servicesData }) {
           {servicesData?.map((item, index) => {
             if (!item.image || !item.title) return null;
 
-            const slug = getProductionSlug(item.image);
-            const hasContent = slug && i18n.exists(`production.items.${slug}.short`);
-            const description = hasContent
-              ? t(`production.items.${slug}.short`)
-              : t("services.contactAboutItem");
+            const curatedSlug = getProductionSlug(item.image);
+            const hasCurated =
+              curatedSlug && i18n.exists(`production.items.${curatedSlug}.short`);
+            // Backend description (from the admin panel) wins; the hand-written
+            // text only fills in while the admin hasn't entered one yet.
+            const description =
+              item.description?.trim() ||
+              (hasCurated
+                ? t(`production.items.${curatedSlug}.short`)
+                : t("services.contactAboutItem"));
+            const slug = getItemSlug(item);
 
             return (
               <motion.div

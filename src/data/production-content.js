@@ -7,9 +7,11 @@
 // (e.g. "UV Printing" vs "УФ печать") — but the image filename stays identical
 // regardless of language, making it the only reliable stable key available.
 //
-// If the backend adds a new item whose image isn't listed here, getProductionSlug
-// returns null and callers fall back to a generic "contact us" flow instead of a
-// detail page — see HomeServices and ProductionDetail.
+// Items added later in the admin panel aren't listed here — getItemSlug falls
+// back to the backend `id` for them, so they get a detail page (title, image and
+// description straight from the API) without any frontend change. Only if the
+// API gives neither a known image nor an id does the item fall back to the
+// generic "contact us" flow — see HomeServices and ProductionDetail.
 const IMAGE_TO_SLUG = {
   "UV_PECHAT.png": "uv-printing",
   "ECO_PECHAT.png": "interior-printing",
@@ -26,6 +28,15 @@ export function getProductionSlug(imageUrl) {
   if (!imageUrl) return null;
   const filename = imageUrl.split("/").pop().split("?")[0];
   return IMAGE_TO_SLUG[filename] || null;
+}
+
+// URL segment for an API item: the readable curated slug when we know the image,
+// otherwise the backend id (as a string), otherwise null.
+export function getItemSlug(item) {
+  const known = getProductionSlug(item?.image);
+  if (known) return known;
+  if (item?.id !== undefined && item?.id !== null) return String(item.id);
+  return null;
 }
 
 export default IMAGE_TO_SLUG;

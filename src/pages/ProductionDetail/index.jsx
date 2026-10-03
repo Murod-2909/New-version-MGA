@@ -8,13 +8,13 @@ import NewLetter from "../../components/newLetter";
 import Seo from "../../components/Seo";
 import Spinner from "../../components/Spinner";
 import { getServices } from "../../reduxToolkit/servesSlice";
-import { getProductionSlug } from "../../data/production-content";
+import { getItemSlug, getProductionSlug } from "../../data/production-content";
 import "../ServicePage/servicePage.scss";
 
-// Detail page for the backend-driven "production capability" items (UV Printing,
-// Laser Cutting, etc.) shown in HomeServices. The backend gives no id/slug — see
-// src/data/production-content.js for how the slug is derived from the image
-// filename, which stays stable across languages while the title text does not.
+// Detail page for the backend-driven items (UV Printing, Laser Cutting, …) shown
+// in HomeServices. Title, image and description come from the API; the URL slug
+// is the curated readable one when we know the image (see production-content.js)
+// and the backend id otherwise, so items added in the admin panel get a page too.
 const ProductionDetail = () => {
   const { slug } = useParams();
   const { t, i18n } = useTranslation();
@@ -26,7 +26,7 @@ const ProductionDetail = () => {
     dispatch(getServices());
   }, [dispatch]);
 
-  const item = servicesData?.find((i) => getProductionSlug(i.image) === slug);
+  const item = servicesData?.find((i) => getItemSlug(i) === slug);
 
   if (!item) {
     if (loading) {
@@ -46,10 +46,19 @@ const ProductionDetail = () => {
     );
   }
 
-  const base = `production.items.${slug}`;
-  const hasContent = i18n.exists(`${base}.intro`);
-  const intro = hasContent ? t(`${base}.intro`) : t("services.contactAboutItem");
-  const capability = hasContent ? t(`${base}.capability`) : "";
+  const curatedSlug = getProductionSlug(item.image);
+  const hasCurated = curatedSlug && i18n.exists(`production.items.${curatedSlug}.intro`);
+  const backendText = item.description?.trim();
+
+  // Backend description (admin panel) is the source of truth. Only while it is
+  // empty do we show the hand-written intro + capability pair instead.
+  const intro =
+    backendText ||
+    (hasCurated
+      ? t(`production.items.${curatedSlug}.intro`)
+      : t("services.contactAboutItem"));
+  const capability =
+    !backendText && hasCurated ? t(`production.items.${curatedSlug}.capability`) : "";
 
   const otherItems = (servicesData || []).filter(
     (i) => i !== item && i.image && i.title
@@ -86,9 +95,9 @@ const ProductionDetail = () => {
               <h3>{t("servies")}</h3>
               <ul>
                 {otherItems.map((i) => {
-                  const otherSlug = getProductionSlug(i.image);
+                  const otherSlug = getItemSlug(i);
                   return (
-                    <li key={i.title}>
+                    <li key={otherSlug || i.title}>
                       {otherSlug ? (
                         <Link to={`/production/${otherSlug}`}>{i.title}</Link>
                       ) : (
