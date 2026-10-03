@@ -1,12 +1,26 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./hero.scss";
+
+// The hero video is decorative, so skip it on phones, Data Saver and
+// reduced-motion setups and show the poster image instead.
+const canPlayVideo = () => {
+  if (typeof window === "undefined" || !window.matchMedia) return true;
+  const saveData = navigator.connection && navigator.connection.saveData;
+  return !(
+    saveData ||
+    window.matchMedia("(max-width: 768px)").matches ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+};
+
 const Hero = () => {
   const { t } = useTranslation();
+  const [playVideo] = useState(canPlayVideo);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null); // Swiper instansiyani olish uchun
@@ -33,14 +47,26 @@ const Hero = () => {
             <div className="slide">
               <div className="container">
                 <div className="hero__media">
-                  <video
-                    src="./heroVideo.mp4"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="bag"
-                  />
+                  {playVideo ? (
+                    <video
+                      src="/heroVideo.mp4"
+                      poster="/heroPoster.jpg"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      className="bag"
+                    />
+                  ) : (
+                    <img
+                      src="/heroPoster.jpg"
+                      alt={t("hero.tagline")}
+                      className="bag"
+                      fetchpriority="high"
+                      decoding="async"
+                    />
+                  )}
                   <div className="hero__overlay">
                     <p className="hero__overlay-tagline">{t("hero.tagline")}</p>
                     <p className="hero__overlay-subline">{t("hero.subline")}</p>
