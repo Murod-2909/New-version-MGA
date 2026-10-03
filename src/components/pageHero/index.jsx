@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
 import { useTranslation } from "react-i18next";
+import Link from "../LocaleLink";
 
 const PageHero = ({ title, subtitle, breadcrumbLabel }) => {
    const { t } = useTranslation();
@@ -11,9 +12,9 @@ const PageHero = ({ title, subtitle, breadcrumbLabel }) => {
           <div className="page-header_innerHead">
               <ul className="bread-crumb">
                 <li className="li-pull">
-                  <a href="/" className="breads">
+                  <Link to="/" className="breads">
                     {t("main")}
-                  </a>
+                  </Link>
                 </li>
                 <li>
                     <span>/</span>

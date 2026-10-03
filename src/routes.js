@@ -4,6 +4,7 @@ import ScrollTop from "./hoc/ScrollTop";
 import Layout from "./components/Layout/Layout";
 import Spinner from "./components/Spinner";
 import RouteSeo from "./components/Seo/RouteSeo";
+import {LANGS, withLang} from "./serves/locale";
 
 const Home = lazy(() => import("./pages/Home/home"));
 const About = lazy(() => import("./pages/About/about"));
@@ -42,9 +43,11 @@ const RoutesContainer = () => (
                 <Routes>
                     {routes.map((route, key) => {
                         const RouteComponent = ScrollTop(route.element);
-                        return (
-                            <Route key={key} path={route.path} element={<RouteComponent/>}/>
-                        );
+                        // "*" is the 404 fallback and has no language variants.
+                        const paths = route.path === "*" ? ["*"] : LANGS.map((lang) => withLang(route.path, lang));
+                        return paths.map((path) => (
+                            <Route key={`${key}-${path}`} path={path} element={<RouteComponent/>}/>
+                        ));
                     })}
                 </Routes>
             </Suspense>

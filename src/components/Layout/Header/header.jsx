@@ -8,7 +8,9 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Link from "../../LocaleLink";
+import { stripLang, withLang } from "../../../serves/locale";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMailOpenOutline } from "react-icons/io5";
 
@@ -17,11 +19,12 @@ import "../../../assests/style/header.scss";
 import Language from "../../Language/language";
 import MobileMenu from "./mobile/MobileMenu";
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const currentPath = stripLang(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,9 +42,9 @@ const Header = () => {
           <div className="container">
             <div className="main_header_top_inner clearfix">
               <div className="main_header_top_inner_logo">
-                <a href="/">
+                <Link to="/">
                   <img src={logo} className="logoItem" alt="MGA Reklama logo" />
-                </a>
+                </Link>
               </div>
               <div className="main_header_top_inner_right">
                 <div className="main_header_top_inner_right_content">
@@ -142,64 +145,64 @@ const Header = () => {
                       }`}
                     >
                       <li
-                        className={location.pathname === "/" ? "current" : ""}
+                        className={currentPath === "/" ? "current" : ""}
                       >
                         <Link to="/" className="current_items">
                          {t("main")}
                         </Link>
-                        {location.pathname === "/" && (
+                        {currentPath === "/" && (
                           <span className="current_border"></span>
                         )}
                       </li>
 
                       <li
                         className={
-                          location.pathname === "/about" ? "current" : ""
+                          currentPath === "/about" ? "current" : ""
                         }
                       >
                         <Link to="/about" className="current_items">
                           {t("about")}
                         </Link>
-                        {location.pathname === "/about" && (
+                        {currentPath === "/about" && (
                           <span className="current_border"></span>
                         )}
                       </li>
 
                       <li
                         className={
-                          location.pathname === "/gallery" ? "current" : ""
+                          currentPath === "/gallery" ? "current" : ""
                         }
                       >
                         <Link to="/gallery" className="current_items">
                           {t("gallery")}
                         </Link>
-                        {location.pathname === "/gallery" && (
+                        {currentPath === "/gallery" && (
                           <span className="current_border"></span>
                         )}
                       </li>
 
                       <li
                         className={
-                          location.pathname === "/serves" ? "current" : ""
+                          currentPath === "/serves" ? "current" : ""
                         }
                       >
                         <Link to="/serves" className="current_items">
                           {t("serves")}
                         </Link>
-                        {location.pathname === "/serves" && (
+                        {currentPath === "/serves" && (
                           <span className="current_border"></span>
                         )}
                       </li>
 
                       <li
                         className={
-                          location.pathname === "/contact" ? "current" : ""
+                          currentPath === "/contact" ? "current" : ""
                         }
                       >
                         <Link to="/contact" className="current_items">
                           {t("contact")}
                         </Link>
-                        {location.pathname === "/contact" && (
+                        {currentPath === "/contact" && (
                           <span className="current_border"></span>
                         )}
                       </li>
@@ -213,7 +216,7 @@ const Header = () => {
                     </div>
                     <div className="main-menu_wrapper_inners_right_btn_btnBox">
                       <a
-                        href="/catalogBook"
+                        href={withLang("/catalogBook", i18n.language)}
                         target="_blank"
                         className="main-menu_wrapper_inners_right_btn_btnBox_thn"
                       >

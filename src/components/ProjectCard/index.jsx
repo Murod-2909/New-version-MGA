@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "../LocaleLink";
 import { useTranslation } from "react-i18next";
 import { FaArrowRight } from "react-icons/fa";
 import { categoryLabel } from "../../pages/Projects/categories";

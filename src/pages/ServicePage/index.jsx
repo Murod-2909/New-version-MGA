@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Link from "../../components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import PageHero from "../../components/pageHero";
 import InquiryForm from "../../components/InquiryForm";

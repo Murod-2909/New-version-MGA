@@ -3,6 +3,7 @@ import logo from "../../../assests/images/white-logo.jpg";
 import { MdOutlineEmail } from "react-icons/md";
 import { GrMapLocation } from "react-icons/gr";
 import { useTranslation } from "react-i18next";
+import Link from "../../LocaleLink";
 
 import {
   FaFacebookF,
@@ -38,9 +39,9 @@ const Footer = () => {
                 data-aos-duration="1000"
               >
                 <div className="footer-widget__logo">
-                  <a href="/">
+                  <Link to="/">
                     <img src={logo} alt="MGA Reklama logo" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="footer-wigdet_text-box">
                   <p className="footer-widget_text-box_des">
@@ -72,9 +73,9 @@ const Footer = () => {
                   >
                     <FaInstagram />
                   </a>
-                  <a href="/" className="fa-you">
+                  <Link to="/" className="fa-you">
                     <FaTelegram />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -89,31 +90,31 @@ const Footer = () => {
                   <h3 className="footer-widget_explore__exTitle">{t("footMenu")}</h3>
                   <ul className="footer-widget_explore-list clearfix">
                     <li>
-                      <a href="/about" className="lists">
+                      <Link to="/about" className="lists">
                         {" "}
                         <MdOutlineNavigateNext />
                         {t("about")}
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="/serves" className="lists">
+                      <Link to="/serves" className="lists">
                         {" "}
                         <MdOutlineNavigateNext /> {t("serves")}
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="/gallery" className="lists">
+                      <Link to="/gallery" className="lists">
                         {" "}
                         <MdOutlineNavigateNext />
                         {t("gallery")}
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="/contact" className="lists">
+                      <Link to="/contact" className="lists">
                         {" "}
                         <MdOutlineNavigateNext />
                         {t("contact")}
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

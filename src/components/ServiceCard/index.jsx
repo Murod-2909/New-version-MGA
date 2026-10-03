@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "../LocaleLink";
 import { useTranslation } from "react-i18next";
 import {
   FaArrowRight,
