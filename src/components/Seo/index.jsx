@@ -30,7 +30,7 @@ function upsertCanonical(href) {
 // re-apply tags reliably across repeated client-side route changes with
 // React 18 (verified while building this) — a plain useEffect here is a
 // few lines and behaves correctly every time.
-const Seo = ({ title, description, path = "/", image = DEFAULT_IMAGE }) => {
+const Seo = ({ title, description, path = "/", image = DEFAULT_IMAGE, noindex = false }) => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -41,6 +41,8 @@ const Seo = ({ title, description, path = "/", image = DEFAULT_IMAGE }) => {
 
     upsertMeta("name", "description", description);
     upsertCanonical(url);
+    // Error / not-found pages must not be indexed (the host answers them with 200).
+    upsertMeta("name", "robots", noindex ? "noindex, follow" : "index, follow");
 
     upsertMeta("property", "og:title", title);
     upsertMeta("property", "og:description", description);
@@ -52,7 +54,7 @@ const Seo = ({ title, description, path = "/", image = DEFAULT_IMAGE }) => {
     upsertMeta("name", "twitter:title", title);
     upsertMeta("name", "twitter:description", description);
     upsertMeta("name", "twitter:image", image);
-  }, [title, description, path, image, i18n.language]);
+  }, [title, description, path, image, noindex, i18n.language]);
 
   return null;
 };

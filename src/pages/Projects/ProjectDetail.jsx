@@ -36,7 +36,7 @@ const ProjectDetail = () => {
   if (!current) {
     return (
       <div className="service-page">
-        <Seo title="MGA Reklama" path={`/projects/${slug}`} />
+        <Seo title="MGA Reklama" path={`/projects/${slug}`} noindex />
         <PageHero title={t("projects.listTitle")} />
         <div className="container service-page__notfound">
           <p>{currentError && !currentNotFound ? t("projects.error") : t("notFoundText")}</p>

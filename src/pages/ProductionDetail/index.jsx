@@ -36,7 +36,7 @@ const ProductionDetail = () => {
 
     return (
       <div className="service-page">
-        <Seo title="MGA Reklama" path={`/production/${slug}`} />
+        <Seo title="MGA Reklama" path={`/production/${slug}`} noindex />
         <PageHero title={t("services.sectionTitle")} />
         <div className="container service-page__notfound">
           <p>{t("notFoundText")}</p>

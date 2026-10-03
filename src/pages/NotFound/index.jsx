@@ -9,7 +9,7 @@ const NotFound = () => {
 
   return (
     <div className="not-found">
-      <Seo title={`404 | MGA Reklama`} path={typeof window !== "undefined" ? window.location.pathname : "/404"} />
+      <Seo title={`404 | MGA Reklama`} noindex path={typeof window !== "undefined" ? window.location.pathname : "/404"} />
       <div className="container not-found__inner">
         <h1 className="not-found__code">404</h1>
         <p className="not-found__text">{t("notFoundText")}</p>

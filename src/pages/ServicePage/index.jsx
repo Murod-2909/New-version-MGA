@@ -15,7 +15,7 @@ const ServicePage = () => {
   if (!serviceSlugs.includes(slug)) {
     return (
       <div className="service-page">
-        <Seo title="MGA Reklama" path={`/services/${slug}`} />
+        <Seo title="MGA Reklama" path={`/services/${slug}`} noindex />
         <PageHero title={t("services.sectionTitle")} />
         <div className="container service-page__notfound">
           <p>{t("notFoundText")}</p>
