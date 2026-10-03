@@ -141,23 +141,24 @@
   },
   "projects": {
     "listTitle": "Our Projects",
-    "listIntro": "A closer look at completed signage and advertising production projects — real project pages are added here as work is completed.",
+    "listIntro": "A closer look at the signage, wayfinding and advertising production projects we have completed.",
     "workDoneLabel": "Work Done",
-    "viewPhotos": "View Photos",
     "backToGallery": "See full photo gallery",
-    "items": {
-      "sample-hotel-wayfinding": {
-        "name": "Sample Project — Hotel Wayfinding",
-        "location": "Tashkent, Uzbekistan",
-        "workDone": "Full wayfinding system including room number plates, floor directories and elevator signage, matched to the hotel's brand identity.",
-        "materials": "Brushed metal, acrylic and illuminated panels."
-      },
-      "sample-outdoor-facade-signage": {
-        "name": "Sample Project — Facade & Outdoor Signage",
-        "location": "Tashkent, Uzbekistan",
-        "workDone": "Design, manufacturing and installation of illuminated facade signage and channel letters for a retail storefront.",
-        "materials": "Aluminum composite panels, channel letters and LED illumination."
-      }
+    "all": "All",
+    "empty": "Projects will appear here soon.",
+    "error": "Couldn't load the projects. Please try again later.",
+    "view": "View project",
+    "photosTitle": "Project photos",
+    "photosSubtitle": "Production and installation.",
+    "relatedTitle": "More projects",
+    "requestSimilar": "Request a similar project",
+    "categories": {
+      "hotel": "Hotels",
+      "museum": "Museums",
+      "outdoor": "Outdoor",
+      "interior": "Interior",
+      "corporate": "Corporate",
+      "facade": "Facades"
     }
   },
   "production": {

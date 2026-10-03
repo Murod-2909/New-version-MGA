@@ -9,13 +9,13 @@ import "./style.scss";
 // Photos of work done with a piece of equipment (the `works` array the backend
 // returns per service). Renders nothing when there are no photos, so services
 // without uploads don't get an empty section.
-const WorksSlider = ({ works = [], title = "" }) => {
+const WorksSlider = ({ works = [], title = "", heading, subheading }) => {
   const { t } = useTranslation();
   const [swiper, setSwiper] = useState(null);
   const [edges, setEdges] = useState({ start: true, end: false });
   const [openIndex, setOpenIndex] = useState(null);
 
-  const photos = works.filter((w) => w && w.image);
+  const photos = (works || []).filter((w) => w && w.image);
   if (photos.length === 0) return null;
 
   const syncEdges = (s) => setEdges({ start: s.isBeginning, end: s.isEnd });
@@ -25,8 +25,8 @@ const WorksSlider = ({ works = [], title = "" }) => {
     <section className="works-slider">
       <div className="works-slider__head">
         <div>
-          <h3 className="works-slider__title">{t("production.worksTitle")}</h3>
-          <p className="works-slider__subtitle">{t("production.worksSubtitle")}</p>
+          <h3 className="works-slider__title">{heading ?? t("production.worksTitle")}</h3>
+          <p className="works-slider__subtitle">{subheading ?? t("production.worksSubtitle")}</p>
         </div>
 
         {!fitsOnScreen && (
