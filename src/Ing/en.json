@@ -3,6 +3,12 @@
   "notFoundText": "Sorry, the page you're looking for doesn't exist.",
   "notFoundBackHome": "Back to Home",
   "galleryImageAlt": "Signage and advertising project photo",
+  "galleryPage": {
+    "open": "Open photo",
+    "close": "Close",
+    "empty": "No photos yet.",
+    "error": "Couldn't load the gallery. Please try again later."
+  },
   "partnerLogoAlt": "Partner logo",
   "referencesTitle": "References",
   "hero": {

@@ -3,6 +3,12 @@
   "notFoundText": "Kechirasiz, siz qidirayotgan sahifa topilmadi.",
   "notFoundBackHome": "Bosh sahifaga qaytish",
   "galleryImageAlt": "Tabela va reklama loyihasi surati",
+  "galleryPage": {
+    "open": "Rasmni ochish",
+    "close": "Yopish",
+    "empty": "Hozircha rasmlar yo'q.",
+    "error": "Galereyani yuklab bo'lmadi. Keyinroq urinib ko'ring."
+  },
   "partnerLogoAlt": "Hamkor logotipi",
   "referencesTitle": "Hamkorlar",
   "hero": {
