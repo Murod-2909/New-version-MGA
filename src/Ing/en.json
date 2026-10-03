@@ -155,6 +155,8 @@
     }
   },
   "production": {
+    "worksTitle": "Our work",
+    "worksSubtitle": "Projects completed with this equipment.",
     "items": {
       "uv-printing": {
         "short": "Direct UV printing on rigid and flexible materials.",
