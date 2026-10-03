@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## SEO build pipeline & deployment
+
+`npm run build` runs three steps:
+
+1. `prebuild` — `scripts/generate-sitemap.js` writes `public/sitemap.xml` (every page in en/ru/uz with hreflang alternates; project pages are fetched from `REACT_APP_API_ROOT/projects/`).
+2. `react-scripts build`
+3. `postbuild` — `scripts/prerender.js` renders every URL in the sitemap with headless Chrome (puppeteer) into static HTML (`build/about/index.html`, `build/ru/about/index.html`, ...) so crawlers and link previews see real titles/meta/content. It never fails the build; set `SKIP_PRERENDER=1` to skip it. The untouched SPA shell is saved as `build/app-shell.html`.
+
+URLs: English has no prefix (`/about`), Russian/Uzbek use `/ru/about`, `/uz/about` (`src/serves/locale.js`).
+
+Web server (nginx example) — serve the pre-rendered file when it exists, otherwise the SPA shell:
+
+```nginx
+location / {
+    try_files $uri $uri/index.html /app-shell.html;
+}
+```
+
+Pages created after the build (a new project) are served by the SPA shell until the next build, and appear in the sitemap on the next build — rebuild/redeploy after adding projects.
