@@ -153,5 +153,54 @@
         "materials": "Alyuminiy kompozit panellar, hajmli harflar va LED yoritish."
       }
     }
+  },
+  "production": {
+    "items": {
+      "uv-printing": {
+        "short": "Qattiq va egiluvchan materiallarga to'g'ridan-to'g'ri UV bosma.",
+        "intro": "UV printerlarimiz bo'yoqni to'g'ridan-to'g'ri qattiq va egiluvchan yuzalarga — akril, PVX, yog'och, shisha va metallga — qo'llaydi va uni UV nur bilan darhol qotiradi, natijada chidamli, tirnalishga bardoshli qoplama hosil bo'ladi.",
+        "capability": "Reklama panellari, dekorativ devor rasmlari, aksiya stendlari va laminatsiyasiz to'g'ridan-to'g'ri qattiq materialga to'liq rangli bosma talab qiladigan har qanday loyiha uchun mos."
+      },
+      "interior-printing": {
+        "short": "Ichki brending va bezak uchun bosma.",
+        "intro": "Biz ofis brendingi, savdo maydonlari bezagi, devor grafikasi va navigatsiya elementlari uchun ichki xonalarga mos material va bo'yoqlar bilan ichki bosma ishlarini bajaramiz.",
+        "capability": "Resepshn devorlari, muzokara xonalari grafikasi, savdo interyeri brendingi va dekorativ panellar uchun mos."
+      },
+      "outdoor-printing": {
+        "short": "Ochiq havo uchun ob-havoga chidamli bosma.",
+        "intro": "Bizning tashqi bosmamiz quyosh, yomg'ir va harorat o'zgarishlariga bardosh beradigan, so'nmaydigan va qavarib ketmaydigan ob-havoga chidamli bo'yoq va materiallardan foydalanadi.",
+        "capability": "Billbordlar, do'kon peshtoqi grafikasi, bannerlar va istalgan tashqi brendlangan yuzalar uchun ishlatiladi."
+      },
+      "metal-laser-cutting-machine": {
+        "short": "Metall detallar uchun aniq lazer kesish.",
+        "intro": "Metall lazer kesish stanogimiz po'lat, alyuminiy va boshqa metallardan aniq shakl va harflarni qo'lda ishlov berishsiz, toza qirralar bilan kesib chiqaradi.",
+        "capability": "Hajmli harflar, metall tabela ramkalari, dekorativ metall panellar va buyurtma asosidagi kronshteynlar uchun ishlatiladi."
+      },
+      "cnc-cutting": {
+        "short": "Aniq o'lchamdagi CNC bilan kesilgan panellar va shakllar.",
+        "intro": "CNC kesish uskunamiz akril, yog'och, ko'pik va kompozit panellarni aniq o'lchamlarda kesib, katta buyurtmalar uchun barqaror, takrorlanuvchi shakllarni ishlab chiqaradi.",
+        "capability": "Tabela yuzalari, hajmli harflar, ko'rgazma stendlari va nostandart shakldagi panellar uchun ishlatiladi."
+      },
+      "laser-plexiglass-machine": {
+        "short": "Organik shishadan lazer bilan kesilgan shakl va harflar.",
+        "intro": "Organik shisha lazer stanogimiz akril varaqlarni toza, sayqallangan qirralar bilan kesadi va o'yib chiqaradi — bu ham tekis, ham yoritiladigan tabelalar uchun mos.",
+        "capability": "Akril harflar, yorug'lik qutilari, o'yib yozilgan lavhalar va dekorativ akril elementlar uchun ishlatiladi."
+      },
+      "letter-bending-machine": {
+        "short": "Hajmli harflar va profillarni shakllantirish.",
+        "intro": "Harf egish stanogimiz metall va akril tasmalarni hajmli harflar va chegara list uchun ishlatiladigan aniq profillarga shakllantiradi.",
+        "capability": "Hajmli harflarning yon tomonlarini (qaytish qismlarini) va nostandart hajmli yozuvlarni shakllantirish uchun ishlatiladi."
+      },
+      "laser-welding": {
+        "short": "Toza va chidamli metall birikmalar uchun aniq payvandlash.",
+        "intro": "Lazer payvandlash uskunamiz metall detallarni tor, aniq chok bilan biriktiradi, deyarli qo'shimcha ishlov talab qilmaydi va yuzani bo'yash yoki qoplash uchun silliq holda saqlaydi.",
+        "capability": "Hajmli harflarni, metall ramkalarni va tabelaning konstruktiv qismlarini yig'ish uchun ishlatiladi."
+      },
+      "plotter-cutting": {
+        "short": "Yozuvlar, stikerlar va grafika uchun vinil kesish.",
+        "intro": "Ploter kesish uskunamiz o'zi yopishadigan vinilni avtomobillar, oynalar va tabelalarga qo'llash uchun aniq harflar, logotiplar va grafikaga kesadi.",
+        "capability": "Avtomobil brendlashtirish, oyna grafikasi, kesilgan vinil yozuvlar va stikerlar uchun ishlatiladi."
+      }
+    }
   }
 }

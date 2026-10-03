@@ -14,6 +14,7 @@ const Contact = lazy(() => import("./pages/Contact/contact"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const ProjectsList = lazy(() => import("./pages/Projects/ProjectsList"));
 const ProjectDetail = lazy(() => import("./pages/Projects/ProjectDetail"));
+const ProductionDetail = lazy(() => import("./pages/ProductionDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 
@@ -24,6 +25,7 @@ const routes = [
     {path: "/about", element: About},
     {path: "/serves", element: Serves},
     {path: "/services/:slug", element: ServicePage},
+    {path: "/production/:slug", element: ProductionDetail},
     {path: "/gallery", element: Gallery},
     {path: "/projects", element: ProjectsList},
     {path: "/projects/:slug", element: ProjectDetail},

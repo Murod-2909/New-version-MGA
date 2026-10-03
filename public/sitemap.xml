@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   Hand-maintained sitemap. If a service slug is added/removed in
-  src/data/services-content.js, or a project in src/data/projects.js,
-  update this file to match. The two /projects/* sample pages are
-  intentionally left out until they're replaced with real project content.
+  src/data/services-content.js, a project in src/data/projects.js, or a
+  production item in src/data/production-content.js, update this file to
+  match. The two /projects/* sample pages are intentionally left out until
+  they're replaced with real project content.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -70,6 +71,51 @@
     <loc>https://mgareklama.com/services/fit-out-interior-works</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/uv-printing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/interior-printing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/outdoor-printing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/metal-laser-cutting-machine</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/cnc-cutting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/laser-plexiglass-machine</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/letter-bending-machine</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/laser-welding</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mgareklama.com/production/plotter-cutting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mgareklama.com/gallery</loc>
