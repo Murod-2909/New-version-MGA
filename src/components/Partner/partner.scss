@@ -1,150 +1,150 @@
 @import "../../assests/style/global";
 
-// "References" strip: a continuously scrolling row of client logos.
-// Every logo sits in the same fixed box (object-fit: contain) so wide and square
-// logos get a comparable visual weight; they are grey until hovered so the mixed
-// brand colours don't compete with each other.
+// "References": two rows of client logos on white cards, drifting in opposite
+// directions. Every logo sits in the same card (object-fit: contain) so wide and
+// square logos get a comparable weight, and the white card keeps full-colour logos
+// legible on the dark page background.
 .brand-one {
   position: relative;
-  display: block;
-  background: #ffffff;
-  padding: 26px 0 30px;
+  padding: 80px 0 90px;
   z-index: 1;
 
-  .al {
-    align-items: center;
-  }
-
-  &_inner-partner {
-    position: relative;
-    display: block;
-
-    &_col-3 {
-      width: 25%;
-      flex: 0 0 auto;
-
-      &_titles {
-        position: relative;
-        display: block;
-        font-size: 1.75rem;
-      }
-    }
-
-    &_col-9 {
-      width: 75%;
-      flex: 0 0 auto;
-      min-width: 0;
-
-      &_main-content {
-        position: relative;
-        display: block;
-        overflow: hidden;
-
-        // Soft fade at both edges so logos slide in/out instead of being cut off.
-        -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
-        mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
-
-        // Constant speed instead of Swiper's default ease-in-out between slides.
-        .swiper-wrapper {
-          transition-timing-function: linear !important;
-        }
-
-        .swiper-slide {
-          width: 170px;
-          height: 64px;
-
-          .imgH {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-
-            a {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 100%;
-              height: 100%;
-            }
-          }
-
-          img {
-            display: block;
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            filter: grayscale(1) contrast(1.15);
-            opacity: 0.85;
-            transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-          }
-
-          &:hover img {
-            filter: none;
-            opacity: 1;
-            transform: scale(1.06);
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 430px) {
-  .brand-one_inner-partner_col-3 {
-    width: 100%;
+  &__head {
     text-align: center;
-    display: block !important;
-  }
-}
-
-@media (max-width: 1190px) {
-  .brand-one {
-    padding: 22px 0 24px;
+    margin-bottom: 44px;
   }
 
-  .rows {
+  &__title {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 18px;
+    padding-bottom: 14px;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 56px;
+      height: 3px;
+      border-radius: 2px;
+      background: $ambed-base;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__subtitle {
+    max-width: 620px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  &__rows {
+    display: flex;
     flex-direction: column;
+    gap: 22px;
+    overflow: hidden;
 
-    .brand-one_inner-partner_col-9 {
-      width: 100vw;
-      max-width: 100vw;
-      // Edge-to-edge logo row. Equal negative side margins keep its outer width
-      // equal to the container, so the title above stays centred.
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
+    // Soft fade at both edges so cards slide in/out instead of being cut off.
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+
+    // Constant speed instead of Swiper's default ease-in-out between slides.
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
     }
 
-    .brand-one_inner-partner_col-3 {
-      display: flex;
-      margin: 0 auto 14px;
+    .swiper-slide {
+      width: 190px;
+      height: 96px;
     }
   }
 }
 
-@media (max-width: 575px) {
-  .brand-one_inner-partner_col-9_main-content .swiper-slide {
-    width: 112px;
-    height: 48px;
+.brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 }
 
-// No marquee for reduced-motion users: wrap the logos into a static grid instead.
+a.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 767px) {
+  .brand-one {
+    padding: 56px 0 64px;
+
+    &__head {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+      padding: 0 8px;
+    }
+
+    &__rows {
+      gap: 14px;
+
+      .swiper-slide {
+        width: 140px;
+        height: 72px;
+      }
+    }
+  }
+
+  .brand-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+}
+
+// No marquee for reduced-motion users: show the logos as a static wrapped grid.
 @media (prefers-reduced-motion: reduce) {
-  .brand-one_inner-partner_col-9_main-content {
+  .brand-one__rows {
     -webkit-mask-image: none;
     mask-image: none;
 
     .swiper-wrapper {
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px 40px;
+      gap: 16px;
       transform: none !important;
     }
 
-    .swiper-slide-duplicate {
+    .swiper-slide {
+      margin: 0 !important;
+    }
+
+    .swiper-slide-duplicate,
+    .is-repeat {
       display: none;
     }
   }
