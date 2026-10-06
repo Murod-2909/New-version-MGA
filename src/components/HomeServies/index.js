@@ -32,7 +32,7 @@ function HomeServices({ servicesData }) {
           {servicesData?.map((item, index) => {
             if (!item.image || !item.title) return null;
 
-            const curatedSlug = getProductionSlug(item.image);
+            const curatedSlug = getProductionSlug(item);
             const hasCurated =
               curatedSlug && i18n.exists(`production.items.${curatedSlug}.short`);
             // Backend description (from the admin panel) wins; the hand-written
@@ -53,7 +53,7 @@ function HomeServices({ servicesData }) {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <ServiceCardBase
-                  image={item.image}
+                  image={item.thumbnail || item.image}
                   title={item.title}
                   description={description}
                   icon={FaTools}
