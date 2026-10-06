@@ -7,7 +7,7 @@ import PageHero from "../../components/pageHero";
 import InquiryForm from "../../components/InquiryForm";
 import NewLetter from "../../components/newLetter";
 import Seo from "../../components/Seo";
-import Spinner from "../../components/Spinner";
+import PageLoading from "../../components/PageLoading";
 import WorksSlider from "../../components/WorksSlider";
 import { getServices } from "../../reduxToolkit/servesSlice";
 import { getItemSlug, getProductionSlug } from "../../data/production-content";
@@ -32,7 +32,7 @@ const ProductionDetail = () => {
 
   if (!item) {
     if (loading) {
-      return <Spinner />;
+      return <PageLoading />;
     }
 
     return (

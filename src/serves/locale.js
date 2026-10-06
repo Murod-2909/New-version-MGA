@@ -45,7 +45,7 @@ export const resolveInitialLanguage = () => {
   let lang = langFromPath(pathname);
   if (!lang) {
     lang = DEFAULT_LANG;
-    if (PREFIXED.includes(stored)) {
+    if (PREFIXED.includes(stored) && !window.__PRERENDER__) {
       window.location.replace(withLang(pathname, stored) + search + hash);
       lang = stored;
     }

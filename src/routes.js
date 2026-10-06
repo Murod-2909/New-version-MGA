@@ -1,8 +1,8 @@
-import React, {lazy, Suspense, useEffect} from "react";
+import React, {lazy, Suspense} from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ScrollTop from "./hoc/ScrollTop";
 import Layout from "./components/Layout/Layout";
-import Spinner from "./components/Spinner";
+import PageLoading from "./components/PageLoading";
 import RouteSeo from "./components/Seo/RouteSeo";
 import {LANGS, withLang} from "./serves/locale";
 
@@ -18,24 +18,6 @@ const ProjectDetail = lazy(() => import("./pages/Projects/ProjectDetail"));
 const ProductionDetail = lazy(() => import("./pages/ProductionDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-
-// On a pre-rendered page the browser shows the static HTML before React has loaded.
-// Keep that markup as the Suspense fallback for the first page, so the content
-// doesn't disappear and re-appear (a big layout shift) while the lazy chunk loads.
-let prerenderedMain =
-    typeof document !== "undefined" ? document.getElementById("main")?.innerHTML || "" : "";
-
-const PageFallback = () => {
-    useEffect(() => () => {
-        prerenderedMain = "";
-    }, []);
-    return (
-        <>
-            {prerenderedMain && <div dangerouslySetInnerHTML={{__html: prerenderedMain}}/>}
-            <Spinner position="full"/>
-        </>
-    );
-};
 
 const routes = [
     {path: "/", element: Home},
@@ -56,7 +38,7 @@ const RoutesContainer = () => (
     <Router>
         <RouteSeo/>
         <Layout>
-            <Suspense fallback={<PageFallback/>}>
+            <Suspense fallback={<PageLoading/>}>
 
                 <Routes>
                     {routes.map((route, key) => {

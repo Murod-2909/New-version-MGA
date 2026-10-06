@@ -10,6 +10,7 @@ import "./hero.scss";
 // reduced-motion setups and show the poster image instead.
 const canPlayVideo = () => {
   if (typeof window === "undefined" || !window.matchMedia) return true;
+  if (window.__PRERENDER__) return false; // set by scripts/prerender.js
   const saveData = navigator.connection && navigator.connection.saveData;
   return !(
     saveData ||
@@ -20,7 +21,12 @@ const canPlayVideo = () => {
 
 const Hero = () => {
   const { t } = useTranslation();
-  const [playVideo] = useState(canPlayVideo);
+  // Start with the poster (this is also what gets pre-rendered into the static HTML,
+  // so phones never download the video); desktops swap in the video after mount.
+  const [playVideo, setPlayVideo] = useState(false);
+  useEffect(() => {
+    setPlayVideo(canPlayVideo());
+  }, []);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef(null); // Swiper instansiyani olish uchun
