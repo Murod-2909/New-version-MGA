@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logo from "../../../assests/images/white-logo.jpg";
+import logo from "../../../assests/images/white-logo.png";
 import { MdOutlineEmail } from "react-icons/md";
 import { GrMapLocation } from "react-icons/gr";
 import { useTranslation } from "react-i18next";
@@ -54,6 +54,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="fa-you"
+                    aria-label="YouTube"
                   >
                     <FaYoutube />
                   </a>
@@ -62,6 +63,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="fa-you"
+                    aria-label="Facebook"
                   >
                     <FaFacebookF />
                   </a>
@@ -70,10 +72,11 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                     className="fa-you"
+                    aria-label="Instagram"
                   >
                     <FaInstagram />
                   </a>
-                  <Link to="/" className="fa-you">
+                  <Link to="/" className="fa-you" aria-label="Telegram">
                     <FaTelegram />
                   </Link>
                 </div>
