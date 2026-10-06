@@ -1,24 +1,20 @@
 // src/components/Language/Language.jsx
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import i18next from "i18next";
-import { languageChange } from "../../reduxToolkit/languageSlice";
+import { useSelector } from "react-redux";
+import { stripLang, withLang } from "../../serves/locale";
 import "./style.scss";
 
 const Language = () => {
-  const dispatch = useDispatch();
   const language = useSelector((state) => state.language.language);
 
+    // The language is part of the URL, so switching means loading the same page
+    // under the other prefix (/about -> /ru/about). A full load also refreshes the
+    // API data that depends on the language.
     const handleChangeLanguage = (lang) => {
         if (lang === language) return;
-
-        i18next.changeLanguage(lang)
-            .then(() => {
-                localStorage.setItem("language", lang); // 🔥 localStorage ga shu yerda yozamiz
-                dispatch(languageChange(lang));
-                window.location.reload(); // (Agar API tilga bog‘liq bo‘lsa, bu ham kerak bo'lishi mumkin)
-            })
-            .catch((err) => console.error("Language change error:", err));
+        localStorage.setItem("language", lang);
+        const { pathname, search, hash } = window.location;
+        window.location.assign(withLang(stripLang(pathname), lang) + search + hash);
     };
 
   return (

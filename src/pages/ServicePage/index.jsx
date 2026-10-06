@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Link from "../../components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import PageHero from "../../components/pageHero";
 import InquiryForm from "../../components/InquiryForm";
@@ -15,9 +16,10 @@ const ServicePage = () => {
   if (!serviceSlugs.includes(slug)) {
     return (
       <div className="service-page">
-        <Seo title="MGA Reklama" path={`/services/${slug}`} />
+        <Seo title="MGA Reklama" path={`/services/${slug}`} noindex />
         <PageHero title={t("services.sectionTitle")} />
         <div className="container service-page__notfound">
+          <p>{t("notFoundText")}</p>
           <p>
             <Link to="/serves">{t("serves")}</Link>
           </p>

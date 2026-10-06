@@ -69,7 +69,7 @@ const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
           className="custom-swiper"
         >
           {galleryImages.map((img, index) => (
-            <SwiperSlide key={img.id ?? index}>
+            <SwiperSlide key={`${index}-${img.image}`}>
               <img
                 src={img.image}
                 alt={`${t("galleryImageAlt")} ${index + 1}`}

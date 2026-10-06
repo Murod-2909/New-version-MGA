@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { stripLang } from "../../serves/locale";
 import Header from "./Header/header";
 import { FaAngleUp } from "react-icons/fa";
 import Footer from "./Footer/footer";
@@ -41,7 +42,7 @@ const Layout = (props) => {
   }, [speaker]);
 
   // Bu yerda /catalogBook sahifasini tekshiramiz
-  const isCatalogBookPage = pathname === "/catalogBook";
+  const isCatalogBookPage = stripLang(pathname) === "/catalogBook";
 
   return (
     <div className="page-wrapper">

@@ -141,23 +141,24 @@
   },
   "projects": {
     "listTitle": "Bizning loyihalarimiz",
-    "listIntro": "Tugallangan tabela va reklama ishlab chiqarish loyihalari haqida batafsil — ishlar yakunlangani sayin real loyiha sahifalari shu yerga qo'shiladi.",
+    "listIntro": "Biz bajargan tabela, navigatsiya va reklama ishlab chiqarish loyihalari bilan yaqindan tanishing.",
     "workDoneLabel": "Bajarilgan ishlar",
-    "viewPhotos": "Rasmlarni ko'rish",
     "backToGallery": "To'liq galereyani ko'rish",
-    "items": {
-      "sample-hotel-wayfinding": {
-        "name": "Namuna loyiha — mehmonxona navigatsiyasi",
-        "location": "Toshkent, O'zbekiston",
-        "workDone": "Mehmonxonaning brend uslubiga mos xona raqami lavhalari, qavat ko'rsatkichlari va lift tabelalarini o'z ichiga olgan to'liq navigatsiya tizimi.",
-        "materials": "Metall, akril va yoritiladigan panellar."
-      },
-      "sample-outdoor-facade-signage": {
-        "name": "Namuna loyiha — fasad va tashqi reklama",
-        "location": "Toshkent, O'zbekiston",
-        "workDone": "Do'kon uchun yoritiladigan fasad tabelasi va hajmli harflarni loyihalash, ishlab chiqarish va o'rnatish.",
-        "materials": "Alyuminiy kompozit panellar, hajmli harflar va LED yoritish."
-      }
+    "all": "Hammasi",
+    "empty": "Loyihalar tez orada shu yerda paydo bo'ladi.",
+    "error": "Loyihalarni yuklab bo'lmadi. Keyinroq urinib ko'ring.",
+    "view": "Loyihani ko'rish",
+    "photosTitle": "Loyiha suratlari",
+    "photosSubtitle": "Ishlab chiqarish va montaj.",
+    "relatedTitle": "Boshqa loyihalar",
+    "requestSimilar": "Shunga o'xshash loyiha buyurtma qilish",
+    "categories": {
+      "hotel": "Mehmonxonalar",
+      "museum": "Muzeylar",
+      "outdoor": "Tashqi reklama",
+      "interior": "Interyer",
+      "corporate": "Korporativ",
+      "facade": "Fasadlar"
     }
   },
   "production": {

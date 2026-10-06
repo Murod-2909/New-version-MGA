@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Link from "../../components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import PageHero from "../../components/pageHero";
@@ -36,9 +37,10 @@ const ProductionDetail = () => {
 
     return (
       <div className="service-page">
-        <Seo title="MGA Reklama" path={`/production/${slug}`} />
+        <Seo title="MGA Reklama" path={`/production/${slug}`} noindex />
         <PageHero title={t("services.sectionTitle")} />
         <div className="container service-page__notfound">
+          <p>{t("notFoundText")}</p>
           <p>
             <Link to="/serves">{t("serves")}</Link>
           </p>
@@ -65,9 +67,18 @@ const ProductionDetail = () => {
     (i) => i !== item && i.image && i.title
   );
 
+  // Prefer a real work photo over the equipment icon for link previews.
+  const ogCandidate = item.works?.find((w) => w?.image)?.image || item.image || "";
+  const ogImage = /^https?:\/\//.test(ogCandidate) ? ogCandidate : undefined;
+
   return (
     <div className="service-page">
-      <Seo title={`${item.title} | MGA Reklama`} description={intro} path={`/production/${slug}`} />
+      <Seo
+        title={`${item.title} | MGA Reklama`}
+        description={intro}
+        path={`/production/${slug}`}
+        image={ogImage}
+      />
       <PageHero title={item.title} />
 
       <section className="service-page__body">

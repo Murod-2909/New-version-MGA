@@ -1,6 +1,8 @@
 // components/MobileMenu.jsx
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Link from "../../../LocaleLink";
+import { stripLang } from "../../../../serves/locale";
 import { RxCross2 } from "react-icons/rx";
 import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
@@ -48,7 +50,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
             ].map(({ path, label }) => (
               <li
                 key={path}
-                className={location.pathname === path ? "active" : ""}
+                className={stripLang(location.pathname) === path ? "active" : ""}
               >
                 <Link to={path} onClick={() => onClose(false)}>
                   {label}

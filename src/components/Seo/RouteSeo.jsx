@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Seo from "./index";
 import seoConfig from "./seoConfig";
+import { stripLang } from "../../serves/locale";
 
 // Renders once for the app's lifetime (mounted outside the <Suspense>/lazy route
 // boundary) and just updates its props on navigation, instead of a fresh <Seo>
@@ -10,7 +11,8 @@ import seoConfig from "./seoConfig";
 const RouteSeo = () => {
   const { pathname } = useLocation();
   const { t } = useTranslation();
-  const key = seoConfig[pathname];
+  const path = stripLang(pathname);
+  const key = seoConfig[path];
 
   if (!key) return null;
 
@@ -18,7 +20,7 @@ const RouteSeo = () => {
     <Seo
       title={t(`seo.${key}.title`)}
       description={t(`seo.${key}.description`)}
-      path={pathname}
+      path={path}
     />
   );
 };
