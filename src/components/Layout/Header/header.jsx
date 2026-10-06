@@ -92,6 +92,7 @@ const Header = () => {
                       href="https://www.facebook.com/mgareklama/"
                       target="_blank"
                       className="social-icon"
+                      aria-label="Facebook"
                       
                       rel="noreferrer"
                     >
@@ -101,18 +102,21 @@ const Header = () => {
                       href="https://www.instagram.com/mgareklama/"
                       target="_blank"
                       className="social-icon"
+                      aria-label="Instagram"
                       
                       rel="noreferrer"
                     >
                       <FaInstagram />
                     </a>
-                    <a href="#" className="social-icon" target="_blank">
+                    <a href="#" className="social-icon"
+                      aria-label="Telegram" target="_blank">
                       <FaTelegram />
                     </a>
                     <a
                       href="https://www.youtube.com/@mgareklama"
                       target="_blank"
                       className="social-icon"
+                      aria-label="YouTube"
                      
                       rel="noreferrer"
                     >
@@ -137,6 +141,7 @@ const Header = () => {
                     <button
                       onClick={() => setIsMenuOpen(true)}
                       className="burger"
+                      aria-label="Menu"
                     >
                       <RxHamburgerMenu />
                     </button>

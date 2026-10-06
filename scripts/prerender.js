@@ -54,9 +54,16 @@ const outputFile = (route) =>
     : path.join(BUILD, decodeURIComponent(route), "index.html");
 
 const renderRoute = async (browser, origin, route) => {
-  const page = await browser.newPage();
+  // A fresh context per page: otherwise localStorage (the saved language) leaks from
+  // /ru or /uz pages into the English ones and they get redirected/rendered wrongly.
+  const context = await browser.createBrowserContext();
+  const page = await context.newPage();
   try {
     await page.setViewport({ width: 1280, height: 900 });
+    // Lets the app know it is being snapshotted (e.g. the hero shows its poster, not the video).
+    await page.evaluateOnNewDocument(() => {
+      window.__PRERENDER__ = true;
+    });
     await page.setRequestInterception(true);
     // The hero video would keep the network "busy" forever and isn't needed in HTML.
     page.on("request", (req) => (req.resourceType() === "media" ? req.abort() : req.continue()));
@@ -67,6 +74,16 @@ const renderRoute = async (browser, origin, route) => {
     );
     const failed = await page.evaluate(() => !!document.querySelector(".projects-page__state"));
     if (failed) return { route, skipped: "page shows empty/error state" };
+
+    // Sanity check: the rendered language and canonical must match the URL we asked for.
+    const expectedLang = (route.match(/^\/(ru|uz)(\/|$)/) || [])[1] || "en";
+    const { lang, canonical } = await page.evaluate(() => ({
+      lang: document.documentElement.lang,
+      canonical: document.querySelector('link[rel="canonical"]')?.getAttribute("href") || "",
+    }));
+    if (lang !== expectedLang || !canonical.endsWith(route === "/" ? "mgareklama.com/" : route)) {
+      return { route, skipped: `rendered as lang=${lang}, canonical=${canonical}` };
+    }
     const html = "<!DOCTYPE html>" + (await page.evaluate(() => document.documentElement.outerHTML));
     const file = outputFile(route);
     fs.mkdirSync(path.dirname(file), { recursive: true });
@@ -76,6 +93,7 @@ const renderRoute = async (browser, origin, route) => {
     return { route, skipped: error.message.split("\n")[0] };
   } finally {
     await page.close();
+    await context.close();
   }
 };
 

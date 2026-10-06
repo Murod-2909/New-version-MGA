@@ -51,9 +51,9 @@ const Layout = (props) => {
         {!isCatalogBookPage && (
           <Header speaker={speaker} changeSpeakSwitcher={changeSpeakSwitcher} />
         )}
-        <div className="page-content">{children}</div>
+        <main className="page-content" id="main">{children}</main>
         {showTopBtn && (
-          <button className="scroll-to-top" onClick={goToTop}>
+          <button className="scroll-to-top" onClick={goToTop} aria-label="Back to top">
             <FaAngleUp />
           </button>
         )}

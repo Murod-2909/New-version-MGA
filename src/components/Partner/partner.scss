@@ -1,82 +1,151 @@
 @import "../../assests/style/global";
 
+// "References": two rows of client logos on white cards, drifting in opposite
+// directions. Every logo sits in the same card (object-fit: contain) so wide and
+// square logos get a comparable weight, and the white card keeps full-colour logos
+// legible on the dark page background.
 .brand-one {
   position: relative;
-  display: block;
-  background: #ffffff;
-padding: 14px 0 10px;
+  padding: 80px 0 90px;
   z-index: 1;
-  .al{
-    align-items: center;
-  }
-  &_inner-partner {
-    position: relative;
-    display: block;
-    border-bottom: 0px solid #e2ddda;
-    // padding: 10px 0 60px;
-    &_col-3 {
-      width: 25%;
-      flex: 0 0 auto;
-      &_titles {
-        position: relative;
-        display: block;
 
-        margin-top: 9px;
-        font-size: 1.75rem;
-      }
-    }
-    &_col-9 {
-      width: 75%;
-      flex: 0 0 auto;
-      &_main-content {
-        position: relative;
-        display: block;
-        margin-top: 15px;
-        .swiper-slide {
-            width: 150px !important;
-          text-align: center;
-          height: 80px;
-          .imgH {
-            width: 150px;
-            height: 60px;
-            display: flex;
-            padding: 10px;
-            background: white;
-          }
-          img {
-            width: 150px !important;
-            height: 60px !important;
-
-            height: auto;
-            object-fit: contain;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-
-            &:hover {
-              opacity: 1;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-@media only screen and (max-width: 430px) {
-  .brand-one_inner-partner_col-3{
-    width: 100%;
+  &__head {
     text-align: center;
-    display: block !important;
+    margin-bottom: 44px;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 18px;
+    padding-bottom: 14px;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 56px;
+      height: 3px;
+      border-radius: 2px;
+      background: $ambed-base;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__subtitle {
+    max-width: 620px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    overflow: hidden;
+
+    // Soft fade at both edges so cards slide in/out instead of being cut off.
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+
+    // Constant speed instead of Swiper's default ease-in-out between slides.
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    .swiper-slide {
+      width: 210px;
+      height: 96px;
+    }
   }
 }
-@media (max-width: 1190px){
-  .rows{
-    flex-direction: column;
-    .brand-one_inner-partner_col-9{
-      width: 100%;
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 16px 16px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+a.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 767px) {
+  .brand-one {
+    padding: 56px 0 64px;
+
+    &__head {
+      margin-bottom: 30px;
     }
-    .brand-one_inner-partner_col-3{
-      display: flex;
-      margin: 0 auto;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+      padding: 0 8px;
+    }
+
+    &__rows {
+      gap: 14px;
+
+      .swiper-slide {
+        width: 140px;
+        height: 72px;
+      }
+    }
+  }
+
+  .brand-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+}
+
+// No marquee for reduced-motion users: show the logos as a static wrapped grid.
+@media (prefers-reduced-motion: reduce) {
+  .brand-one__rows {
+    -webkit-mask-image: none;
+    mask-image: none;
+
+    .swiper-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      transform: none !important;
+    }
+
+    .swiper-slide {
+      margin: 0 !important;
+    }
+
+    .swiper-slide-duplicate,
+    .is-repeat {
+      display: none;
     }
   }
 }

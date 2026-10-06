@@ -49,7 +49,7 @@ export const ServiceCardBase = ({
 }) => (
   <div className={`service-card${reverse ? " service-card--reverse" : ""}`}>
     <div className="service-card__image">
-      <img src={image} alt={title} />
+      <img src={image} alt={title} loading="lazy" decoding="async" />
       {Icon && (
         <span className="service-card__badge">
           <Icon />

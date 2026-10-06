@@ -7,7 +7,7 @@ import PageHero from "../../components/pageHero";
 import InquiryForm from "../../components/InquiryForm";
 import NewLetter from "../../components/newLetter";
 import Seo from "../../components/Seo";
-import Spinner from "../../components/Spinner";
+import PageLoading from "../../components/PageLoading";
 import WorksSlider from "../../components/WorksSlider";
 import { getServices } from "../../reduxToolkit/servesSlice";
 import { getItemSlug, getProductionSlug } from "../../data/production-content";
@@ -32,7 +32,7 @@ const ProductionDetail = () => {
 
   if (!item) {
     if (loading) {
-      return <Spinner />;
+      return <PageLoading />;
     }
 
     return (
@@ -49,7 +49,7 @@ const ProductionDetail = () => {
     );
   }
 
-  const curatedSlug = getProductionSlug(item.image);
+  const curatedSlug = getProductionSlug(item);
   const hasCurated = curatedSlug && i18n.exists(`production.items.${curatedSlug}.intro`);
   const backendText = item.description?.trim();
 
@@ -117,7 +117,7 @@ const ProductionDetail = () => {
                       state={otherSlug ? undefined : { subject: i.title }}
                       className="service-page__related-card"
                     >
-                      <img src={i.image} alt={i.title} />
+                      <img src={i.thumbnail || i.image} alt={i.title} loading="lazy" decoding="async" />
                       <span>{i.title}</span>
                     </Link>
                   );

@@ -8,7 +8,7 @@ import PageHero from "../../components/pageHero";
 import InquiryForm from "../../components/InquiryForm";
 import NewLetter from "../../components/newLetter";
 import Seo from "../../components/Seo";
-import Spinner from "../../components/Spinner";
+import PageLoading from "../../components/PageLoading";
 import WorksSlider from "../../components/WorksSlider";
 import ProjectCard from "../../components/ProjectCard";
 import { getProject, getProjects } from "../../reduxToolkit/projectsSlice";
@@ -32,7 +32,7 @@ const ProjectDetail = () => {
     dispatch(getProjects());
   }, [dispatch, slug]);
 
-  if (currentLoading) return <Spinner />;
+  if (currentLoading) return <PageLoading />;
 
   if (!current) {
     return (

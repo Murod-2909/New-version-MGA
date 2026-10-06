@@ -2,7 +2,7 @@ import React, {lazy, Suspense} from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import ScrollTop from "./hoc/ScrollTop";
 import Layout from "./components/Layout/Layout";
-import Spinner from "./components/Spinner";
+import PageLoading from "./components/PageLoading";
 import RouteSeo from "./components/Seo/RouteSeo";
 import {LANGS, withLang} from "./serves/locale";
 
@@ -38,7 +38,7 @@ const RoutesContainer = () => (
     <Router>
         <RouteSeo/>
         <Layout>
-            <Suspense fallback={<Spinner position="full"/>}>
+            <Suspense fallback={<PageLoading/>}>
 
                 <Routes>
                     {routes.map((route, key) => {

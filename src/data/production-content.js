@@ -24,16 +24,34 @@ const IMAGE_TO_SLUG = {
   "PLOTER_RESKA.png": "plotter-cutting",
 };
 
-export function getProductionSlug(imageUrl) {
-  if (!imageUrl) return null;
-  const filename = imageUrl.split("/").pop().split("?")[0];
-  return IMAGE_TO_SLUG[filename] || null;
+// "UV_PECHAT.png", "UV_PECHAT.webp" and Django's collision-renamed "UV_PECHAT_aB3dE9x.webp"
+// all normalise to "uv_pechat", so the mapping survives the backend converting
+// uploads to WebP.
+const normalizeFilename = (name) =>
+  name
+    .replace(/\.[^.]+$/, "")
+    .replace(/_[A-Za-z0-9]{7}$/, "")
+    .toLowerCase();
+
+const NORMALIZED_IMAGE_TO_SLUG = Object.fromEntries(
+  Object.entries(IMAGE_TO_SLUG).map(([file, slug]) => [normalizeFilename(file), slug])
+);
+
+// Accepts a backend item ({slug?, image}) or a bare image URL.
+export function getProductionSlug(itemOrImageUrl) {
+  if (!itemOrImageUrl) return null;
+  const item = typeof itemOrImageUrl === "string" ? { image: itemOrImageUrl } : itemOrImageUrl;
+  // A stable slug from the backend wins over the filename lookup.
+  if (item.slug) return String(item.slug);
+  if (!item.image) return null;
+  const filename = item.image.split("/").pop().split("?")[0];
+  return IMAGE_TO_SLUG[filename] || NORMALIZED_IMAGE_TO_SLUG[normalizeFilename(filename)] || null;
 }
 
-// URL segment for an API item: the readable curated slug when we know the image,
+// URL segment for an API item: the readable curated slug when we know the item,
 // otherwise the backend id (as a string), otherwise null.
 export function getItemSlug(item) {
-  const known = getProductionSlug(item?.image);
+  const known = getProductionSlug(item);
   if (known) return known;
   if (item?.id !== undefined && item?.id !== null) return String(item.id);
   return null;

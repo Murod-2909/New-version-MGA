@@ -413,3 +413,8 @@ textarea {
   width: 100%;
   min-width: 300px;
 }
+
+// Keeps the footer below the fold while a lazy-loaded page is still loading (avoids a big layout shift).
+.page-content {
+  min-height: 80vh;
+}
