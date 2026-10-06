@@ -8,6 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { getPartner } from "../../reduxToolkit/partnerSlice";
 
+// Respect the OS "reduce motion" setting: show a static row instead of the marquee.
+const prefersReducedMotion =
+  typeof window !== "undefined" &&
+  !!window.matchMedia &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 export default function Partner() {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -37,70 +43,42 @@ export default function Partner() {
               <div className="brand-one_inner-partner_col-9_main-content">
                 <Swiper
                   modules={[Autoplay]}
-                  spaceBetween={100}
-                  slidesPerView={5}
-                  loop={true}
-                  autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                  }}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 2,
-                      spaceBetween: 20,
-                    },
-                    375: {
-                      slidesPerView: 2,
-                      spaceBetween: 30,
-                    },
-                    575: {
-                      slidesPerView: 3,
-                      spaceBetween: 30,
-                    },
-                    767: {
-                      slidesPerView: 4,
-                      spaceBetween: 40,
-                    },
-                    991: {
-                      slidesPerView: 5,
-                      spaceBetween: 50,
-                    },
-                    1199: {
-                      slidesPerView: 6,
-                      spaceBetween: 60,
-                    },
-                    1440: {
-                      slidesPerView: 7,
-                      spaceBetween: 70,
-                    },
-                    1600: {
-                      slidesPerView: 8,
-                      spaceBetween: 80,
-                    },
-                    1920: {
-                      slidesPerView: 9,
-                      spaceBetween: 90,
-                    },
-                    2560: {
-                      slidesPerView: 10,
-                      spaceBetween: 100,
-                    },
-                  }}
                   className="brand-swiper"
+                  loop
+                  slidesPerView="auto"
+                  spaceBetween={28}
+                  breakpoints={{ 576: { spaceBetween: 56 } }}
+                  speed={6000}
+                  allowTouchMove={false}
+                  autoplay={
+                    prefersReducedMotion
+                      ? false
+                      : { delay: 0, disableOnInteraction: false, pauseOnMouseEnter: true }
+                  }
                 >
-                  {brandImages?.map((img, index) => (
-                    <SwiperSlide key={index}>
-                      <div className="imgH">
-                        <a
-                          href={img.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <img src={img?.image} alt={`${t("partnerLogoAlt")} ${index + 1}`} />
-                        </a>
-                      </div>
-                    </SwiperSlide>
-                  ))}
+                  {brandImages?.map((brand, index) => {
+                    const logo = (
+                      <img
+                        src={brand?.thumbnail || brand?.image}
+                        alt={`${t("partnerLogoAlt")} ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    );
+                    return (
+                      <SwiperSlide key={brand.id ?? index}>
+                        <div className="imgH">
+                          {brand.url ? (
+                            <a href={brand.url} target="_blank" rel="noopener noreferrer">
+                              {logo}
+                            </a>
+                          ) : (
+                            logo
+                          )}
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
                 </Swiper>
               </div>
             </div>
