@@ -65,7 +65,8 @@
     "callNow": "Позвонить",
     "writeUs": "Написать нам",
     "hoursLabel": "Часы работы",
-    "hoursValue": "Пн–Сб, 9:00–19:00"
+    "hoursValue": "Пн–Сб, 9:00–19:00",
+    "showMap": "Показать карту"
   },
   "formErrorRequired":"Это поле обязательно для заполнения.",
   "formErrorEmail":"Введите корректный email-адрес.",

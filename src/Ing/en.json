@@ -65,7 +65,8 @@
     "callNow": "Call now",
     "writeUs": "Write to us",
     "hoursLabel": "Working hours",
-    "hoursValue": "Mon–Sat, 9:00–19:00"
+    "hoursValue": "Mon–Sat, 9:00–19:00",
+    "showMap": "Show map"
   },
   "formErrorRequired":"This field is required.",
   "formErrorEmail":"Please enter a valid email address.",

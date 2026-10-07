@@ -90,14 +90,14 @@ const ProductionDetail = () => {
 
               {capability && (
                 <div className="service-page__block">
-                  <h3>{t("services.capabilityLabel")}</h3>
+                  <h3 aria-level={2}>{t("services.capabilityLabel")}</h3>
                   <p>{capability}</p>
                 </div>
               )}
             </div>
 
             <div className="service-page__form">
-              <h3>{t("services.requestQuote")}</h3>
+              <h3 aria-level={2}>{t("services.requestQuote")}</h3>
               <InquiryForm presetSubject={item.title} />
             </div>
           </div>
@@ -106,7 +106,7 @@ const ProductionDetail = () => {
 
           {otherItems.length > 0 && (
             <div className="service-page__related">
-              <h3>{t("servies")}</h3>
+              <h3 aria-level={2}>{t("servies")}</h3>
               <div className="service-page__related-grid">
                 {otherItems.map((i) => {
                   const otherSlug = getItemSlug(i);

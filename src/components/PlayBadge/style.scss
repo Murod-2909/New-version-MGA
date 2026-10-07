@@ -32,6 +32,11 @@
     font-size: 12px;
     font-weight: 700;
     pointer-events: none;
+
+    // Not a text node, so it isn't counted as visible text missing from the button label.
+    &::after {
+      content: attr(data-duration);
+    }
   }
 }
 

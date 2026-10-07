@@ -28,7 +28,7 @@ const WorksSlider = ({ works = [], title = "", heading, subheading }) => {
     <section className="works-slider">
       <div className="works-slider__head">
         <div>
-          <h3 className="works-slider__title">{heading ?? t("production.worksTitle")}</h3>
+          <h3 className="works-slider__title" aria-level={2}>{heading ?? t("production.worksTitle")}</h3>
           <p className="works-slider__subtitle">{subheading ?? t("production.worksSubtitle")}</p>
         </div>
 

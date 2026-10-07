@@ -15,9 +15,18 @@
     margin-top: 40px;
 
     a {
-      color: #d25717;
+      display: inline-block;
+      padding: 13px 30px;
+      border: 2px solid $ambed-base;
+      border-radius: 999px;
+      color: #fff;
       font-weight: 700;
       font-size: 15px;
+      transition: background 0.2s;
+
+      &:hover {
+        background: $ambed-base;
+      }
     }
   }
 }
@@ -104,6 +113,12 @@
     color: $ambed-white;
     font-size: 13px;
     font-weight: 700;
+
+    // The number comes from a data attribute so it is not "visible text" that would
+    // have to be part of the button's accessible name.
+    &::after {
+      content: attr(data-count);
+    }
   }
 
   &__zoom {

@@ -15,7 +15,7 @@ export const ProjectCardSkeleton = () => (
   </div>
 );
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, headingLevel = 3 }) => {
   const { t, i18n } = useTranslation();
   const imgRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
@@ -53,7 +53,7 @@ const ProjectCard = ({ project }) => {
         )}
       </div>
       <div className="project-card__body">
-        <h3 className="project-card__title">{project.title}</h3>
+        <h3 className="project-card__title" aria-level={headingLevel}>{project.title}</h3>
         {meta && <p className="project-card__meta">{meta}</p>}
         <span className="project-card__cta">
           {t("projects.view")}

@@ -65,7 +65,8 @@
     "callNow": "Qo'ng'iroq qilish",
     "writeUs": "Bizga yozing",
     "hoursLabel": "Ish vaqti",
-    "hoursValue": "Du–Sha, 9:00–19:00"
+    "hoursValue": "Du–Sha, 9:00–19:00",
+    "showMap": "Xaritani ko'rsatish"
   },
   "formErrorRequired":"Bu maydonni to'ldirish shart.",
   "formErrorEmail":"Iltimos, to'g'ri email manzilini kiriting.",

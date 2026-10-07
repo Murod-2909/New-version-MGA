@@ -57,7 +57,7 @@ export const ServiceCardBase = ({
       )}
     </div>
     <div className="service-card__content">
-      <h3 className="service-card__title">{title}</h3>
+      <h3 className="service-card__title" aria-level={2}>{title}</h3>
       {description && <p className="service-card__text">{description}</p>}
       {ctaTo && (
         <Link to={ctaTo} state={ctaState} className="service-card__btn">

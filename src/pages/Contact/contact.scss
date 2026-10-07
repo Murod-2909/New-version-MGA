@@ -83,7 +83,7 @@
       gap: 8px;
       margin-top: auto;
       padding-top: 14px;
-      color: $ambed-base;
+      color: $text-brand;
       font-size: 14px;
       font-weight: 700;
     }
@@ -110,7 +110,7 @@
     &__tag {
       display: inline-block;
       margin-bottom: 10px;
-      color: $ambed-base;
+      color: $text-brand;
       font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.18em;
@@ -368,5 +368,50 @@
     .contact-map {
       height: 240px;
     }
+  }
+}
+
+.contact .contact-map__facade {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px;
+  border: none;
+  background: linear-gradient(135deg, #1b3149 0%, #22405f 100%);
+  color: #fff;
+  cursor: pointer;
+  transition: filter 250ms ease;
+
+  svg {
+    margin-bottom: 8px;
+    font-size: 34px;
+    color: $text-brand-dark;
+  }
+
+  &-title {
+    padding: 11px 26px;
+    border-radius: 999px;
+    background-color: $text-brand;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  &-address {
+    margin-top: 8px;
+    color: $text-muted-dark;
+    font-size: 14px;
+  }
+
+  &:hover {
+    filter: brightness(1.12);
+  }
+
+  &:focus-visible {
+    outline: 3px solid $ambed-base;
+    outline-offset: -6px;
   }
 }

@@ -53,7 +53,7 @@
   &__intro {
     font-size: 16px;
     line-height: 28px;
-    color: $ambed-gray;
+    color: $text-muted-dark;
     margin-bottom: 30px;
   }
 
@@ -70,7 +70,7 @@
     p {
       font-size: 15px;
       line-height: 26px;
-      color: $ambed-gray;
+      color: $text-muted-dark;
     }
   }
 
@@ -113,7 +113,7 @@
               padding: 0 20px;
               outline: none;
               font-size: 14px;
-              color: $ambed-gray;
+              color: $text-muted;
               display: block;
             }
           }
@@ -129,7 +129,7 @@
           background-color: $ambed-white;
           border: 1px solid $ambed-bdr-color;
           font-size: 14px;
-          color: $ambed-gray;
+          color: $text-muted;
           padding: 15px 20px;
           outline: none;
         }
@@ -137,7 +137,7 @@
 
       .btn-box {
         .form-btn {
-          background-color: $ambed-base;
+          background-color: $text-brand;
           color: $ambed-white;
           border: none;
           font-size: 14px;
