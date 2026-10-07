@@ -69,6 +69,14 @@
           }
         }
 
+        // Body copy: light on the navy background (the old grey was only 4.2:1).
+        &__p {
+          margin: 0 0 18px;
+          font-size: 17px;
+          line-height: 1.8;
+          color: #d3ccc6;
+        }
+
         &__text {
           font-size: 18px;
           line-height: 1.7;
@@ -94,9 +102,9 @@
     }
 
     @media only screen and (max-width: 430px) {
-      margin-top: 10rem;
+      margin-top: 2.5rem;
       &_lefts{
-        margin-top: 4rem;
+        margin-top: 1rem;
       }
     }
     @media (max-width: 768px){
@@ -145,6 +153,19 @@
           padding: 16px 20px;
         }
       }
+    }
+  }
+}
+
+// The MGA letters only fill the middle third of their 270px box; on phones that left
+// ~190px of empty navy around them.
+@media (max-width: 575px) {
+  .pession_rows_lefts .col-2 {
+    .m,
+    .g,
+    .a {
+      height: 130px;
+      background-size: 85%;
     }
   }
 }

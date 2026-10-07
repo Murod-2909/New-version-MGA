@@ -1,193 +1,139 @@
-import React, { useEffect } from "react";
-import logo from "../../../assests/images/white-logo.png";
-import { MdOutlineEmail } from "react-icons/md";
-import { GrMapLocation } from "react-icons/gr";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import Link from "../../LocaleLink";
-
+import logo from "../../../assests/images/white-logo.png";
+import serviceSlugs from "../../../data/services-content";
 import {
   FaFacebookF,
   FaYoutube,
   FaInstagram,
-  FaPhoneVolume,
-} from "react-icons/fa6";
-import { MdOutlineNavigateNext } from "react-icons/md";
-import AOS from "aos";
-import "aos/dist/aos.css";
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaClock,
+} from "react-icons/fa";
+
+// Keep the contact details in sync with the Contact page and the LocalBusiness data
+// in public/index.html.
+const PHONE = { href: "tel:+998770124004", label: "+998 77 012 40 04" };
+const EMAIL = "info@mgareklama.com";
+const SOCIALS = [
+  { href: "https://www.youtube.com/@mgareklama", label: "YouTube", Icon: FaYoutube },
+  { href: "https://www.facebook.com/mgareklama/", label: "Facebook", Icon: FaFacebookF },
+  { href: "https://www.instagram.com/mgareklama/", label: "Instagram", Icon: FaInstagram },
+];
+const FOOTER_SERVICES = serviceSlugs.slice(0, 6);
 
 const Footer = () => {
   const { t } = useTranslation();
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // animatsiya davomiyligi (ms)
-      once: true, // faqat bir marta animatsiya bajariladi
-      offset: 120,
-    });
-  }, []);
+
+  const menu = [
+    { to: "/", label: t("main") },
+    { to: "/about", label: t("about") },
+    { to: "/serves", label: t("serves") },
+    { to: "/projects", label: t("nav.projects") },
+    { to: "/gallery", label: t("gallery") },
+    { to: "/contact", label: t("contact") },
+  ];
+
   return (
     <footer className="site-footer">
-      <div className="site-footer-bg"></div>
-      <div className="site-footer__top">
-        <div className="container">
-          <div className="rowss">
-            <div className="site-footer__top_col3 fadeInUp animated">
-              <div
-                className="footer-widget"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="1000"
-              >
-                <div className="footer-widget__logo">
-                  <Link to="/">
-                    <img src={logo} alt="MGA Reklama logo" />
-                  </Link>
-                </div>
-                <div className="footer-wigdet_text-box">
-                  <p className="footer-widget_text-box_des">
-                    {t("footerText")}
-                  </p>
-                </div>
-                <div className="footer-widget__social">
-                  <a
-                    href="https://www.youtube.com/@mgareklama"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="fa-you"
-                    aria-label="YouTube"
-                  >
-                    <FaYoutube />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/mgareklama/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="fa-you"
-                    aria-label="Facebook"
-                  >
-                    <FaFacebookF />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/mgareklama/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="fa-you"
-                    aria-label="Instagram"
-                  >
-                    <FaInstagram />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="site-footer__top_col3 fadeInUp animated">
-              <div className="footer-widget">
-                <div
-                  className="footer-widget_explore clearfix"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  data-aos-duration="1000"
+      <div className="container">
+        <div className="site-footer__grid">
+          <div className="site-footer__brand">
+            <Link to="/" className="site-footer__logo">
+              <img src={logo} alt="MGA Reklama logo" />
+            </Link>
+            <p className="site-footer__about">{t("footerText")}</p>
+            <div className="site-footer__social">
+              {SOCIALS.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
                 >
-                  <h3 className="footer-widget_explore__exTitle" aria-level={2}>{t("footMenu")}</h3>
-                  <ul className="footer-widget_explore-list clearfix">
-                    <li>
-                      <Link to="/about" className="lists">
-                        {" "}
-                        <MdOutlineNavigateNext />
-                        {t("about")}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/serves" className="lists">
-                        {" "}
-                        <MdOutlineNavigateNext /> {t("serves")}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/gallery" className="lists">
-                        {" "}
-                        <MdOutlineNavigateNext />
-                        {t("gallery")}
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/contact" className="lists">
-                        {" "}
-                        <MdOutlineNavigateNext />
-                        {t("contact")}
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                  <Icon aria-hidden="true" />
+                </a>
+              ))}
             </div>
-          
-            <div className="site-footer__top_col3 fadeInUp animated">
-              <div className="footer-widget">
-                <div
-                  className="footer-widget_explore clearfix"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  data-aos-duration="1000"
-                >
-                  <h3 className="footer-widget_explore__exTitle" aria-level={2}>{t("work")}</h3>
-                  <ul className="footer-widget_explore-list clearfix">
-                    <li className="foot-icon">
-                      <div className="call-icon">
-                        <FaPhoneVolume className="phone-call" />
-                      </div>
-                      <div className="call-text">
-                        <h5 className="call-text-h5" aria-level={3}>{t("call")}</h5>
-                        <p className="call-text-pp">
-                          <a className="call-text-aa" href="tel:+998770124004">
-                            +998 77 012 40 04
-                          </a>
-                        </p>
-                      </div>
-                    </li>
-                    <li className="foot-icon">
-                      <div className="call-icon">
-                        <MdOutlineEmail className="phone-call" />
-                      </div>
-                      <div className="call-text">
-                        <h5 className="call-text-h5" aria-level={3}>{t("send")}</h5>
-                        <p className="call-text-pp">
-                          <a
-                            className="call-text-aa"
-                            href="mailto:info@mgareklama.com"
-                          >
-                            info@mgareklama.com
-                          </a>
-                        </p>
-                      </div>
-                    </li>
-                    <li className="foot-icon">
-                      <div className="call-icon">
-                        <GrMapLocation className="phone-call" />
-                      </div>
-                      <div className="call-text">
-                        <h5 className="call-text-h5" aria-level={3}>
-                          Uzbekistan
-                        </h5>
-                        <p className="call-text-pp">
-                          <a
-                            className="call-text-aa"
-                          >
-                           {t("address")}
-                          </a>
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
+          </div>
+
+          <nav className="site-footer__col" aria-label={t("footMenu")}>
+            <h2 className="site-footer__title">{t("footMenu")}</h2>
+            <ul>
+              {menu.map(({ to, label }) => (
+                <li key={to}>
+                  <Link to={to}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav className="site-footer__col" aria-label={t("serves")}>
+            <h2 className="site-footer__title">{t("serves")}</h2>
+            <ul>
+              {FOOTER_SERVICES.map((slug) => (
+                <li key={slug}>
+                  <Link to={`/services/${slug}`}>{t(`services.items.${slug}.h1`)}</Link>
+                </li>
+              ))}
+              <li className="site-footer__all">
+                <Link to="/serves">{t("services.menuAll")}</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="site-footer__col">
+            <h2 className="site-footer__title">{t("contact")}</h2>
+            <ul className="site-footer__contacts">
+              <li>
+                <span className="site-footer__icon" aria-hidden="true">
+                  <FaPhoneAlt />
+                </span>
+                <div>
+                  <span className="site-footer__label">{t("call")}</span>
+                  <a href={PHONE.href}>{PHONE.label}</a>
                 </div>
-              </div>
-            </div>
+              </li>
+              <li>
+                <span className="site-footer__icon" aria-hidden="true">
+                  <FaEnvelope />
+                </span>
+                <div>
+                  <span className="site-footer__label">{t("send")}</span>
+                  <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                </div>
+              </li>
+              <li>
+                <span className="site-footer__icon" aria-hidden="true">
+                  <FaMapMarkerAlt />
+                </span>
+                <div>
+                  <span className="site-footer__label">{t("contactPage.addressLabel")}</span>
+                  <span className="site-footer__value">{t("address")}</span>
+                </div>
+              </li>
+              <li>
+                <span className="site-footer__icon" aria-hidden="true">
+                  <FaClock />
+                </span>
+                <div>
+                  <span className="site-footer__label">{t("contactPage.hoursLabel")}</span>
+                  <span className="site-footer__value">{t("contactPage.hoursValue")}</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
+
       <div className="site-footer__bottom">
         <div className="container">
-          <div className="site-footer__bottom_binner">
-            <div className="bText">© 2025 Mga Reklama </div>
-          </div>
+          <p>
+            © {new Date().getFullYear()} MGA Reklama. {t("footer.rights")}
+          </p>
         </div>
       </div>
     </footer>

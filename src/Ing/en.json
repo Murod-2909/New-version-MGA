@@ -35,6 +35,44 @@
   "sends":"Send a Message",
   "toastSuccess":"Message sent successfully!",
   "toastError":"Failed to send message. Please try again.",
+  "nav": {
+    "projects": "Projects"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "newsletter": {
+    "title": "Subscribe to our news",
+    "text": "Get new projects and news from MGA Reklama by email."
+  },
+  "aboutPage": {
+    "p1": "Since 2010, our company has been offering innovative solutions in the advertising and printing industry in Turkey. We are continuously improving ourselves to provide services that best meet the needs of our clients.",
+    "p2": "In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region.",
+    "p3": "Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!",
+    "teamTitle": "Our team",
+    "teamPlaceholderName": "Name Surname",
+    "teamPlaceholderRole": "Position",
+    "statYears": "Years in advertising",
+    "statLines": "Production capabilities",
+    "statPartners": "Partner brands",
+    "photosTitle": "Our factory and work",
+    "statSinceValue": "2010",
+    "statSince": "In the advertising industry since",
+    "statFactoryValue": "2022",
+    "statFactory": "Tashkent factory opened",
+    "statAreaValue": "2000 m²",
+    "statArea": "Production area",
+    "processTitle": "How we work",
+    "stepDesign": "Design",
+    "stepDesignText": "Concept, drawings and mock-ups for your space.",
+    "stepMake": "Manufacturing",
+    "stepMakeText": "Made in our own 2,000 m² factory in Tashkent.",
+    "stepInstall": "Installation",
+    "stepInstallText": "Installed on site by our own team.",
+    "videoTitle": "See our production",
+    "ctaTitle": "Have a project in mind?",
+    "ctaText": "Tell us about it and we will prepare a quote."
+  },
   "form": {
     "name": "Your name",
     "email": "Email address",

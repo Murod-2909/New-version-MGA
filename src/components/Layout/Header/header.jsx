@@ -30,7 +30,11 @@ const Header = () => {
   const productionLinks = useProductionLinks();
   const rawPath = stripLang(location.pathname);
   // Service and production detail pages belong to the "Services" menu item.
-  const currentPath = /^\/(services|production)\//.test(rawPath) ? "/serves" : rawPath;
+  const currentPath = /^\/(services|production)\//.test(rawPath)
+    ? "/serves"
+    : /^\/projects\//.test(rawPath)
+    ? "/projects"
+    : rawPath;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -242,6 +246,19 @@ const Header = () => {
                             <Link to="/serves">{t("services.menuAll")}</Link>
                           </div>
                         </div>
+                      </li>
+
+                      <li
+                        className={
+                          currentPath === "/projects" ? "current" : ""
+                        }
+                      >
+                        <Link to="/projects" className="current_items">
+                          {t("nav.projects")}
+                        </Link>
+                        {currentPath === "/projects" && (
+                          <span className="current_border"></span>
+                        )}
                       </li>
 
                       <li
