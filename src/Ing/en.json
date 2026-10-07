@@ -35,6 +35,16 @@
   "sends":"Send a Message",
   "toastSuccess":"Message sent successfully!",
   "toastError":"Failed to send message. Please try again.",
+  "nav": {
+    "projects": "Projects"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "newsletter": {
+    "title": "Subscribe to our news",
+    "text": "Get new projects and news from MGA Reklama by email."
+  },
   "form": {
     "name": "Your name",
     "email": "Email address",

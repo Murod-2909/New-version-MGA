@@ -3,18 +3,21 @@ import "./style.scss";
 import { useDispatch } from "react-redux";
 import { sendEmail } from "../../reduxToolkit/messageSlice";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import {useTranslation} from "react-i18next";
+import { FaEnvelopeOpenText } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+
 export default function NewLetter() {
   const [email, setEmail] = useState("");
+  const [sending, setSending] = useState(false);
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim() || sending) return;
 
-    dispatch(sendEmail({ email }))
+    setSending(true);
+    dispatch(sendEmail({ email: email.trim() }))
       .unwrap()
       .then(() => {
         toast.success(t("form.newsletterSuccess"));
@@ -22,46 +25,44 @@ export default function NewLetter() {
       })
       .catch((err) => {
         toast.error(err?.status === 429 ? t("form.errorTooMany") : t("form.newsletterError"));
-      });
+      })
+      .finally(() => setSending(false));
   };
 
   return (
-    <div className="newLetter">
+    <section className="newLetter" aria-labelledby="newsletter-title">
       <div className="container">
-        <div className="newLetter__inners fadeInUp animated">
-          <div className="newLetter__inners_shapes1"></div>
-          <div className="newLetter__inners_lefts">
-            <div className="newLetter__inners_lefts_title-new">
-              {t("get")}
+        <div className="newLetter__card">
+          <div className="newLetter__text">
+            <span className="newLetter__icon" aria-hidden="true">
+              <FaEnvelopeOpenText />
+            </span>
+            <div>
+              <h2 className="newLetter__title" id="newsletter-title">
+                {t("newsletter.title")}
+              </h2>
+              <p className="newLetter__desc">{t("newsletter.text")}</p>
             </div>
           </div>
-          <div className="newLetter__inners_rights">
-            <form
-              className="newLetter__inners_rights_forms"
-              onSubmit={handleSubmit}
-            >
-              <div className="newLetter__inners_rights_forms_input-box">
-                <input
-                  type="email"
-                  placeholder={t("form.newsletterEmail")}
-                  aria-label={t("form.newsletterEmail")}
-                  autoComplete="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="newLetter__inners_rights_forms_input-box_input"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="newLetter__inners_rights_forms_input-box_button"
-                >
-                  {t("sub")}
-                </button>
-              </div>
-            </form>
-          </div>
+
+          <form className="newLetter__form" onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              placeholder={t("form.newsletterEmail")}
+              aria-label={t("form.newsletterEmail")}
+              autoComplete="email"
+              maxLength={100}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit" disabled={sending}>
+              {t("sub")}
+            </button>
+          </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

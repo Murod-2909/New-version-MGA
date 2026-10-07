@@ -203,7 +203,7 @@
             &_list {
               display: flex;
               align-items: center;
-              gap: 70px;
+              gap: 44px;
 
               // Every item gets the padding, not just .current — on pages where no
               // item is current (/production/*, /services/*, /projects/*) the links

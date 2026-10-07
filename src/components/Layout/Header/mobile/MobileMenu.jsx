@@ -19,7 +19,11 @@ const MobileMenu = ({ isOpen, onClose }) => {
   const productionLinks = useProductionLinks({ load: false }); // the header already loads the data
   const rawPath = stripLang(location.pathname);
   // Service and production detail pages belong to the "Services" item.
-  const currentPath = /^\/(services|production)\//.test(rawPath) ? "/serves" : rawPath;
+  const currentPath = /^\/(services|production)\//.test(rawPath)
+    ? "/serves"
+    : /^\/projects\//.test(rawPath)
+    ? "/projects"
+    : rawPath;
 
   return (
     <>
@@ -54,6 +58,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
               { path: "/about", label: t("about") },
               { path: "/gallery", label: t("gallery") },
               { path: "/serves", label: t("serves") },
+              { path: "/projects", label: t("nav.projects") },
               { path: "/contact", label: t("contact") },
             ].map(({ path, label }) => (
               <li

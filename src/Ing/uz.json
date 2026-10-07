@@ -35,6 +35,16 @@
   "sends":"Xabar yuborish",
   "toastSuccess":"Xabar muvaffaqiyatli yuborildi!",
   "toastError":"Xabarni yuborib bo'lmadi. Iltimos, qayta urinib ko'ring.",
+  "nav": {
+    "projects": "Loyihalar"
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan."
+  },
+  "newsletter": {
+    "title": "Yangiliklarga obuna bo'ling",
+    "text": "MGA Reklama yangi loyihalari va yangiliklarini emailingizga oling."
+  },
   "form": {
     "name": "Ismingiz",
     "email": "Elektron pochta",
