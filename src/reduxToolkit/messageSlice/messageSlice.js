@@ -27,7 +27,6 @@ const senQuestion = createSlice({
       .addCase(sendContact.fulfilled, (state, action) => {
         state.sendContactLoading = false;
         state.sendContactData = action.payload;
-        console.log(action.payload);
       })
       .addCase(sendContact.rejected, (state, action) => {
         state.sendContactLoading = false;
