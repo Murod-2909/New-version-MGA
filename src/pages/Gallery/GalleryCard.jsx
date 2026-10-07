@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaImages, FaSearchPlus } from "react-icons/fa";
+import PlayBadge from "../../components/PlayBadge";
+import { isVideo, mediaPoster } from "../../data/media";
 
 // One gallery tile. Uses the small `thumbnail` the backend provides when it
 // exists and falls back to the full `image` otherwise; the full image is only
@@ -10,6 +12,7 @@ const GalleryCard = ({ item, index, onOpen }) => {
   const imgRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
   const count = 1 + (item.same_images?.length || 0);
+  const video = isVideo(item);
 
   // A cached image can finish loading before React attaches onLoad.
   useEffect(() => {
@@ -22,11 +25,11 @@ const GalleryCard = ({ item, index, onOpen }) => {
       type="button"
       className={`gallery-card${loaded ? " is-loaded" : ""}`}
       onClick={() => onOpen(item)}
-      aria-label={`${t("galleryPage.open")} ${index + 1}`}
+      aria-label={`${t(video ? "galleryPage.playVideo" : "galleryPage.open")} ${index + 1}`}
     >
       <img
         ref={imgRef}
-        src={item.thumbnail || item.image}
+        src={mediaPoster(item)}
         alt={`${t("galleryImageAlt")} ${index + 1}`}
         loading="lazy"
         decoding="async"
@@ -39,9 +42,13 @@ const GalleryCard = ({ item, index, onOpen }) => {
           {count}
         </span>
       )}
-      <span className="gallery-card__zoom" aria-hidden="true">
-        <FaSearchPlus />
-      </span>
+      {video ? (
+        <PlayBadge duration={item.duration} />
+      ) : (
+        <span className="gallery-card__zoom" aria-hidden="true">
+          <FaSearchPlus />
+        </span>
+      )}
     </button>
   );
 };
