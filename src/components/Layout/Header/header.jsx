@@ -11,6 +11,9 @@ import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import Link from "../../LocaleLink";
 import { stripLang, withLang } from "../../../serves/locale";
+import serviceSlugs from "../../../data/services-content";
+import { FaChevronDown } from "react-icons/fa";
+import "./ServicesMenu.scss";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMailOpenOutline } from "react-icons/io5";
 
@@ -189,16 +192,36 @@ const Header = () => {
                       </li>
 
                       <li
-                        className={
-                          currentPath === "/serves" ? "current" : ""
-                        }
+                        className={`has-dropdown${
+                          currentPath === "/serves" ? " current" : ""
+                        }`}
                       >
                         <Link to="/serves" className="current_items">
                           {t("serves")}
+                          <FaChevronDown
+                            className="has-dropdown__caret"
+                            aria-hidden="true"
+                          />
                         </Link>
                         {currentPath === "/serves" && (
                           <span className="current_border"></span>
                         )}
+                        <div className="nav-dropdown">
+                          {serviceSlugs.map((slug) => (
+                            <Link
+                              key={slug}
+                              to={`/services/${slug}`}
+                              className={
+                                rawPath === `/services/${slug}` ? "is-active" : undefined
+                              }
+                            >
+                              {t(`services.items.${slug}.h1`)}
+                            </Link>
+                          ))}
+                          <div className="nav-dropdown__all">
+                            <Link to="/serves">{t("services.menuAll")}</Link>
+                          </div>
+                        </div>
                       </li>
 
                       <li

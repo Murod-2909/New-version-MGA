@@ -64,6 +64,8 @@
   },
   "services": {
     "sectionTitle": "Bizning ixtisoslashgan xizmatlarimiz",
+    "productionTitle": "Ishlab chiqarish imkoniyatlarimiz",
+    "menuAll": "Barcha xizmatlar",
     "moreAboutService": "Xizmat haqida batafsil",
     "contactAboutItem": "Bu ishlab chiqarish imkoniyati haqida batafsil bilish uchun biz bilan bog'laning.",
     "materialsLabel": "Materiallar",

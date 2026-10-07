@@ -21,7 +21,7 @@ import "./style.scss";
 
 // One representative icon per service slug, shown as the badge on the image
 // (stand-in for a real photo carousel until actual project photos exist).
-const ICONS = {
+export const ICONS = {
   "wayfinding-signage": FaMapSigns,
   "hotel-signage": FaHotel,
   "interior-signage": FaBuilding,

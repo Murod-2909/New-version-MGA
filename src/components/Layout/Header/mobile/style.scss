@@ -102,3 +102,46 @@
   }
 }
     
+
+// Services entry: link + chevron that expands the list of service pages.
+.mobile-menu-sheet__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu-sheet__toggle {
+  padding: 6px 4px 6px 16px;
+  border: none;
+  background: transparent;
+  color: #112337;
+  font-size: 14px;
+  cursor: pointer;
+
+  svg {
+    transition: transform 250ms ease;
+  }
+
+  &.is-open svg {
+    transform: rotate(180deg);
+  }
+}
+
+.mobile-menu-sheet__sub {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 8px 0 2px 14px;
+  padding-left: 14px;
+  border-left: 2px solid #e2e2e2;
+  max-height: 46vh;
+  overflow-y: auto;
+
+  // Needs the extra specificity: `li.active a` would otherwise turn every sub-link orange.
+  .mobile-menu-sheet__nav li & a {
+    padding: 7px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #112337;
+  }
+}

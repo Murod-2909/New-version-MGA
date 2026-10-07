@@ -64,6 +64,8 @@
   },
   "services": {
     "sectionTitle": "Our Specialized Services",
+    "productionTitle": "Our Production Capabilities",
+    "menuAll": "All services",
     "moreAboutService": "More about the service",
     "contactAboutItem": "Contact us to learn more about this production capability.",
     "materialsLabel": "Materials",

@@ -1,9 +1,11 @@
 // components/MobileMenu.jsx
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Link from "../../../LocaleLink";
 import { stripLang } from "../../../../serves/locale";
 import { RxCross2 } from "react-icons/rx";
+import { FaChevronDown } from "react-icons/fa";
+import serviceSlugs from "../../../../data/services-content";
 import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
 import "./style.scss";
@@ -12,6 +14,10 @@ import logo from "../../../../assests/images/Log.png";
 const MobileMenu = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
   const location = useLocation();
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const rawPath = stripLang(location.pathname);
+  // Service and production detail pages belong to the "Services" item.
+  const currentPath = /^\/(services|production)\//.test(rawPath) ? "/serves" : rawPath;
 
   return (
     <>
@@ -50,12 +56,45 @@ const MobileMenu = ({ isOpen, onClose }) => {
             ].map(({ path, label }) => (
               <li
                 key={path}
-                className={stripLang(location.pathname) === path ? "active" : ""}
+                className={currentPath === path ? "active" : ""}
               >
-                <Link to={path} onClick={() => onClose(false)}>
-                  {label}
-                  <hr />
-                </Link>
+                {path === "/serves" ? (
+                  <>
+                    <div className="mobile-menu-sheet__row">
+                      <Link to={path} onClick={() => onClose(false)}>
+                        {label}
+                      </Link>
+                      <button
+                        type="button"
+                        className={`mobile-menu-sheet__toggle${servicesOpen ? " is-open" : ""}`}
+                        onClick={() => setServicesOpen((open) => !open)}
+                        aria-expanded={servicesOpen}
+                        aria-label={label}
+                      >
+                        <FaChevronDown aria-hidden="true" />
+                      </button>
+                    </div>
+                    {servicesOpen && (
+                      <div className="mobile-menu-sheet__sub">
+                        {serviceSlugs.map((slug) => (
+                          <Link
+                            key={slug}
+                            to={`/services/${slug}`}
+                            onClick={() => onClose(false)}
+                          >
+                            {t(`services.items.${slug}.h1`)}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                    <hr />
+                  </>
+                ) : (
+                  <Link to={path} onClick={() => onClose(false)}>
+                    {label}
+                    <hr />
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

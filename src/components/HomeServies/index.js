@@ -23,7 +23,7 @@ function HomeServices({ servicesData }) {
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1500"
         >
-          {t("servies")}
+          {t("services.productionTitle")}
         </div>
       </div>
 
