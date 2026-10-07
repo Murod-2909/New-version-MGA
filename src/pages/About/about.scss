@@ -14,7 +14,7 @@
 
     &__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 24px;
       margin: 0;
       padding: 0;
@@ -22,6 +22,8 @@
     }
 
     &__item {
+      min-height: 160px;
+      justify-content: center;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -44,6 +46,67 @@
       color: #d3ccc6;
       font-size: 15px;
       line-height: 1.4;
+    }
+  }
+
+  // ---- Photos of the factory and finished work ----
+  .about-photos {
+    padding: 70px 0 10px;
+
+    &__grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 18px;
+        display: block;
+        background: #1b3149;
+      }
+
+      // One big feature photo, the rest around it.
+      &--5 img:first-child,
+      &--4 img:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      &--1 {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 420px;
+      }
+
+      &--2,
+      &--3 {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-auto-rows: 260px;
+      }
+    }
+
+    &__more {
+      margin: 26px 0 0;
+      text-align: center;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 28px;
+        border: 2px solid #be4c15;
+        border-radius: 999px;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        transition: background-color 250ms ease;
+
+        &:hover {
+          background-color: #be4c15;
+        }
+      }
     }
   }
 
@@ -191,9 +254,13 @@
 
 @media (max-width: 991px) {
   .about-page {
-    .about-stats__grid,
     .about-process__grid {
       grid-template-columns: 1fr;
+    }
+
+    .about-photos__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 170px;
     }
 
     .about-cta__card {
@@ -212,7 +279,8 @@
     }
 
     .about-stats__value {
-      font-size: 38px;
+      font-size: 32px;
+      white-space: nowrap;
     }
 
     .about-cta__title {
@@ -231,5 +299,21 @@
       width: 100%;
       justify-content: center;
     }
+
+    .about-stats__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .about-stats__item {
+      min-height: 130px;
+      padding: 22px 12px;
+    }
+
+    .about-photos__grid {
+      grid-auto-rows: 130px;
+      gap: 10px;
+    }
   }
 }
+

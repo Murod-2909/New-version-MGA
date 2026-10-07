@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./about.scss";
 import PageHero from "../../components/pageHero";
 import Partner from "../../components/Partner";
@@ -8,16 +9,14 @@ import YouTubeFacade from "../../components/YouTubeFacade";
 import Link from "../../components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import { FaPencilRuler, FaIndustry, FaTools, FaArrowRight } from "react-icons/fa";
+import useProductionLinks from "../../hooks/useProductionLinks";
+import { getGallery } from "../../reduxToolkit/gallerySlice";
+import { mediaPoster } from "../../data/media";
 
 const VIDEO_ID = "55_3tE4tNno";
 
-// Only facts stated on the site: advertising since 2010, Tashkent factory opened in
-// 2022, 2,000 m² production area.
-const STATS = [
-  { value: "aboutPage.statSinceValue", label: "aboutPage.statSince" },
-  { value: "aboutPage.statFactoryValue", label: "aboutPage.statFactory" },
-  { value: "aboutPage.statAreaValue", label: "aboutPage.statArea" },
-];
+const FOUNDED_YEAR = 2010; // "Since 2010, our company ..." (see aboutPage.p1)
+const PHOTO_COUNT = 5;
 
 const STEPS = [
   { Icon: FaPencilRuler, title: "aboutPage.stepDesign", text: "aboutPage.stepDesignText" },
@@ -27,6 +26,35 @@ const STEPS = [
 
 const About = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const productionLinks = useProductionLinks();
+  const partners = useSelector((state) => state.partnerSlice?.partnerData);
+  const gallery = useSelector((state) => state.gallerySlice?.galleryData);
+
+  useEffect(() => {
+    dispatch(getGallery());
+  }, [dispatch]);
+
+  // Every figure is real: years since 2010, the 2,000 m² factory (stated in the text),
+  // and live counts from the same data that fills the Services and References sections.
+  const stats = [
+    { value: String(new Date().getFullYear() - FOUNDED_YEAR), label: t("aboutPage.statYears") },
+    { value: t("aboutPage.statAreaValue"), label: t("aboutPage.statArea") },
+    productionLinks.length > 0 && {
+      value: String(productionLinks.length),
+      label: t("aboutPage.statLines"),
+    },
+    Array.isArray(partners) &&
+      partners.length > 0 && { value: String(partners.length), label: t("aboutPage.statPartners") },
+  ].filter(Boolean);
+
+  // Real photos of the factory and finished work: the first gallery entries, falling
+  // back to the factory shot used on the home page.
+  const photos = (Array.isArray(gallery) ? gallery : [])
+    .map((item) => mediaPoster(item))
+    .filter(Boolean)
+    .slice(0, PHOTO_COUNT);
+  if (photos.length === 0) photos.push("/heroPoster.jpg");
 
   return (
     <div className="about-page">
@@ -36,13 +64,36 @@ const About = () => {
       <section className="about-stats">
         <div className="container">
           <ul className="about-stats__grid">
-            {STATS.map(({ value, label }) => (
+            {stats.map(({ value, label }) => (
               <li key={label} className="about-stats__item">
-                <span className="about-stats__value">{t(value)}</span>
-                <span className="about-stats__label">{t(label)}</span>
+                <span className="about-stats__value">{value}</span>
+                <span className="about-stats__label">{label}</span>
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="about-photos">
+        <div className="container">
+          <h2 className="about-section-title">{t("aboutPage.photosTitle")}</h2>
+          <div className={`about-photos__grid about-photos__grid--${Math.min(photos.length, 5)}`}>
+            {photos.map((src, index) => (
+              <img
+                key={`${src}-${index}`}
+                src={src}
+                alt={`${t("aboutPage.photosTitle")} ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
+          </div>
+          <p className="about-photos__more">
+            <Link to="/gallery">
+              {t("projects.backToGallery")}
+              <FaArrowRight aria-hidden="true" />
+            </Link>
+          </p>
         </div>
       </section>
 
