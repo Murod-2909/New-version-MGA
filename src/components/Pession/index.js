@@ -4,7 +4,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 
-export default function Pession({ headingLevel = "h2" }) {
+// variant "full" (About page) shows the story as three short paragraphs; the default
+// (home page) keeps the compact single text.
+export default function Pession({ headingLevel = "h2", variant = "compact" }) {
   const { t } = useTranslation();
   const Heading = headingLevel;
 
@@ -52,9 +54,15 @@ export default function Pession({ headingLevel = "h2" }) {
                   {t("aboutUs")}
                 </Heading>
 
-                  <p  className="text-base leading-7 text-gray-700">
-                    {t("desAbout")}
-                  </p>
+                {variant === "full" ? (
+                  ["p1", "p2", "p3"].map((key) => (
+                    <p key={key} className="aboutCompany__p">
+                      {t(`aboutPage.${key}`)}
+                    </p>
+                  ))
+                ) : (
+                  <p className="aboutCompany__p">{t("desAbout")}</p>
+                )}
 
               </div>
             </section>

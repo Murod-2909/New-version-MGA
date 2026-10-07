@@ -164,6 +164,23 @@ ul {
   padding-right: 15px;
 }
 
+// On tablets and phones 80% of the viewport wasted a fifth of the screen (a 375px phone
+// got a 270px column), so the content uses the full width with a modest gutter.
+@media (max-width: 991px) {
+  .container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 
 
 ::-webkit-input-placeholder {
