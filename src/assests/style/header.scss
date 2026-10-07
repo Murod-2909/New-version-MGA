@@ -269,12 +269,6 @@
   }
 }
 
-// Needs the extra specificity: global.scss is bundled several times and its
-// `.container { max-width: 80% }` would otherwise win by source order.
-.main_header .main_header__bar {
-  max-width: min(1600px, 94%);
-}
-
 // The quote button inside the top row is for tablets/phones only (the menu row has its own).
 .main_header .main_header__cta--bar {
   display: none;
