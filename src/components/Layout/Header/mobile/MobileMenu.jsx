@@ -2,18 +2,19 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Link from "../../../LocaleLink";
-import { stripLang } from "../../../../serves/locale";
+import { stripLang, withLang } from "../../../../serves/locale";
 import { RxCross2 } from "react-icons/rx";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaPhoneAlt } from "react-icons/fa";
 import serviceSlugs from "../../../../data/services-content";
 import useProductionLinks from "../../../../hooks/useProductionLinks";
 import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
+import Language from "../../../Language/language";
 import "./style.scss";
 import logo from "../../../../assests/images/Log.png";
 
 const MobileMenu = ({ isOpen, onClose }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const [servicesOpen, setServicesOpen] = useState(false);
   const productionLinks = useProductionLinks({ load: false }); // the header already loads the data
@@ -121,6 +122,27 @@ const MobileMenu = ({ isOpen, onClose }) => {
               </li>
             ))}
           </ul>
+
+          <div className="mobile-menu-sheet__actions">
+            <Link to="/contact" className="mobile-menu-sheet__cta" onClick={() => onClose(false)}>
+              {t("services.requestQuote")}
+            </Link>
+            <a className="mobile-menu-sheet__phone" href="tel:+998770124004">
+              <FaPhoneAlt aria-hidden="true" />
+              +998 77 012 40 04
+            </a>
+            <a
+              className="mobile-menu-sheet__catalog"
+              href={withLang("/catalogBook", i18n.language)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              E-Catalog
+            </a>
+            <div className="mobile-menu-sheet__lang">
+              <Language />
+            </div>
+          </div>
         </div>
       </CSSTransition>
     </>

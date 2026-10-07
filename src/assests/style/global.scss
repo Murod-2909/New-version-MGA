@@ -152,7 +152,9 @@ ul {
   margin: 0 auto;
   width: 100%;
   min-width: 300px;
-  overflow: hidden;
+  // `clip` hides horizontal overflow like `hidden` but does not create a scroll container,
+  // so the sticky header can stick to the viewport.
+  overflow-x: clip;
 }
 
 .container {

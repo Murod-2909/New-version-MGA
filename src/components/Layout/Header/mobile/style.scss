@@ -154,3 +154,60 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
+// Bottom of the sheet: the main action, a call link, the catalogue and the language switch.
+.mobile-menu-sheet {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.mobile-menu-sheet__actions {
+  margin-top: auto;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-menu-sheet__cta {
+  display: block;
+  padding: 15px 20px;
+  border-radius: 999px;
+  background-color: #be4c15;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mobile-menu-sheet__phone,
+.mobile-menu-sheet__catalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 2px solid #112337;
+  border-radius: 999px;
+  color: #112337;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.mobile-menu-sheet__lang {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
+
+  .lang-simple {
+    .lang-item,
+    .divider {
+      color: #112337;
+    }
+
+    .lang-item.active {
+      color: #b84a12;
+    }
+  }
+}

@@ -1,425 +1,241 @@
-@import "global";
+// Site header: one slim sticky bar. The Services dropdown styles are in
+// components/Layout/Header/ServicesMenu.scss.
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .main_header {
-  width: 100%;
-  background: transparent;
-  transition: all 500ms ease;
-  z-index: 99;
-  position: relative;
-
-  &_top {
-    position: relative;
-    display: block;
-    background-color: #f0e3cc;
-    padding-bottom: 35px;
-    margin-bottom: -35px;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 8px;
-      width: 50%;
-      content: "";
-      background-color: #112337;
-    }
-
-    &:after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 8px;
-      width: 50%;
-      content: "";
-      background-color: #d25717;
-    }
-
-    &_inner {
-      position: relative;
-      display: block;
-      padding: 36px 0 27px;
-
-      &_logo {
-        position: relative;
-        display: block;
-        float: left;
-        .logoItem {
-          width: 100px;
-        }
-      }
-
-      &_right {
-        position: relative;
-        display: block;
-        float: right;
-
-        &_content {
-          position: relative;
-          display: flex;
-          align-items: center;
-          padding: 8px 0 2px;
-
-          &_address {
-            position: relative;
-            display: block;
-
-            &_topBox {
-              position: relative;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 30px;
-
-              &_li {
-                position: relative;
-                display: flex;
-                align-items: center;
-
-                &::before {
-                  position: absolute;
-                  top: -4px;
-                  bottom: -5px;
-                  right: -28px;
-                  content: "";
-                  width: 1px;
-                  background-color: var(--ambed-bdr-color, #e2ddda);
-                  transform: rotate(12deg);
-                }
-
-                .icon {
-                  position: relative;
-                  display: flex;
-                  align-items: center;
-                  top: -3px;
-                  width: 30px;
-                  height: 30px;
-                  font-size: 30px;
-                  color: #112337;
-                }
-
-                &_texts {
-                  margin-left: 10px;
-
-                  .ps {
-                    font-size: 12px;
-                    font-weight: 600;
-                    line-height: 12px;
-                    color: #c7bbb3;
-                  }
-
-                  .h5 {
-                    font-size: 14px;
-                    font-weight: 700;
-                    line-height: 26px;
-                    color: #112337 !important;
-                  }
-                }
-              }
-            }
-          }
-
-          &_right-social {
-            display: flex;
-            align-items: center;
-            margin-left: 40px;
-            margin-top: -3px;
-            gap: 10px;
-
-            .social-icon {
-              background-color: #112337;
-              position: relative;
-              height: 40px;
-              width: 40px;
-              color: white;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-align: center;
-              font-size: 15px;
-              z-index: 1;
-              font-weight: 400;
-              border-radius: 50%;
-              overflow: hidden;
-
-              &::after {
-                position: absolute;
-                content: "";
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                background-color: #d25717;
-                -webkit-transition-delay: 0.1s;
-                transition-delay: 0.1s;
-                -webkit-transition-timing-function: ease-in-out;
-                transition-timing-function: ease-in-out;
-                -webkit-transition-duration: 0.4s;
-                transition-duration: 0.4s;
-                -webkit-transition-property: all;
-                transition-property: all;
-                opacity: 1;
-                -webkit-transform-origin: top;
-                transform-origin: top;
-                -webkit-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-
-                transform: scaleY(0);
-                z-index: -1;
-              }
-
-              &:hover:after {
-                opacity: 1;
-                color: #ffffff;
-                transform: scaleY(1);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .main-menu {
-    position: relative;
-    display: block;
-
-    &_wrapper {
-      position: relative;
-      display: block;
-
-      &_inners {
-        background-color: #112337;
-        box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.1);
-        padding-left: 40px;
-        padding-right: 5px;
-
-        &_left {
-          display: block;
-          float: left;
-
-          &_boxMenu {
-            display: block;
-
-            &_list {
-              display: flex;
-              align-items: center;
-              gap: 44px;
-
-              // Every item gets the padding, not just .current — on pages where no
-              // item is current (/production/*, /services/*, /projects/*) the links
-              // would otherwise collapse to the top of the bar.
-              li {
-                padding-top: 20px;
-                padding-bottom: 20px;
-                position: relative;
-              }
-
-              .current {
-                &_items {
-                  color: white;
-                  font-weight: 500;
-                  font-size: 17px;
-                }
-
-                &_border {
-                  transform: translateX(-50%) translateY(0px);
-                  opacity: 1;
-                  visibility: visible;
-                  height: 11px;
-                  position: absolute;
-                  bottom: 0;
-                  left: 50%;
-                  width: 12px;
-                  border-left: 2px solid #3b3430;
-                  border-right: 2px solid #3b3430;
-
-                  &::before {
-                    position: absolute;
-                    top: -7px;
-                    bottom: 0;
-                    left: 50%;
-                    width: 2px;
-                    background-color: var(--ambed-base, #a47c68);
-                    content: "";
-                    transform: translateX(-50%);
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        &_right {
-          position: relative;
-          display: block;
-          float: right;
-
-          &_btn {
-            align-items: center;
-            padding: 5px 0;
-            display: flex;
-            position: relative;
-
-            &_language {
-              display: flex;
-              position: relative;
-              margin-right: 30px;
-
-              &::before {
-                position: absolute;
-                top: -8px;
-                bottom: -7px;
-                left: -30px;
-                content: "";
-                width: 1px;
-                background-color: var(--ambed-bdr-color, #e2ddda);
-              }
-            }
-
-            &_btnBox {
-              &_thn {
-                position: relative;
-                display: inline-block;
-                vertical-align: middle;
-                -webkit-appearance: none;
-                outline: none !important;
-                background-color: #f0e3cc;
-                color: #112337;
-                font-size: 14px;
-                font-weight: 700;
-                padding: 15px 50px 15px;
-                transition: all 0.5s linear;
-                overflow: hidden;
-                z-index: 1;
-
-                &:hover {
-                  color: $ambed-white;
-                  transition: all 0.5s linear;
-                }
-
-                &::after {
-                  position: absolute;
-                  content: "";
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  width: 3px;
-                  background-color: #d25717;
-                  transition: width 0.5s ease;
-                  opacity: 1;
-                  z-index: -1;
-                }
-
-                &:hover:after {
-                  opacity: 1;
-                  transition-property: all;
-                  width: 100%;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.clearfix::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-.stricky-header {
-  visibility: visible; // bunga `hidden` emas, `visible` bo‘lishi kerak
-  transition: width 0.5s ease; // yoki animatsiya orqali o‘zgaradi
-}
-
-.stricky-header {
-  position: fixed !important;
+  position: sticky;
   top: 0;
-  left: 0;
+  z-index: 99;
   width: 100%;
-  background-color: #112337;
-  z-index: 9991;
-  transition: width 0.5s ease;
-  visibility: visible;
-  box-shadow: 0 10px 60px 0 rgba(0, 0, 0, 0.05);
-}
+  background-color: #0d1b2e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: box-shadow 250ms ease, background-color 250ms ease;
 
-@media (max-width: 1199px) {
-  .stricky-header {
-    display: none !important;
+  &.is-scrolled {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   }
-}
 
-.stricky-header.stricky-fixed {
-  -webkit-transform: translateY(0);
-  transition: width 0.5s ease;
-  visibility: visible;
-}
-.stricky-header.stricky-fixed {
-  .main-menu_wrapper_inners {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-}
-
-.stricky-header .main-menu__inner {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  padding-right: 0;
-  max-width: 1170px;
-  width: 100%;
-  transition: width 0.5s ease;
-  margin: 0 auto;
-}
-.burger {
-  display: none;
-}
-@media (max-width: 1190px) {
-  .main_header_top_inner_right_content_address_topBox {
-    display: none;
-  }
-  .burger {
+  &__bar {
     display: flex;
-    margin-top: 25px;
-    font-size: 23px;
-    border: none;
-    color: #a47c68;
-    background: transparent;
+    align-items: center;
+    gap: clamp(20px, 2vw, 44px);
+    min-height: 76px;
   }
- 
-  
-  .main-menu_wrapper_inners_left_boxMenu_list {
-    display: none !important;
-  }
-  
-}
-@media (max-width: 768px) {
-  .main_header_top_inner_right {
-    display: none;
-  }
-  .main-menu_wrapper_inners_right_btn_btnBox{
-    display: none;
-  }
-  .burger {
-    display: flex;
-    margin-top: 10px;
-    font-size: 23px;
-  }
-  .main_header .main-menu_wrapper_inners{
-    padding: 15px;
-  }
-  .main_header_top_inner_logo {
-    position: relative;
-    float: none;
-    .logoItem {
-      width: 120px;
+
+  &__logo {
+    display: block;
+    flex: 0 0 auto;
+
+    img {
+      display: block;
+      width: 132px;
       height: auto;
-      margin: 0 auto;
-      display: flex;
     }
   }
+
+  &__nav {
+    flex: 1 1 auto;
+
+    > ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2px, 0.4vw, 10px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    > ul > li {
+      position: relative;
+      padding: 22px 0; // keeps the hover area continuous down to the dropdown
+
+      > a {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding: 6px clamp(10px, 1vw, 22px);
+        color: #fff;
+        font-size: clamp(15px, 0.85vw, 18px);
+        font-weight: 600;
+        transition: color 200ms ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: clamp(10px, 1vw, 22px);
+          right: clamp(10px, 1vw, 22px);
+          bottom: -2px;
+          height: 2px;
+          border-radius: 2px;
+          background-color: #ef7d45;
+          transform: scaleX(0);
+          transition: transform 250ms ease;
+        }
+
+        &:hover,
+        &:focus-visible {
+          color: #ef7d45;
+        }
+      }
+
+      &.current > a::after,
+      > a:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.4vw, 28px);
+    margin-left: auto;
+  }
+
+  &__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    svg {
+      flex: 0 0 auto;
+      padding: 9px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ef7d45;
+    }
+
+    &:hover {
+      color: #ef7d45;
+    }
+  }
+
+  &__catalog {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d3ccc6;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 13px clamp(20px, 1.5vw, 32px);
+    border-radius: 999px;
+    background-color: #be4c15;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background-color 250ms ease;
+
+    &:hover {
+      background-color: #9b3e0e;
+    }
+
+    &:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 2px;
+    }
+  }
+
+  &__burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 3px solid #ef7d45;
+    }
+  }
+
+  a:focus-visible {
+    outline: 2px solid #ef7d45;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+// Narrower desktops: drop the least important items first.
+@media (max-width: 1480px) {
+  .main_header__catalog {
+    display: none;
+  }
+}
+
+@media (max-width: 1320px) {
+  .main_header__phone-text {
+    display: none;
+  }
+}
+
+// Tablet and phone: the menu moves into the slide-in sheet (MobileMenu).
+@media (max-width: 1260px) {
+  .main_header {
+    &__bar {
+      min-height: 68px;
+      gap: 16px;
+    }
+
+    &__logo img {
+      width: 112px;
+    }
+
+    &__nav,
+    &__lang {
+      display: none;
+    }
+
+    &__right {
+      gap: 12px;
+    }
+
+    &__burger {
+      display: inline-flex;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .main_header__cta {
+    display: none; // the sheet has the same button, and phone + burger keep the bar uncluttered
+  }
+}
+
+// Needs the extra specificity: global.scss is bundled several times and its
+// `.container { max-width: 80% }` would otherwise win by source order.
+.main_header .main_header__bar {
+  max-width: min(1600px, 94%);
 }
