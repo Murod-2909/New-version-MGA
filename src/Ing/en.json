@@ -47,7 +47,10 @@
     "successText": "Your message has been sent. We will get back to you soon.",
     "sendAnother": "Send another message",
     "errorPhone": "Please enter a valid phone number.",
-    "defaultSubject": "Website inquiry"
+    "defaultSubject": "Website inquiry",
+    "errorTooMany": "Too many messages. Please try again in a minute.",
+    "newsletterSuccess": "Successfully subscribed!",
+    "newsletterError": "Something went wrong. Please try again."
   },
   "contactPage": {
     "addressLabel": "Address",
@@ -60,7 +63,9 @@
     "tip2": "Size and place: indoor or outdoor, city and address",
     "tip3": "Deadline, and your logo or drawing if you have one",
     "callNow": "Call now",
-    "writeUs": "Write to us"
+    "writeUs": "Write to us",
+    "hoursLabel": "Working hours",
+    "hoursValue": "Mon–Sat, 9:00–19:00"
   },
   "formErrorRequired":"This field is required.",
   "formErrorEmail":"Please enter a valid email address.",

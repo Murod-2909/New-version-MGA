@@ -8,6 +8,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
+  FaClock,
   FaArrowRight,
   FaCheckCircle,
   FaFacebookF,
@@ -79,6 +80,13 @@ const Contact = () => {
                 <FaArrowRight aria-hidden="true" />
               </span>
             </a>
+            <div className="contact-quick__card contact-quick__card--static">
+              <span className="contact-quick__icon" aria-hidden="true">
+                <FaClock />
+              </span>
+              <span className="contact-quick__label">{t("contactPage.hoursLabel")}</span>
+              <span className="contact-quick__value">{t("contactPage.hoursValue")}</span>
+            </div>
           </div>
         </div>
       </section>

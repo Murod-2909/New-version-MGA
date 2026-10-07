@@ -16,7 +16,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
   const location = useLocation();
   const [servicesOpen, setServicesOpen] = useState(false);
-  const productionLinks = useProductionLinks();
+  const productionLinks = useProductionLinks({ load: false }); // the header already loads the data
   const rawPath = stripLang(location.pathname);
   // Service and production detail pages belong to the "Services" item.
   const currentPath = /^\/(services|production)\//.test(rawPath) ? "/serves" : rawPath;

@@ -47,7 +47,10 @@
     "successText": "Xabaringiz yuborildi. Tez orada siz bilan bog'lanamiz.",
     "sendAnother": "Yana xabar yuborish",
     "errorPhone": "Telefon raqamini to'g'ri kiriting.",
-    "defaultSubject": "Saytdan so'rov"
+    "defaultSubject": "Saytdan so'rov",
+    "errorTooMany": "Juda ko'p xabar. Bir daqiqadan keyin urinib ko'ring.",
+    "newsletterSuccess": "Obuna muvaffaqiyatli amalga oshirildi!",
+    "newsletterError": "Xatolik yuz berdi. Qayta urinib ko'ring."
   },
   "contactPage": {
     "addressLabel": "Manzil",
@@ -60,7 +63,9 @@
     "tip2": "O'lcham va joy: ichkarida yoki tashqarida, shahar va manzil",
     "tip3": "Muddat, shuningdek logotip yoki chizmangiz bo'lsa",
     "callNow": "Qo'ng'iroq qilish",
-    "writeUs": "Bizga yozing"
+    "writeUs": "Bizga yozing",
+    "hoursLabel": "Ish vaqti",
+    "hoursValue": "Du–Sha, 9:00–19:00"
   },
   "formErrorRequired":"Bu maydonni to'ldirish shart.",
   "formErrorEmail":"Iltimos, to'g'ri email manzilini kiriting.",

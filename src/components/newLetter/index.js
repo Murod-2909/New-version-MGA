@@ -17,11 +17,11 @@ export default function NewLetter() {
     dispatch(sendEmail({ email }))
       .unwrap()
       .then(() => {
-        toast.success("Successfully subscribed!");
+        toast.success(t("form.newsletterSuccess"));
         setEmail("");
       })
-      .catch(() => {
-        toast.error("Something went wrong. Please try again.");
+      .catch((err) => {
+        toast.error(err?.status === 429 ? t("form.errorTooMany") : t("form.newsletterError"));
       });
   };
 
