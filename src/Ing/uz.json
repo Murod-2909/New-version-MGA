@@ -5,6 +5,8 @@
   "galleryImageAlt": "Tabela va reklama loyihasi surati",
   "galleryPage": {
     "open": "Rasmni ochish",
+    "video": "Video",
+    "playVideo": "Videoni ko'rish",
     "close": "Yopish",
     "empty": "Hozircha rasmlar yo'q.",
     "error": "Galereyani yuklab bo'lmadi. Keyinroq urinib ko'ring."

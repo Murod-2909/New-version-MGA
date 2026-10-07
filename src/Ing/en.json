@@ -5,6 +5,8 @@
   "galleryImageAlt": "Signage and advertising project photo",
   "galleryPage": {
     "open": "Open photo",
+    "video": "Video",
+    "playVideo": "Play video",
     "close": "Close",
     "empty": "No photos yet.",
     "error": "Couldn't load the gallery. Please try again later."

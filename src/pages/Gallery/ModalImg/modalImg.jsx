@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import { FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { isVideo } from "../../../data/media";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,6 +13,24 @@ import "./modalImg.scss";
 // no autoplay: someone studying a photo shouldn't have it swapped out from
 // under them. Closes on Esc, on a click outside the photo/controls, and locks
 // page scroll while open.
+// Plays the video of the slide that is showing and pauses every other one.
+const syncVideos = (swiper) => {
+  swiper.slides.forEach((slide, i) => {
+    const video = slide.querySelector("video");
+    if (!video) return;
+    if (i === swiper.activeIndex) {
+      // Try with sound first (the lightbox was opened by a click); fall back to muted
+      // if the browser's autoplay policy refuses.
+      video.play().catch(() => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
+    } else {
+      video.pause();
+    }
+  });
+};
+
 const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
   const { t } = useTranslation();
   const closeRef = useRef(null);
@@ -33,7 +52,7 @@ const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
 
   const handleBackdropClick = (e) => {
     const onControl = e.target.closest(
-      "img, button, .swiper-pagination, .swiper-button-prev, .swiper-button-next"
+      "img, video, button, .swiper-pagination, .swiper-button-prev, .swiper-button-next"
     );
     if (!onControl) onClose();
   };
@@ -67,15 +86,28 @@ const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
           keyboard={{ enabled: true }}
           rewind
           className="custom-swiper"
+          onSwiper={syncVideos}
+          onSlideChange={syncVideos}
         >
           {galleryImages.map((img, index) => (
             <SwiperSlide key={`${index}-${img.image}`}>
-              <img
-                src={img.image}
-                alt={`${t("galleryImageAlt")} ${index + 1}`}
-                loading={index === initialSlide ? "eager" : "lazy"}
-                decoding="async"
-              />
+              {isVideo(img) ? (
+                <video
+                  src={img.video}
+                  poster={img.image}
+                  controls
+                  playsInline
+                  preload={index === initialSlide ? "auto" : "none"}
+                  aria-label={`${t("galleryPage.video")} ${index + 1}`}
+                />
+              ) : (
+                <img
+                  src={img.image}
+                  alt={`${t("galleryImageAlt")} ${index + 1}`}
+                  loading={index === initialSlide ? "eager" : "lazy"}
+                  decoding="async"
+                />
+              )}
             </SwiperSlide>
           ))}
         </Swiper>

@@ -4,6 +4,8 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "swiper/css";
 import ModalCarousel from "../../pages/Gallery/ModalImg/modalImg";
+import PlayBadge from "../PlayBadge";
+import { isVideo, mediaPoster } from "../../data/media";
 import "./style.scss";
 
 // Photos of work done with a piece of equipment (the `works` array the backend
@@ -15,7 +17,8 @@ const WorksSlider = ({ works = [], title = "", heading, subheading }) => {
   const [edges, setEdges] = useState({ start: true, end: false });
   const [openIndex, setOpenIndex] = useState(null);
 
-  const photos = (works || []).filter((w) => w && w.image);
+  // A video counts as long as it has a poster to show in the grid.
+  const photos = (works || []).filter((w) => w && (w.image || w.thumbnail));
   if (photos.length === 0) return null;
 
   const syncEdges = (s) => setEdges({ start: s.isBeginning, end: s.isEnd });
@@ -72,14 +75,15 @@ const WorksSlider = ({ works = [], title = "", heading, subheading }) => {
               type="button"
               className="works-slider__card"
               onClick={() => setOpenIndex(index)}
-              aria-label={`${title} — ${index + 1}`}
+              aria-label={`${isVideo(work) ? `${t("galleryPage.playVideo")}: ` : ""}${title} — ${index + 1}`}
             >
               <img
-                src={work.thumbnail || work.image}
+                src={mediaPoster(work)}
                 alt={`${title} — ${index + 1}`}
                 loading="lazy"
                 decoding="async"
               />
+              {isVideo(work) && <PlayBadge duration={work.duration} />}
             </button>
           </SwiperSlide>
         ))}
