@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "../LocaleLink";
 import { useTranslation } from "react-i18next";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaPlay } from "react-icons/fa";
 import { categoryLabel } from "../../pages/Projects/categories";
 import "./style.scss";
 
@@ -45,6 +45,12 @@ const ProjectCard = ({ project }) => {
           />
         )}
         {category && <span className="project-card__chip">{category}</span>}
+        {project.has_video && (
+          <span className="project-card__video">
+            <FaPlay aria-hidden="true" />
+            {t("galleryPage.video")}
+          </span>
+        )}
       </div>
       <div className="project-card__body">
         <h3 className="project-card__title">{project.title}</h3>

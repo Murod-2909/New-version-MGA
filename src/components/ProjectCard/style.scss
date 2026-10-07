@@ -17,6 +17,27 @@
   overflow: hidden;
   transition: transform 300ms ease, box-shadow 300ms ease;
 
+  // "Video" tag for projects that include video clips (backend: has_video).
+  &__video {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background-color: rgba(17, 35, 55, 0.85);
+    color: $ambed-white;
+    font-size: 12px;
+    font-weight: 700;
+
+    svg {
+      font-size: 10px;
+    }
+  }
+
   &__media {
     position: relative;
     aspect-ratio: 4 / 3;
