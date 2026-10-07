@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { FaChevronDown, FaPhoneAlt, FaBookOpen } from "react-icons/fa";
+import {
+  FaChevronDown,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaBookOpen,
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+} from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
@@ -14,10 +22,16 @@ import "./ServicesMenu.scss";
 import "../../../assests/style/header.scss";
 
 const PHONE = { href: "tel:+998770124004", label: "+998 77 012 40 04" };
+const EMAIL = "info@mgareklama.com";
+const SOCIALS = [
+  { href: "https://www.facebook.com/mgareklama/", label: "Facebook", Icon: FaFacebookF },
+  { href: "https://www.instagram.com/mgareklama/", label: "Instagram", Icon: FaInstagram },
+  { href: "https://www.youtube.com/@mgareklama", label: "YouTube", Icon: FaYoutube },
+];
 
-// One slim, sticky bar: logo, menu, and the two things a visitor most often wants
-// (call us / request a quote). Contact details and social links live in the footer
-// and on the Contact page instead of a second header row.
+// Two rows on desktop: contact details + language on top (scrolls away), the menu and
+// the main action below (sticks to the top). On tablets and phones the top row becomes
+// the one sticky bar and the menu moves into the slide-in sheet.
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,7 +47,7 @@ const Header = () => {
     : rawPath;
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    const onScroll = () => setIsScrolled(window.scrollY > 90);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -49,12 +63,71 @@ const Header = () => {
 
   return (
     <>
-      <header className={`main_header${isScrolled ? " is-scrolled" : ""}`}>
+      <header className="main_header main_header--top">
         <div className="container main_header__bar">
           <Link to="/" className="main_header__logo">
             <img src={logo} alt="MGA Reklama" width="132" height="61" />
           </Link>
 
+          <ul className="main_header__contacts">
+            <li>
+              <a href={PHONE.href}>
+                <span className="main_header__contact-icon" aria-hidden="true">
+                  <FaPhoneAlt />
+                </span>
+                <span>
+                  <span className="main_header__contact-label">{t("call")}</span>
+                  <span className="main_header__contact-value">{PHONE.label}</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${EMAIL}`}>
+                <span className="main_header__contact-icon" aria-hidden="true">
+                  <FaEnvelope />
+                </span>
+                <span>
+                  <span className="main_header__contact-label">{t("send")}</span>
+                  <span className="main_header__contact-value">{EMAIL}</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <div className="main_header__right">
+            <div className="main_header__social">
+              {SOCIALS.map(({ href, label, Icon }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+                  <Icon aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+            <div className="main_header__lang">
+              <Language />
+            </div>
+
+            {/* Tablet / phone only */}
+            <a className="main_header__call" href={PHONE.href} aria-label={t("call")}>
+              <FaPhoneAlt aria-hidden="true" />
+            </a>
+            <Link to="/contact" className="main_header__cta main_header__cta--bar">
+              {t("services.requestQuote")}
+            </Link>
+            <button
+              type="button"
+              className="main_header__burger"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Menu"
+              aria-expanded={isMenuOpen}
+            >
+              <RxHamburgerMenu />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className={`main_header main_header--nav${isScrolled ? " is-scrolled" : ""}`}>
+        <div className="container main_header__bar">
           <nav className="main_header__nav" aria-label="Main">
             <ul>
               {item("/", t("main"))}
@@ -108,15 +181,7 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className="main_header__right">
-            <a className="main_header__phone" href={PHONE.href}>
-              <FaPhoneAlt aria-hidden="true" />
-              <span className="main_header__phone-text">{PHONE.label}</span>
-              <span className="sr-only">{t("call")}</span>
-            </a>
-            <div className="main_header__lang">
-              <Language />
-            </div>
+          <div className="main_header__actions">
             <a
               className="main_header__catalog"
               href={withLang("/catalogBook", i18n.language)}
@@ -129,18 +194,10 @@ const Header = () => {
             <Link to="/contact" className="main_header__cta">
               {t("services.requestQuote")}
             </Link>
-            <button
-              type="button"
-              className="main_header__burger"
-              onClick={() => setIsMenuOpen(true)}
-              aria-label="Menu"
-              aria-expanded={isMenuOpen}
-            >
-              <RxHamburgerMenu />
-            </button>
           </div>
         </div>
-      </header>
+      </div>
+
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );

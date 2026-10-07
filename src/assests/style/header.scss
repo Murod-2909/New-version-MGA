@@ -1,5 +1,8 @@
-// Site header: one slim sticky bar. The Services dropdown styles are in
-// components/Layout/Header/ServicesMenu.scss.
+// Site header, two rows on desktop:
+//   .main_header--top  logo, contact details, social links, language (scrolls away)
+//   .main_header--nav  menu + E-Catalog + "Request a quote" (sticks to the top)
+// Tablets/phones use the top row alone as the sticky bar; the menu moves into MobileMenu.
+// The Services dropdown styles live in components/Layout/Header/ServicesMenu.scss.
 .sr-only {
   position: absolute;
   width: 1px;
@@ -13,23 +16,30 @@
 }
 
 .main_header {
-  position: sticky;
-  top: 0;
-  z-index: 99;
   width: 100%;
-  background-color: #0d1b2e;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  transition: box-shadow 250ms ease, background-color 250ms ease;
-
-  &.is-scrolled {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  }
+  z-index: 99;
 
   &__bar {
     display: flex;
     align-items: center;
     gap: clamp(20px, 2vw, 44px);
-    min-height: 76px;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #ef7d45;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  // ---------- top row ----------
+  &--top {
+    position: relative;
+    background-color: #0b1727;
+
+    .main_header__bar {
+      min-height: 88px;
+    }
   }
 
   &__logo {
@@ -43,14 +53,114 @@
     }
   }
 
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: clamp(22px, 3vw, 56px);
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    a:hover .main_header__contact-value {
+      color: #ef7d45;
+    }
+  }
+
+  &__contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ef7d45;
+    font-size: 16px;
+  }
+
+  &__contact-label {
+    display: block;
+    color: #8f9aa6;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__contact-value {
+    display: block;
+    font-size: clamp(15px, 0.85vw, 17px);
+    font-weight: 700;
+    transition: color 200ms ease;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.6vw, 30px);
+  }
+
+  &__social {
+    display: flex;
+    gap: 8px;
+
+    a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: background-color 250ms ease, border-color 250ms ease;
+
+      &:hover {
+        background-color: #d25717;
+        border-color: #d25717;
+      }
+    }
+  }
+
+  &__call,
+  &__burger {
+    display: none;
+  }
+
+  // ---------- menu row ----------
+  &--nav {
+    position: sticky;
+    top: 0;
+    background-color: #112337;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: box-shadow 250ms ease;
+
+    &.is-scrolled {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .main_header__bar {
+      min-height: 66px;
+    }
+  }
+
   &__nav {
     flex: 1 1 auto;
 
     > ul {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: clamp(2px, 0.4vw, 10px);
+      gap: clamp(2px, 0.5vw, 14px);
       margin: 0;
       padding: 0;
       list-style: none;
@@ -58,13 +168,13 @@
 
     > ul > li {
       position: relative;
-      padding: 22px 0; // keeps the hover area continuous down to the dropdown
+      padding: 19px 0; // keeps the hover area continuous down to the dropdown
 
       > a {
         position: relative;
         display: inline-flex;
         align-items: center;
-        padding: 6px clamp(10px, 1vw, 22px);
+        padding: 6px clamp(10px, 1.1vw, 24px);
         color: #fff;
         font-size: clamp(15px, 0.85vw, 18px);
         font-weight: 600;
@@ -73,8 +183,8 @@
         &::after {
           content: "";
           position: absolute;
-          left: clamp(10px, 1vw, 22px);
-          right: clamp(10px, 1vw, 22px);
+          left: clamp(10px, 1.1vw, 24px);
+          right: clamp(10px, 1.1vw, 24px);
           bottom: -2px;
           height: 2px;
           border-radius: 2px;
@@ -96,35 +206,11 @@
     }
   }
 
-  &__right {
+  &__actions {
     display: flex;
     align-items: center;
-    gap: clamp(14px, 1.4vw, 28px);
+    gap: clamp(14px, 1.6vw, 28px);
     margin-left: auto;
-  }
-
-  &__phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    white-space: nowrap;
-
-    svg {
-      flex: 0 0 auto;
-      padding: 9px;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #ef7d45;
-    }
-
-    &:hover {
-      color: #ef7d45;
-    }
   }
 
   &__catalog {
@@ -156,15 +242,20 @@
     &:hover {
       background-color: #9b3e0e;
     }
+  }
 
-    &:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 2px;
-    }
+  &__call {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ef7d45;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
   }
 
   &__burger {
-    display: none;
     align-items: center;
     justify-content: center;
     width: 44px;
@@ -175,62 +266,6 @@
     color: #fff;
     font-size: 24px;
     cursor: pointer;
-
-    &:focus-visible {
-      outline: 3px solid #ef7d45;
-    }
-  }
-
-  a:focus-visible {
-    outline: 2px solid #ef7d45;
-    outline-offset: 3px;
-    border-radius: 6px;
-  }
-}
-
-// Narrower desktops: drop the least important items first.
-@media (max-width: 1480px) {
-  .main_header__catalog {
-    display: none;
-  }
-}
-
-@media (max-width: 1320px) {
-  .main_header__phone-text {
-    display: none;
-  }
-}
-
-// Tablet and phone: the menu moves into the slide-in sheet (MobileMenu).
-@media (max-width: 1260px) {
-  .main_header {
-    &__bar {
-      min-height: 68px;
-      gap: 16px;
-    }
-
-    &__logo img {
-      width: 112px;
-    }
-
-    &__nav,
-    &__lang {
-      display: none;
-    }
-
-    &__right {
-      gap: 12px;
-    }
-
-    &__burger {
-      display: inline-flex;
-    }
-  }
-}
-
-@media (max-width: 575px) {
-  .main_header__cta {
-    display: none; // the sheet has the same button, and phone + burger keep the bar uncluttered
   }
 }
 
@@ -238,4 +273,64 @@
 // `.container { max-width: 80% }` would otherwise win by source order.
 .main_header .main_header__bar {
   max-width: min(1600px, 94%);
+}
+
+// The quote button inside the top row is for tablets/phones only (the menu row has its own).
+.main_header .main_header__cta--bar {
+  display: none;
+}
+
+// Smaller laptops: the e-mail goes first, then the social icons.
+@media (max-width: 1500px) {
+  .main_header__social {
+    display: none;
+  }
+}
+
+@media (max-width: 1360px) {
+  .main_header__contacts li:nth-child(2) {
+    display: none;
+  }
+}
+
+// Tablet and phone: one sticky bar (logo, call, quote, burger); the menu is in MobileMenu.
+@media (max-width: 1260px) {
+  .main_header--top {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+    .main_header__bar {
+      min-height: 68px;
+      gap: 16px;
+    }
+  }
+
+  .main_header--nav,
+  .main_header__contacts,
+  .main_header__social,
+  .main_header__lang {
+    display: none;
+  }
+
+  .main_header__logo img {
+    width: 112px;
+  }
+
+  .main_header__right {
+    margin-left: auto;
+    gap: 12px;
+  }
+
+  .main_header__call,
+  .main_header__burger,
+  .main_header .main_header__cta--bar {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 575px) {
+  .main_header .main_header__cta--bar {
+    display: none; // the sheet has the same button
+  }
 }
