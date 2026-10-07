@@ -10,13 +10,12 @@ import TeamSection from "../../components/TeamSection";
 import Link from "../../components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import { FaPencilRuler, FaIndustry, FaTools, FaArrowRight } from "react-icons/fa";
-import useProductionLinks from "../../hooks/useProductionLinks";
+import useAboutStats from "../../hooks/useAboutStats";
 import { getGallery } from "../../reduxToolkit/gallerySlice";
 import { mediaPoster } from "../../data/media";
 
 const VIDEO_ID = "55_3tE4tNno";
 
-const FOUNDED_YEAR = 2010; // "Since 2010, our company ..." (see aboutPage.p1)
 const PHOTO_COUNT = 5;
 
 const STEPS = [
@@ -28,26 +27,13 @@ const STEPS = [
 const About = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const productionLinks = useProductionLinks();
-  const partners = useSelector((state) => state.partnerSlice?.partnerData);
   const gallery = useSelector((state) => state.gallerySlice?.galleryData);
 
   useEffect(() => {
     dispatch(getGallery());
   }, [dispatch]);
 
-  // Every figure is real: years since 2010, the 2,000 m² factory (stated in the text),
-  // and live counts from the same data that fills the Services and References sections.
-  const stats = [
-    { value: String(new Date().getFullYear() - FOUNDED_YEAR), label: t("aboutPage.statYears") },
-    { value: t("aboutPage.statAreaValue"), label: t("aboutPage.statArea") },
-    productionLinks.length > 0 && {
-      value: String(productionLinks.length),
-      label: t("aboutPage.statLines"),
-    },
-    Array.isArray(partners) &&
-      partners.length > 0 && { value: String(partners.length), label: t("aboutPage.statPartners") },
-  ].filter(Boolean);
+  const stats = useAboutStats();
 
   // Real photos of the factory and finished work: the first gallery entries, falling
   // back to the factory shot used on the home page.

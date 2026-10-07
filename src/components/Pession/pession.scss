@@ -236,9 +236,71 @@
   }
 }
 
-// Desktop: centre the MGA letters against the text instead of pinning them to the top.
-@media (min-width: 1191px) {
-  .pession_rows {
-    align-items: center;
+// Left column: the MGA letters stay at the top, the company facts sit underneath them.
+.pession_rows {
+  align-items: flex-start;
+}
+
+.pession_rows_leftcol {
+  width: 50%;
+
+  .pession_rows_lefts {
+    width: 100%;
+  }
+}
+
+.pession__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 520px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    background: linear-gradient(145deg, #1d3552 0%, #152a42 100%);
+  }
+}
+
+.pession__stat-value {
+  color: #ef7d45;
+  font-family: var(--ambed-heading-font);
+  font-size: clamp(28px, 2.4vw, 38px);
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.pession__stat-label {
+  margin-top: 6px;
+  color: #d3ccc6;
+  font-size: var(--fs-small);
+  line-height: 1.4;
+}
+
+// Stacked layout: letters, then the text, then the facts (so the story is not pushed down).
+@media (max-width: 1190px) {
+  .pession_rows_leftcol {
+    display: contents;
+  }
+
+  .pession_rows_lefts {
+    order: 1;
+  }
+
+  .pession_rows_rights {
+    order: 2;
+  }
+
+  .pession__stats {
+    order: 3;
+    max-width: none;
+    margin-top: 36px;
   }
 }
