@@ -6,6 +6,7 @@ import { stripLang } from "../../../../serves/locale";
 import { RxCross2 } from "react-icons/rx";
 import { FaChevronDown } from "react-icons/fa";
 import serviceSlugs from "../../../../data/services-content";
+import useProductionLinks from "../../../../hooks/useProductionLinks";
 import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
 import "./style.scss";
@@ -15,6 +16,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
   const location = useLocation();
   const [servicesOpen, setServicesOpen] = useState(false);
+  const productionLinks = useProductionLinks();
   const rawPath = stripLang(location.pathname);
   // Service and production detail pages belong to the "Services" item.
   const currentPath = /^\/(services|production)\//.test(rawPath) ? "/serves" : rawPath;
@@ -85,6 +87,22 @@ const MobileMenu = ({ isOpen, onClose }) => {
                             {t(`services.items.${slug}.h1`)}
                           </Link>
                         ))}
+                        {productionLinks.length > 0 && (
+                          <>
+                            <p className="mobile-menu-sheet__sub-heading">
+                              {t("services.productionTitle")}
+                            </p>
+                            {productionLinks.map(({ slug, title }) => (
+                              <Link
+                                key={slug}
+                                to={`/production/${slug}`}
+                                onClick={() => onClose(false)}
+                              >
+                                {title}
+                              </Link>
+                            ))}
+                          </>
+                        )}
                       </div>
                     )}
                     <hr />

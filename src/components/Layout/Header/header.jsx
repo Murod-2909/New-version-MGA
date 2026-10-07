@@ -13,6 +13,7 @@ import Link from "../../LocaleLink";
 import { stripLang, withLang } from "../../../serves/locale";
 import serviceSlugs from "../../../data/services-content";
 import { FaChevronDown } from "react-icons/fa";
+import useProductionLinks from "../../../hooks/useProductionLinks";
 import "./ServicesMenu.scss";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMailOpenOutline } from "react-icons/io5";
@@ -27,6 +28,7 @@ const Header = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const productionLinks = useProductionLinks();
   const rawPath = stripLang(location.pathname);
   // Service and production detail pages belong to the "Services" menu item.
   const currentPath = /^\/(services|production)\//.test(rawPath) ? "/serves" : rawPath;
@@ -207,17 +209,40 @@ const Header = () => {
                           <span className="current_border"></span>
                         )}
                         <div className="nav-dropdown">
-                          {serviceSlugs.map((slug) => (
-                            <Link
-                              key={slug}
-                              to={`/services/${slug}`}
-                              className={
-                                rawPath === `/services/${slug}` ? "is-active" : undefined
-                              }
-                            >
-                              {t(`services.items.${slug}.h1`)}
-                            </Link>
-                          ))}
+                          <div className="nav-dropdown__col">
+                            <p className="nav-dropdown__heading">
+                              {t("services.sectionTitle")}
+                            </p>
+                            {serviceSlugs.map((slug) => (
+                              <Link
+                                key={slug}
+                                to={`/services/${slug}`}
+                                className={
+                                  rawPath === `/services/${slug}` ? "is-active" : undefined
+                                }
+                              >
+                                {t(`services.items.${slug}.h1`)}
+                              </Link>
+                            ))}
+                          </div>
+                          {productionLinks.length > 0 && (
+                            <div className="nav-dropdown__col">
+                              <p className="nav-dropdown__heading">
+                                {t("services.productionTitle")}
+                              </p>
+                              {productionLinks.map(({ slug, title }) => (
+                                <Link
+                                  key={slug}
+                                  to={`/production/${slug}`}
+                                  className={
+                                    rawPath === `/production/${slug}` ? "is-active" : undefined
+                                  }
+                                >
+                                  {title}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                           <div className="nav-dropdown__all">
                             <Link to="/serves">{t("services.menuAll")}</Link>
                           </div>
