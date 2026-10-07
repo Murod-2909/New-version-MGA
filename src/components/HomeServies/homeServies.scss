@@ -1,38 +1,52 @@
+// Section header for the production-equipment cards (Home and Services pages).
 .services {
   overflow: hidden;
   position: relative;
+  padding-top: 70px;
 
-  &_iServices {
-    width: 50%;
-    height: 300px;
-    background: #f2eeeb;
-    z-index: -1;
-    position: absolute;
-    left: 0;
-    color: #25333b;
+  &__head {
     text-align: center;
-    display: flex;
-    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
     align-items: center;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 900;
-    margin: 0 auto;
-    line-height: normal;
+    gap: 12px;
+    color: #ef7d45;
+    font-size: var(--fs-label);
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+
+    // Short brand-coloured dashes on both sides.
+    &::before,
+    &::after {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #d25717;
+    }
+  }
+
+  &__title {
+    margin: 14px 0 14px;
+    color: #fff;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-heading);
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #b9b0aa;
+    font-size: var(--fs-lead);
+    line-height: 1.6;
   }
 
   &_bad {
-    margin-top: 10%;
-    padding: 60px 0;
-  }
-}
-
-@media only screen and (max-width: 430px) {
-  .services {
-    &_iServices {
-      width: 100%;
-      height: 150px;
-    }
+    padding: 40px 0 60px;
   }
 }

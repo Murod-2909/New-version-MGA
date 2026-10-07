@@ -52,8 +52,8 @@
   &__title {
     margin: 0 0 6px;
     color: #fff;
-    font-size: 26px;
-    font-weight: 800;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-heading);
     line-height: 1.25;
   }
 

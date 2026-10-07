@@ -3,8 +3,8 @@
   .about-section-title {
     margin: 0 0 36px;
     color: #fff;
-    font-size: 30px;
-    font-weight: 800;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-heading);
     text-align: center;
   }
 
@@ -159,8 +159,8 @@
     &__title {
       margin: 0 0 8px;
       color: #112337;
-      font-size: 22px;
-      font-weight: 800;
+      font-size: var(--fs-h3);
+      font-weight: var(--fw-heading);
     }
 
     &__text {
@@ -195,8 +195,8 @@
     &__title {
       margin: 0 0 8px;
       color: #fff;
-      font-size: 30px;
-      font-weight: 800;
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-heading);
     }
 
     &__text {
@@ -274,7 +274,7 @@
 @media (max-width: 575px) {
   .about-page {
     .about-section-title {
-      font-size: 24px;
+      font-size: var(--fs-h2);
       margin-bottom: 26px;
     }
 

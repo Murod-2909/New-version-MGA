@@ -120,8 +120,8 @@
     &__title {
       margin: 0 0 12px;
       color: #112337;
-      font-size: 34px;
-      font-weight: 800;
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-heading);
       line-height: 1.2;
     }
 
@@ -356,7 +356,7 @@
       border-radius: 20px;
 
       &__title {
-        font-size: 26px;
+        font-size: var(--fs-h2);
       }
 
       .validation .form-group {

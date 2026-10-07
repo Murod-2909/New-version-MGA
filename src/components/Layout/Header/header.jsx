@@ -1,30 +1,40 @@
 import React, { useEffect, useState } from "react";
 import {
-  FaFacebookSquare,
+  FaChevronDown,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaBookOpen,
+  FaFacebookF,
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import Link from "../../LocaleLink";
 import { stripLang, withLang } from "../../../serves/locale";
 import serviceSlugs from "../../../data/services-content";
-import { FaChevronDown } from "react-icons/fa";
 import useProductionLinks from "../../../hooks/useProductionLinks";
-import "./ServicesMenu.scss";
-import { FiPhoneCall } from "react-icons/fi";
-import { IoMailOpenOutline } from "react-icons/io5";
-
 import logo from "../../../assests/images/Log.png";
-import "../../../assests/style/header.scss";
 import Language from "../../Language/language";
 import MobileMenu from "./mobile/MobileMenu";
+import "./ServicesMenu.scss";
+import "../../../assests/style/header.scss";
+
+const PHONE = { href: "tel:+998770124004", label: "+998 77 012 40 04" };
+const EMAIL = "info@mgareklama.com";
+const SOCIALS = [
+  { href: "https://www.facebook.com/mgareklama/", label: "Facebook", Icon: FaFacebookF },
+  { href: "https://www.instagram.com/mgareklama/", label: "Instagram", Icon: FaInstagram },
+  { href: "https://www.youtube.com/@mgareklama", label: "YouTube", Icon: FaYoutube },
+];
+
+// Two rows on desktop: contact details + language on top (scrolls away), the menu and
+// the main action below (sticks to the top). On tablets and phones the top row becomes
+// the one sticky bar and the menu moves into the slide-in sheet.
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const productionLinks = useProductionLinks();
@@ -37,266 +47,153 @@ const Header = () => {
     : rawPath;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 90);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const item = (to, label) => (
+    <li className={currentPath === to ? "current" : ""}>
+      <Link to={to} className="current_items" aria-current={currentPath === to ? "page" : undefined}>
+        {label}
+      </Link>
+    </li>
+  );
 
   return (
     <>
-      <header className="main_header clearfix">
-        <div className="main_header_top">
-          <div className="container">
-            <div className="main_header_top_inner clearfix">
-              <div className="main_header_top_inner_logo">
-                <Link to="/">
-                  <img src={logo} className="logoItem" alt="MGA Reklama logo" />
+      <header className="main_header main_header--top">
+        <div className="container main_header__bar">
+          <Link to="/" className="main_header__logo">
+            <img src={logo} alt="MGA Reklama" width="132" height="61" />
+          </Link>
+
+          <ul className="main_header__contacts">
+            <li>
+              <a href={PHONE.href}>
+                <span className="main_header__contact-icon" aria-hidden="true">
+                  <FaPhoneAlt />
+                </span>
+                <span>
+                  <span className="main_header__contact-label">{t("call")}</span>
+                  <span className="main_header__contact-value">{PHONE.label}</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${EMAIL}`}>
+                <span className="main_header__contact-icon" aria-hidden="true">
+                  <FaEnvelope />
+                </span>
+                <span>
+                  <span className="main_header__contact-label">{t("send")}</span>
+                  <span className="main_header__contact-value">{EMAIL}</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <div className="main_header__right">
+            <div className="main_header__social">
+              {SOCIALS.map(({ href, label, Icon }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+                  <Icon aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+            {/* Tablet / phone only */}
+            <a className="main_header__call" href={PHONE.href} aria-label={t("call")}>
+              <FaPhoneAlt aria-hidden="true" />
+            </a>
+            <Link to="/contact" className="main_header__cta main_header__cta--bar">
+              {t("services.requestQuote")}
+            </Link>
+            <button
+              type="button"
+              className="main_header__burger"
+              onClick={() => setIsMenuOpen(true)}
+              aria-label="Menu"
+              aria-expanded={isMenuOpen}
+            >
+              <RxHamburgerMenu />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className={`main_header main_header--nav${isScrolled ? " is-scrolled" : ""}`}>
+        <div className="container main_header__bar">
+          <nav className="main_header__nav" aria-label="Main">
+            <ul>
+              {item("/", t("main"))}
+              {item("/about", t("about"))}
+              {item("/gallery", t("gallery"))}
+
+              <li className={`has-dropdown${currentPath === "/serves" ? " current" : ""}`}>
+                <Link
+                  to="/serves"
+                  className="current_items"
+                  aria-current={currentPath === "/serves" ? "page" : undefined}
+                >
+                  {t("serves")}
+                  <FaChevronDown className="has-dropdown__caret" aria-hidden="true" />
                 </Link>
-              </div>
-              <div className="main_header_top_inner_right">
-                <div className="main_header_top_inner_right_content">
-                  <div className="main_header_top_inner_right_content_address">
-                    <ul className="main_header_top_inner_right_content_address_topBox">
-                      <li className="main_header_top_inner_right_content_address_topBox_li">
-                        <div className="icon">
-                          <FiPhoneCall
-                            style={{ width: "25px", height: "35px" }}
-                          />
-                        </div>
-                        <div className="main_header_top_inner_right_content_address_topBox_li_texts">
-                          <p className="ps">{t("call")}</p>
-                          <h5 className="h5">
-                            <a className="h5" href="tel:+99877 0124004">
-                              +998 77 012 40 04
-                            </a>
-                          </h5>
-                        </div>
-                      </li>
-                      <li className="main_header_top_inner_right_content_address_topBox_li">
-                        <div className="icon">
-                          <IoMailOpenOutline
-                            style={{ width: "30px", height: "35px" }}
-                          />
-                        </div>
-                        <div className="main_header_top_inner_right_content_address_topBox_li_texts">
-                          <p className="ps">{t("send")}</p>
-                          <h5 className="h5">
-                            <a
-                              className="h5"
-                              href="mailto:info@mgareklama.com"
-                            >
-                              info@mgareklama.com
-                            </a>
-                          </h5>
-                        </div>
-                      </li>
-                    </ul>
+                <div className="nav-dropdown">
+                  <div className="nav-dropdown__col">
+                    <p className="nav-dropdown__heading">{t("services.sectionTitle")}</p>
+                    {serviceSlugs.map((slug) => (
+                      <Link
+                        key={slug}
+                        to={`/services/${slug}`}
+                        className={rawPath === `/services/${slug}` ? "is-active" : undefined}
+                      >
+                        {t(`services.items.${slug}.h1`)}
+                      </Link>
+                    ))}
                   </div>
-                  <div className="main_header_top_inner_right_content_right-social">
-                    <a
-                      href="https://www.facebook.com/mgareklama/"
-                      target="_blank"
-                      className="social-icon"
-                      aria-label="Facebook"
-                      
-                      rel="noreferrer"
-                    >
-                      <FaFacebookSquare />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/mgareklama/"
-                      target="_blank"
-                      className="social-icon"
-                      aria-label="Instagram"
-                      
-                      rel="noreferrer"
-                    >
-                      <FaInstagram />
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@mgareklama"
-                      target="_blank"
-                      className="social-icon"
-                      aria-label="YouTube"
-                     
-                      rel="noreferrer"
-                    >
-                      <FaYoutube />
-                    </a>
+                  {productionLinks.length > 0 && (
+                    <div className="nav-dropdown__col">
+                      <p className="nav-dropdown__heading">{t("services.productionTitle")}</p>
+                      {productionLinks.map(({ slug, title }) => (
+                        <Link
+                          key={slug}
+                          to={`/production/${slug}`}
+                          className={rawPath === `/production/${slug}` ? "is-active" : undefined}
+                        >
+                          {title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  <div className="nav-dropdown__all">
+                    <Link to="/serves">{t("services.menuAll")}</Link>
                   </div>
                 </div>
-              </div>
+              </li>
+
+              {item("/projects", t("nav.projects"))}
+              {item("/contact", t("contact"))}
+            </ul>
+          </nav>
+
+          <div className="main_header__actions">
+            <a
+              className="main_header__catalog"
+              href={withLang("/catalogBook", i18n.language)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaBookOpen aria-hidden="true" />
+              E-Catalog
+            </a>
+            <div className="main_header__lang">
+              <Language />
             </div>
           </div>
         </div>
-        <nav
-          className={`main-menu clearfix ${
-            isScrolled ? "stricky-header stricky-fixed" : ""
-          }`}
-        >
-          <div className="main-menu_wrapper clearfix">
-            <div className="container">
-              <div className="main-menu_wrapper_inners clearfix">
-                <div className="main-menu_wrapper_inners_left">
-                  <div className="main-menu_wrapper_inners_left_boxMenu">
-                    <button
-                      onClick={() => setIsMenuOpen(true)}
-                      className="burger"
-                      aria-label="Menu"
-                    >
-                      <RxHamburgerMenu />
-                    </button>
+      </div>
 
-                    <ul
-                      className={`main-menu_wrapper_inners_left_boxMenu_list ${
-                        isMenuOpen ? "active" : ""
-                      }`}
-                    >
-                      <li
-                        className={currentPath === "/" ? "current" : ""}
-                      >
-                        <Link to="/" className="current_items">
-                         {t("main")}
-                        </Link>
-                        {currentPath === "/" && (
-                          <span className="current_border"></span>
-                        )}
-                      </li>
-
-                      <li
-                        className={
-                          currentPath === "/about" ? "current" : ""
-                        }
-                      >
-                        <Link to="/about" className="current_items">
-                          {t("about")}
-                        </Link>
-                        {currentPath === "/about" && (
-                          <span className="current_border"></span>
-                        )}
-                      </li>
-
-                      <li
-                        className={
-                          currentPath === "/gallery" ? "current" : ""
-                        }
-                      >
-                        <Link to="/gallery" className="current_items">
-                          {t("gallery")}
-                        </Link>
-                        {currentPath === "/gallery" && (
-                          <span className="current_border"></span>
-                        )}
-                      </li>
-
-                      <li
-                        className={`has-dropdown${
-                          currentPath === "/serves" ? " current" : ""
-                        }`}
-                      >
-                        <Link to="/serves" className="current_items">
-                          {t("serves")}
-                          <FaChevronDown
-                            className="has-dropdown__caret"
-                            aria-hidden="true"
-                          />
-                        </Link>
-                        {currentPath === "/serves" && (
-                          <span className="current_border"></span>
-                        )}
-                        <div className="nav-dropdown">
-                          <div className="nav-dropdown__col">
-                            <p className="nav-dropdown__heading">
-                              {t("services.sectionTitle")}
-                            </p>
-                            {serviceSlugs.map((slug) => (
-                              <Link
-                                key={slug}
-                                to={`/services/${slug}`}
-                                className={
-                                  rawPath === `/services/${slug}` ? "is-active" : undefined
-                                }
-                              >
-                                {t(`services.items.${slug}.h1`)}
-                              </Link>
-                            ))}
-                          </div>
-                          {productionLinks.length > 0 && (
-                            <div className="nav-dropdown__col">
-                              <p className="nav-dropdown__heading">
-                                {t("services.productionTitle")}
-                              </p>
-                              {productionLinks.map(({ slug, title }) => (
-                                <Link
-                                  key={slug}
-                                  to={`/production/${slug}`}
-                                  className={
-                                    rawPath === `/production/${slug}` ? "is-active" : undefined
-                                  }
-                                >
-                                  {title}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                          <div className="nav-dropdown__all">
-                            <Link to="/serves">{t("services.menuAll")}</Link>
-                          </div>
-                        </div>
-                      </li>
-
-                      <li
-                        className={
-                          currentPath === "/projects" ? "current" : ""
-                        }
-                      >
-                        <Link to="/projects" className="current_items">
-                          {t("nav.projects")}
-                        </Link>
-                        {currentPath === "/projects" && (
-                          <span className="current_border"></span>
-                        )}
-                      </li>
-
-                      <li
-                        className={
-                          currentPath === "/contact" ? "current" : ""
-                        }
-                      >
-                        <Link to="/contact" className="current_items">
-                          {t("contact")}
-                        </Link>
-                        {currentPath === "/contact" && (
-                          <span className="current_border"></span>
-                        )}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="main-menu_wrapper_inners_right">
-                  <div className="main-menu_wrapper_inners_right_btn">
-                    <div className="main-menu_wrapper_inners_right_btn_language">
-                      <Language />
-                    </div>
-                    <div className="main-menu_wrapper_inners_right_btn_btnBox">
-                      <a
-                        href={withLang("/catalogBook", i18n.language)}
-                        target="_blank"
-                        className="main-menu_wrapper_inners_right_btn_btnBox_thn"
-                      >
-                        E-Catalog
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );

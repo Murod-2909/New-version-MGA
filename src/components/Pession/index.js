@@ -3,12 +3,16 @@ import "./pession.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
+import { FaArrowRight } from "react-icons/fa";
+import Link from "../LocaleLink";
+import useAboutStats from "../../hooks/useAboutStats";
 
 // variant "full" (About page) shows the story as three short paragraphs; the default
 // (home page) keeps the compact single text.
 export default function Pession({ headingLevel = "h2", variant = "compact" }) {
   const { t } = useTranslation();
   const Heading = headingLevel;
+  const stats = useAboutStats();
 
   useEffect(() => {
     AOS.init({
@@ -21,6 +25,7 @@ export default function Pession({ headingLevel = "h2", variant = "compact" }) {
     <div className="pession">
       <div className="container">
         <div className="pession_rows">
+          <div className="pession_rows_leftcol">
           <div className="pession_rows_lefts">
             <div className="col-2">
               <div
@@ -47,6 +52,17 @@ export default function Pession({ headingLevel = "h2", variant = "compact" }) {
               ></div>
             </div>
           </div>
+          {variant !== "full" && stats.length > 0 && (
+            <ul className="pession__stats">
+              {stats.map(({ value, label }) => (
+                <li key={label}>
+                  <span className="pession__stat-value">{value}</span>
+                  <span className="pession__stat-label">{label}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          </div>
           <div className="pession_rows_rights">
             <section className="aboutCompany" data-aos="zoom-in">
               <div className="aboutCompany__content" data-aos="fade-up">
@@ -54,14 +70,25 @@ export default function Pession({ headingLevel = "h2", variant = "compact" }) {
                   {t("aboutUs")}
                 </Heading>
 
-                {variant === "full" ? (
-                  ["p1", "p2", "p3"].map((key) => (
-                    <p key={key} className="aboutCompany__p">
-                      {t(`aboutPage.${key}`)}
-                    </p>
-                  ))
-                ) : (
-                  <p className="aboutCompany__p">{t("desAbout")}</p>
+                <span className="aboutCompany__bar" aria-hidden="true"></span>
+                {(variant === "full" ? ["p1", "p2", "p3"] : ["p1", "p2"]).map((key) => (
+                  <p key={key} className="aboutCompany__p">
+                    {t(`aboutPage.${key}`)}
+                  </p>
+                ))}
+
+                {variant !== "full" && (
+                  <>
+                    <ul className="aboutCompany__chips">
+                      {["chipCycle"].map((key) => (
+                        <li key={key}>{t(`aboutPage.${key}`)}</li>
+                      ))}
+                    </ul>
+                    <Link to="/about" className="aboutCompany__more">
+                      {t("aboutPage.more")}
+                      <FaArrowRight aria-hidden="true" />
+                    </Link>
+                  </>
                 )}
 
               </div>

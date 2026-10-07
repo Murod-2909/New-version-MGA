@@ -3,7 +3,7 @@
     padding: 20px 0 90px;
 
     &-title {
-      font-size: 28px;
+      font-size: var(--fs-h2);
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 40px;
@@ -11,7 +11,7 @@
       overflow-wrap: anywhere;
 
       @media (max-width: 575px) {
-        font-size: 22px;
+        font-size: var(--fs-h2);
         margin-bottom: 28px;
       }
     }

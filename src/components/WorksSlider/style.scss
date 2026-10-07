@@ -14,8 +14,8 @@
   }
 
   &__title {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-heading);
     color: $ambed-white;
     margin-bottom: 8px;
   }
@@ -83,7 +83,7 @@
 
   @media (max-width: 575px) {
     &__title {
-      font-size: 22px;
+      font-size: var(--fs-h2);
     }
 
     &__nav button {

@@ -16,6 +16,7 @@
   "referencesSubtitle": "Trusted by leading companies and brands across Uzbekistan and Central Asia.",
   "hero": {
     "tagline": "SIGNAGE • WAYFINDING • ADVERTISING PRODUCTION",
+    "title": "We design, manufacture and install signage",
     "subline": "Professional signage, wayfinding and advertising manufacturing in Tashkent, Uzbekistan.",
     "facility": "2,000 m² Production Facility • Design • Manufacturing • Installation"
   },
@@ -24,7 +25,7 @@
   "gallery": "Gallery",
   "contact": "Contact",
   "servies":"Our services",
-  "call":"Call anytime",
+  "call":"Call us",
   "send":"Send email",
   "get": "Get in touch with us",
   "sub": "Subscribe",
@@ -50,6 +51,10 @@
     "p2": "In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region.",
     "p3": "Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!",
     "teamTitle": "Our team",
+    "chipSince": "Since 2010",
+    "chipFactory": "2000 m² factory",
+    "chipCycle": "Design • Manufacturing • Installation",
+    "more": "More about us",
     "teamPlaceholderName": "Name Surname",
     "teamPlaceholderRole": "Position",
     "statYears": "Years in advertising",
@@ -136,6 +141,8 @@
   "services": {
     "sectionTitle": "Our Specialized Services",
     "productionTitle": "Our Production Capabilities",
+    "productionEyebrow": "Our equipment",
+    "productionSubtitle": "Printing, cutting and finishing equipment in our own factory, all in one place.",
     "menuAll": "All services",
     "moreAboutService": "More about the service",
     "contactAboutItem": "Contact us to learn more about this production capability.",
