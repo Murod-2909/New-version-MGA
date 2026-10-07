@@ -17,15 +17,11 @@ function HomeServices({ servicesData }) {
 
   return (
     <div className="services">
-      <div className="services_iServices">
-        <div
-          data-aos="fade-right"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="1500"
-        >
-          {t("services.productionTitle")}
-        </div>
-      </div>
+      <header className="services__head container">
+        <span className="services__eyebrow">{t("services.productionEyebrow")}</span>
+        <h2 className="services__title">{t("services.productionTitle")}</h2>
+        <p className="services__subtitle">{t("services.productionSubtitle")}</p>
+      </header>
 
       <div className="services_bad">
         <div className="container">
