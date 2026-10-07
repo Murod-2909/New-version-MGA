@@ -3,7 +3,6 @@ import {
   FaFacebookSquare,
   FaInstagram,
   FaYoutube,
-  FaTelegram,
 } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -112,10 +111,6 @@ const Header = () => {
                       rel="noreferrer"
                     >
                       <FaInstagram />
-                    </a>
-                    <a href="#" className="social-icon"
-                      aria-label="Telegram" target="_blank">
-                      <FaTelegram />
                     </a>
                     <a
                       href="https://www.youtube.com/@mgareklama"

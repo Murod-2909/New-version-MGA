@@ -13,9 +13,7 @@ const PlayBadge = ({ duration }) => {
         <FaPlay />
       </span>
       {length && (
-        <span className="play-badge__duration" aria-hidden="true">
-          {length}
-        </span>
+        <span className="play-badge__duration" data-duration={length} aria-hidden="true" />
       )}
     </>
   );

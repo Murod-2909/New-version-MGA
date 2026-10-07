@@ -11,7 +11,15 @@ const fetchServices = async (lang) => {
   return response.data;
 };
 
-export const getServices = createAsyncThunk("services/get", async () => {
+// The menu, the page and the home section all ask for the services at about the same
+// time; only one request goes out and they all read the shared result.
+let inFlight = false;
+
+export const getServices = createAsyncThunk(
+  "services/get",
+  async () => {
+  inFlight = true;
+  try {
   const language = localStorage.getItem('language') || 'en';
   const data = await fetchServices(language);
 
@@ -23,4 +31,9 @@ export const getServices = createAsyncThunk("services/get", async () => {
   }
 
   return data;
-});
+  } finally {
+    inFlight = false;
+  }
+  },
+  { condition: () => !inFlight }
+);

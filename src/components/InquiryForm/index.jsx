@@ -2,8 +2,7 @@ import React, { useEffect, useId, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { sendContact } from "../../reduxToolkit/messageSlice";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { FaCheckCircle } from "react-icons/fa";
 import "./style.scss";
 
@@ -24,7 +23,7 @@ const cleanPhone = (raw) => {
 const phoneDigits = (raw) => raw.replace(/\D/g, "").length;
 
 const InquiryForm = ({ presetSubject = "" }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
 
   const [form, setForm] = useState({
@@ -83,17 +82,30 @@ const InquiryForm = ({ presetSubject = "" }) => {
     }
 
     setSending(true);
-    dispatch(
-      sendContact({
-        ...form,
-        name: form.name.trim(),
-        email: form.email.trim(),
-        phone: cleanPhone(form.phone) || "-",
-        subject: form.subject.trim() || t("form.defaultSubject"),
-        message: form.message.trim(),
+
+    const base = {
+      name: form.name.trim(),
+      email: form.email.trim(),
+      phone: form.phone.trim(),
+      subject: form.subject.trim(),
+      message: form.message.trim(),
+      lang: i18n.language,
+    };
+    const submit = (data) => dispatch(sendContact(data)).unwrap();
+
+    submit(base)
+      .catch((err) => {
+        // Older backends reject a blank/long phone or a blank subject (400 naming those
+        // fields). Retry once with values they accept, so no enquiry is lost.
+        if (err?.status === 400 && (err.data?.phone || err.data?.subject)) {
+          return submit({
+            ...base,
+            phone: cleanPhone(base.phone) || "-",
+            subject: base.subject || t("form.defaultSubject"),
+          });
+        }
+        throw err;
       })
-    )
-      .unwrap()
       .then(() => {
         setSent(true);
         setForm({
@@ -105,8 +117,8 @@ const InquiryForm = ({ presetSubject = "" }) => {
         });
         setErrors({});
       })
-      .catch(() => {
-        toast.error(t("toastError"));
+      .catch((err) => {
+        toast.error(err?.status === 429 ? t("form.errorTooMany") : t("toastError"));
       })
       .finally(() => setSending(false));
   };
@@ -122,7 +134,6 @@ const InquiryForm = ({ presetSubject = "" }) => {
             {t("form.sendAnother")}
           </button>
         </div>
-        <ToastContainer position="top-right" autoClose={3000} />
       </>
     );
   }
@@ -249,7 +260,6 @@ const InquiryForm = ({ presetSubject = "" }) => {
           </button>
         </div>
       </form>
-      <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
 };

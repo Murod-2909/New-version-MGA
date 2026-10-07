@@ -68,7 +68,7 @@ const ProjectsList = () => {
             {showSkeleton &&
               Array.from({ length: SKELETON_COUNT }, (_, i) => <ProjectCardSkeleton key={i} />)}
             {visible.map((project) => (
-              <ProjectCard key={project.slug ?? project.id} project={project} />
+              <ProjectCard key={project.slug ?? project.id} project={project} headingLevel={2} />
             ))}
           </div>
 

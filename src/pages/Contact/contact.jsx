@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./contact.scss";
 import PageHero from "../../components/pageHero";
@@ -8,6 +8,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
+  FaClock,
   FaArrowRight,
   FaCheckCircle,
   FaFacebookF,
@@ -32,6 +33,8 @@ const TIPS = ["contactPage.tip1", "contactPage.tip2", "contactPage.tip3"];
 const Contact = () => {
   const { t } = useTranslation();
   const location = useLocation();
+  // The Yandex widget sets third-party cookies and weighs ~1 MB, so it only loads on request.
+  const [mapOn, setMapOn] = useState(false);
 
   return (
     <div className="contact">
@@ -79,6 +82,13 @@ const Contact = () => {
                 <FaArrowRight aria-hidden="true" />
               </span>
             </a>
+            <div className="contact-quick__card contact-quick__card--static">
+              <span className="contact-quick__icon" aria-hidden="true">
+                <FaClock />
+              </span>
+              <span className="contact-quick__label">{t("contactPage.hoursLabel")}</span>
+              <span className="contact-quick__value">{t("contactPage.hoursValue")}</span>
+            </div>
           </div>
         </div>
       </section>
@@ -95,7 +105,7 @@ const Contact = () => {
 
             <aside className="contact-side">
               <div className="contact-tips">
-                <h3 className="contact-tips__title">{t("contactPage.tipsTitle")}</h3>
+                <h3 className="contact-tips__title" aria-level={2}>{t("contactPage.tipsTitle")}</h3>
                 <ul>
                   {TIPS.map((key) => (
                     <li key={key}>
@@ -107,15 +117,26 @@ const Contact = () => {
               </div>
 
               <div className="contact-map">
-                <iframe
-                  className="contact-map-iframe"
-                  src={MAP_URL}
-                  width="100%"
-                  height="100%"
-                  title={t("contactPage.mapTitle")}
-                  loading="lazy"
-                  allowFullScreen
-                ></iframe>
+                {mapOn ? (
+                  <iframe
+                    className="contact-map-iframe"
+                    src={MAP_URL}
+                    width="100%"
+                    height="100%"
+                    title={t("contactPage.mapTitle")}
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <button
+                    type="button"
+                    className="contact-map__facade"
+                    onClick={() => setMapOn(true)}
+                  >
+                    <FaMapMarkerAlt aria-hidden="true" />
+                    <span className="contact-map__facade-title">{t("contactPage.showMap")}</span>
+                    <span className="contact-map__facade-address">{t("address")}</span>
+                  </button>
+                )}
               </div>
 
               <div className="contact-social">

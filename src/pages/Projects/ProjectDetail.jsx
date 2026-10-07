@@ -107,21 +107,21 @@ const ProjectDetail = () => {
 
               {description && (
                 <div className="service-page__block">
-                  <h3>{t("projects.workDoneLabel")}</h3>
+                  <h3 aria-level={2}>{t("projects.workDoneLabel")}</h3>
                   <p className="project-detail__text">{description}</p>
                 </div>
               )}
 
               {project.materials?.trim() && (
                 <div className="service-page__block">
-                  <h3>{t("services.materialsLabel")}</h3>
+                  <h3 aria-level={2}>{t("services.materialsLabel")}</h3>
                   <p className="project-detail__text">{project.materials}</p>
                 </div>
               )}
             </div>
 
             <div className="service-page__form">
-              <h3>{t("projects.requestSimilar")}</h3>
+              <h3 aria-level={2}>{t("projects.requestSimilar")}</h3>
               <InquiryForm presetSubject={project.title} />
             </div>
           </div>
@@ -135,7 +135,7 @@ const ProjectDetail = () => {
 
           {related.length > 0 && (
             <div className="project-detail__related">
-              <h3>{t("projects.relatedTitle")}</h3>
+              <h3 aria-level={2}>{t("projects.relatedTitle")}</h3>
               <div className="projects-page__grid">
                 {related.map((p) => (
                   <ProjectCard key={p.slug ?? p.id} project={p} />

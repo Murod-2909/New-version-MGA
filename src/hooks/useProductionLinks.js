@@ -5,15 +5,15 @@ import { getItemSlug } from "../data/production-content";
 
 // Production capabilities (UV printing, CNC, ...) for the menus: [{ slug, title }].
 // They come from the services API, so the menu loads them if nothing has yet.
-const useProductionLinks = () => {
+const useProductionLinks = ({ load = true } = {}) => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.servicesSlider?.servicesData);
   const error = useSelector((state) => state.servicesSlider?.error);
   const hasData = Array.isArray(data) && data.length > 0;
 
   useEffect(() => {
-    if (!hasData && !error) dispatch(getServices());
-  }, [dispatch, hasData, error]);
+    if (load && !hasData && !error) dispatch(getServices());
+  }, [dispatch, load, hasData, error]);
 
   return useMemo(
     () =>

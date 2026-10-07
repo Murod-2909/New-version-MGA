@@ -7,7 +7,6 @@ import AboutCompany from "../../components/Pession";
 import HomeServices from "../../components/HomeServies";
 import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../../reduxToolkit/servesSlice";
-import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,7 +24,6 @@ const Home = () => {
     
       <Partner />
       <NewLetter />
-            <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
 
     </div>
   );

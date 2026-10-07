@@ -37,9 +37,8 @@ const GalleryCard = ({ item, index, onOpen }) => {
         onError={() => setLoaded(true)}
       />
       {count > 1 && (
-        <span className="gallery-card__count">
+        <span className="gallery-card__count" data-count={count} aria-hidden="true">
           <FaImages aria-hidden="true" />
-          {count}
         </span>
       )}
       {video ? (

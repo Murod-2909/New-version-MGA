@@ -49,24 +49,24 @@ const ServicePage = () => {
               <p className="service-page__intro">{intro}</p>
 
               <div className="service-page__block">
-                <h3>{t("services.materialsLabel")}</h3>
+                <h3 aria-level={2}>{t("services.materialsLabel")}</h3>
                 <p>{t(`${base}.materials`)}</p>
               </div>
 
               <div className="service-page__block">
-                <h3>{t("services.capabilityLabel")}</h3>
+                <h3 aria-level={2}>{t("services.capabilityLabel")}</h3>
                 <p>{t(`${base}.capability`)}</p>
               </div>
             </div>
 
             <div className="service-page__form">
-              <h3>{t("services.requestQuote")}</h3>
+              <h3 aria-level={2}>{t("services.requestQuote")}</h3>
               <InquiryForm presetSubject={h1} />
             </div>
           </div>
 
           <div className="service-page__related">
-            <h3>{t("services.sectionTitle")}</h3>
+            <h3 aria-level={2}>{t("services.sectionTitle")}</h3>
             <ul>
               {serviceSlugs
                 .filter((s) => s !== slug)

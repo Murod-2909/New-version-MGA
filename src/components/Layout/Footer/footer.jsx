@@ -9,7 +9,6 @@ import {
   FaFacebookF,
   FaYoutube,
   FaInstagram,
-  FaTelegram,
   FaPhoneVolume,
 } from "react-icons/fa6";
 import { MdOutlineNavigateNext } from "react-icons/md";
@@ -76,9 +75,6 @@ const Footer = () => {
                   >
                     <FaInstagram />
                   </a>
-                  <Link to="/" className="fa-you" aria-label="Telegram">
-                    <FaTelegram />
-                  </Link>
                 </div>
               </div>
             </div>
@@ -90,7 +86,7 @@ const Footer = () => {
                   data-aos-delay="300"
                   data-aos-duration="1000"
                 >
-                  <h3 className="footer-widget_explore__exTitle">{t("footMenu")}</h3>
+                  <h3 className="footer-widget_explore__exTitle" aria-level={2}>{t("footMenu")}</h3>
                   <ul className="footer-widget_explore-list clearfix">
                     <li>
                       <Link to="/about" className="lists">
@@ -132,14 +128,14 @@ const Footer = () => {
                   data-aos-delay="300"
                   data-aos-duration="1000"
                 >
-                  <h3 className="footer-widget_explore__exTitle">{t("work")}</h3>
+                  <h3 className="footer-widget_explore__exTitle" aria-level={2}>{t("work")}</h3>
                   <ul className="footer-widget_explore-list clearfix">
                     <li className="foot-icon">
                       <div className="call-icon">
                         <FaPhoneVolume className="phone-call" />
                       </div>
                       <div className="call-text">
-                        <h5 className="call-text-h5">{t("call")}</h5>
+                        <h5 className="call-text-h5" aria-level={3}>{t("call")}</h5>
                         <p className="call-text-pp">
                           <a className="call-text-aa" href="tel:+998770124004">
                             +998 77 012 40 04
@@ -152,7 +148,7 @@ const Footer = () => {
                         <MdOutlineEmail className="phone-call" />
                       </div>
                       <div className="call-text">
-                        <h5 className="call-text-h5">{t("send")}</h5>
+                        <h5 className="call-text-h5" aria-level={3}>{t("send")}</h5>
                         <p className="call-text-pp">
                           <a
                             className="call-text-aa"
@@ -168,7 +164,7 @@ const Footer = () => {
                         <GrMapLocation className="phone-call" />
                       </div>
                       <div className="call-text">
-                        <h5 className="call-text-h5">
+                        <h5 className="call-text-h5" aria-level={3}>
                           Uzbekistan
                         </h5>
                         <p className="call-text-pp">

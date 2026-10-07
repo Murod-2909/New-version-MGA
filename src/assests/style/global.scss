@@ -418,3 +418,9 @@ textarea {
 .page-content {
   min-height: 80vh;
 }
+
+// Text-safe variants (WCAG AA): the brand tan and the grey are too light for small text.
+$text-brand: #85533c;        // brand colour as text on white / light cards (6.4:1)
+$text-muted: #6f6761;        // secondary text on white (5.5:1)
+$text-muted-dark: #b9b0aa;   // secondary text on the navy background (7.5:1)
+$text-brand-dark: #ef7d45;   // brand colour as text on navy (5.8:1)

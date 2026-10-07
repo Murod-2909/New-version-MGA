@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { stripLang } from "../../serves/locale";
 import Header from "./Header/header";
 import { FaAngleUp } from "react-icons/fa";
@@ -48,6 +50,8 @@ const Layout = (props) => {
     <div className="page-wrapper">
       <>
         <CustomCursor />
+        {/* One container for every toast (contact form, newsletter, ...) */}
+        <ToastContainer position="top-right" autoClose={3500} />
         {!isCatalogBookPage && (
           <Header speaker={speaker} changeSpeakSwitcher={changeSpeakSwitcher} />
         )}
