@@ -1,9 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import "swiper/css";
-import "swiper/css/navigation";
+import { FaArrowRight } from "react-icons/fa";
+import Link from "../LocaleLink";
 import "./hero.scss";
 
 // The hero video is decorative, so skip it on phones, Data Saver and
@@ -27,64 +25,45 @@ const Hero = () => {
   useEffect(() => {
     setPlayVideo(canPlayVideo());
   }, []);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-  const swiperRef = useRef(null); // Swiper instansiyani olish uchun
-
-
-  useEffect(() => {
-    if (
-      swiperRef.current &&
-      swiperRef.current.params &&
-      swiperRef.current.params.navigation
-    ) {
-      swiperRef.current.params.navigation.prevEl = prevRef.current;
-      swiperRef.current.params.navigation.nextEl = nextRef.current;
-      swiperRef.current.navigation.init();
-      swiperRef.current.navigation.update();
-    }
-  }, []);
 
   return (
-    <div className="hero">
-      <div className="sliderWrapper">
-
-
-            <div className="slide">
-              <div className="container">
-                <div className="hero__media">
-                  {playVideo ? (
-                    <video
-                      src="/heroVideo.mp4"
-                      poster="/heroPoster.jpg"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      className="bag"
-                    />
-                  ) : (
-                    <img
-                      src="/heroPoster.jpg"
-                      alt={t("hero.tagline")}
-                      className="bag"
-                      fetchpriority="high"
-                      decoding="async"
-                    />
-                  )}
-                  <div className="hero__overlay">
-                    <p className="hero__overlay-tagline">{t("hero.tagline")}</p>
-                    <p className="hero__overlay-subline">{t("hero.subline")}</p>
-                    <p className="hero__overlay-facility">{t("hero.facility")}</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-       
+    <section className="hero">
+      <div className="hero__media">
+        {playVideo ? (
+          <video
+            src="/heroVideo.mp4"
+            poster="/heroPoster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+          />
+        ) : (
+          <img src="/heroPoster.jpg" alt="" fetchpriority="high" decoding="async" />
+        )}
       </div>
-    </div>
+      <div className="hero__shade" aria-hidden="true"></div>
+
+      <div className="container hero__inner">
+        <div className="hero__content">
+          <p className="hero__eyebrow">{t("hero.tagline")}</p>
+          <h1 className="hero__title">{t("hero.title")}</h1>
+          <p className="hero__lead">{t("hero.subline")}</p>
+          <div className="hero__actions">
+            <Link to="/contact" className="hero__btn hero__btn--primary">
+              {t("services.requestQuote")}
+              <FaArrowRight aria-hidden="true" />
+            </Link>
+            <Link to="/projects" className="hero__btn hero__btn--ghost">
+              {t("projects.listTitle")}
+            </Link>
+          </div>
+          <p className="hero__facts">{t("hero.facility")}</p>
+        </div>
+      </div>
+    </section>
   );
 };
 

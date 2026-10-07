@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className="home">
       <Hero />
-      <AboutCompany headingLevel="h1" />
+      <AboutCompany headingLevel="h2" />
       <HomeServices servicesData={services} />
     
       <Partner />
