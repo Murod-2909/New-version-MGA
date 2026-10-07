@@ -4,8 +4,8 @@
   &__heading {
     margin: 0 0 36px;
     color: #fff;
-    font-size: 30px;
-    font-weight: 800;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-heading);
     text-align: center;
   }
 
@@ -52,8 +52,8 @@
   &__name {
     margin: 16px 0 4px;
     color: #fff;
-    font-size: 19px;
-    font-weight: 800;
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-heading);
   }
 
   &__role {
@@ -66,7 +66,7 @@
 @media (max-width: 575px) {
   .team {
     &__heading {
-      font-size: 24px;
+      font-size: var(--fs-h2);
       margin-bottom: 26px;
     }
 
@@ -76,7 +76,7 @@
     }
 
     &__name {
-      font-size: 16px;
+      font-size: var(--fs-h4);
     }
 
     &__role {

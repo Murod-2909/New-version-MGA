@@ -57,8 +57,8 @@
         }
 
         &__title {
-          font-size: 2rem;
-          font-weight: 900;
+          font-size: var(--fs-h2);
+          font-weight: var(--fw-heading);
           line-height: 1.4;
           text-transform: uppercase;
           margin-bottom: 20px;
@@ -143,7 +143,7 @@
           margin-top: 60px;
         }
         .aboutCompany__title{
-          font-size: 45px;
+          font-size: var(--fs-h2);
         }
         .aboutCompany__text{
           font-size: 20px;

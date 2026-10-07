@@ -15,7 +15,7 @@ import Link from "../../LocaleLink";
 import { stripLang, withLang } from "../../../serves/locale";
 import serviceSlugs from "../../../data/services-content";
 import useProductionLinks from "../../../hooks/useProductionLinks";
-import logo from "../../../assests/images/white-logo.png";
+import logo from "../../../assests/images/Log.png";
 import Language from "../../Language/language";
 import MobileMenu from "./mobile/MobileMenu";
 import "./ServicesMenu.scss";

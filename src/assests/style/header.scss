@@ -27,7 +27,7 @@
 
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid #ef7d45;
+    outline: 2px solid #d25717;
     outline-offset: 3px;
     border-radius: 6px;
   }
@@ -35,7 +35,27 @@
   // ---------- top row ----------
   &--top {
     position: relative;
-    background-color: #0b1727;
+    background-color: #f0e3cc;
+
+    // The original two-colour stripe along the top edge.
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 6px;
+      width: 50%;
+    }
+
+    &::before {
+      left: 0;
+      background-color: #112337;
+    }
+
+    &::after {
+      right: 0;
+      background-color: #d25717;
+    }
 
     .main_header__bar {
       min-height: 88px;
@@ -65,11 +85,11 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      color: #fff;
+      color: #112337;
     }
 
     a:hover .main_header__contact-value {
-      color: #ef7d45;
+      color: #d25717;
     }
   }
 
@@ -81,14 +101,14 @@
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.08);
-    color: #ef7d45;
+    background-color: #112337;
+    color: #fff;
     font-size: 16px;
   }
 
   &__contact-label {
     display: block;
-    color: #8f9aa6;
+    color: #6f5f50;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -116,17 +136,16 @@
       width: 38px;
       height: 38px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background-color: #112337;
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 14px;
-      transition: background-color 250ms ease, border-color 250ms ease;
+      transition: background-color 250ms ease;
 
       &:hover {
         background-color: #d25717;
-        border-color: #d25717;
       }
     }
   }
@@ -255,8 +274,8 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ef7d45;
+    background-color: #112337;
+    color: #fff;
     align-items: center;
     justify-content: center;
     font-size: 16px;
@@ -269,7 +288,7 @@
     height: 44px;
     border: none;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #112337;
     color: #fff;
     font-size: 24px;
     cursor: pointer;
@@ -299,7 +318,7 @@
   .main_header--top {
     position: sticky;
     top: 0;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 
     .main_header__bar {
       min-height: 68px;

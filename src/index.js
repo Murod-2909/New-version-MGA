@@ -4,7 +4,7 @@ import Routes from './routes';
 import {Provider} from "react-redux";
 
 // Self-hosted fonts (Latin, Latin-Ext and Cyrillic subsets load only when a page needs them).
-import "@fontsource-variable/rubik/wght.css";
+import "@fontsource-variable/inter/wght.css";
 import "@fontsource-variable/montserrat/wght.css";
 import "./assests/style/global.scss";
 import "./assests/style/header.scss"
