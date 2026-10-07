@@ -102,10 +102,6 @@ const Header = () => {
                 </a>
               ))}
             </div>
-            <div className="main_header__lang">
-              <Language />
-            </div>
-
             {/* Tablet / phone only */}
             <a className="main_header__call" href={PHONE.href} aria-label={t("call")}>
               <FaPhoneAlt aria-hidden="true" />
@@ -191,9 +187,9 @@ const Header = () => {
               <FaBookOpen aria-hidden="true" />
               E-Catalog
             </a>
-            <Link to="/contact" className="main_header__cta">
-              {t("services.requestQuote")}
-            </Link>
+            <div className="main_header__lang">
+              <Language />
+            </div>
           </div>
         </div>
       </div>

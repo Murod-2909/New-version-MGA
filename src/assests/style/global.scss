@@ -1,5 +1,6 @@
 :root {
-  --ambed-font: "Rubik", sans-serif;
+  --ambed-font: "Rubik Variable", "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ambed-heading-font: "Montserrat Variable", "Montserrat", "Rubik Variable", system-ui, Arial, sans-serif;
   --ambed-reey-font: "reeyregular";
   --ambed-gray: #8b827d;
   --ambed-gray-rgb: 139, 130, 125;
@@ -15,7 +16,7 @@
   --ambed-bdr-color-rgb: 226, 221, 218;
 }
 
-$ambed-font: var(--ambed-font, "Rubik", sans-serif);
+$ambed-font: var(--ambed-font, "Rubik Variable", "Rubik", sans-serif);
 $ambed-reey-font: var(--ambed-reey-font, "reeyregular");
 $ambed-gray: var(--ambed-gray, #8b827d);
 $ambed-gray-rgb: var(--ambed-gray-rgb, 139, 130, 125);
@@ -399,18 +400,19 @@ h4,
 h5,
 h6 {
   position: relative;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--ambed-heading-font);
   font-weight: normal;
   margin: 0px;
   background: none;
   line-height: 1.8em;
 }
 
+// Form controls follow the page font (they used to switch to a different family).
 input,
 button,
 select,
 textarea {
-  font-family: "Montserrat", sans-serif;
+  font-family: inherit;
 }
 .auto-container {
   position: static;

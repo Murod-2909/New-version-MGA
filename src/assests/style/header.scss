@@ -97,8 +97,8 @@
 
   &__contact-value {
     display: block;
-    font-size: clamp(15px, 0.85vw, 17px);
-    font-weight: 700;
+    font-size: clamp(15px, 0.8vw + 2px, 17px);
+    font-weight: 600;
     transition: color 200ms ease;
   }
 
@@ -176,8 +176,9 @@
         align-items: center;
         padding: 6px clamp(10px, 1.1vw, 24px);
         color: #fff;
-        font-size: clamp(15px, 0.85vw, 18px);
-        font-weight: 600;
+        font-size: clamp(15px, 0.6vw + 7px, 18px);
+        font-weight: 500;
+        letter-spacing: 0.01em;
         transition: color 200ms ease;
 
         &::after {
@@ -213,13 +214,19 @@
     margin-left: auto;
   }
 
+  &__lang {
+    // A thin divider separates the language switch from the catalogue link.
+    padding-left: clamp(14px, 1.6vw, 28px);
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
   &__catalog {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     color: #d3ccc6;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     white-space: nowrap;
 
     &:hover {
