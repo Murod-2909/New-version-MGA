@@ -6,6 +6,7 @@ import Partner from "../../components/Partner";
 import NewLetter from "../../components/newLetter";
 import Pession from "../../components/Pession";
 import YouTubeFacade from "../../components/YouTubeFacade";
+import TeamSection from "../../components/TeamSection";
 import Link from "../../components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import { FaPencilRuler, FaIndustry, FaTools, FaArrowRight } from "react-icons/fa";
@@ -96,6 +97,8 @@ const About = () => {
           </p>
         </div>
       </section>
+
+      <TeamSection />
 
       <section className="about-process">
         <div className="container">
