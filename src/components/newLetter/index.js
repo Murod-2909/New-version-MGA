@@ -43,7 +43,9 @@ export default function NewLetter() {
               <div className="newLetter__inners_rights_forms_input-box">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t("form.newsletterEmail")}
+                  aria-label={t("form.newsletterEmail")}
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="newLetter__inners_rights_forms_input-box_input"

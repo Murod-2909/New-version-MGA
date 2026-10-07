@@ -1,0 +1,77 @@
+@import "../../assests/style/global";
+
+.service-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: 30px 28px 26px;
+  border-radius: 22px;
+  background-color: $ambed-white;
+  color: #112337;
+  text-decoration: none;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 22px;
+    border-radius: 50%;
+    background-color: #112337;
+    color: $ambed-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: background-color 300ms ease;
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #3c3531;
+  }
+
+  &__text {
+    flex: 1;
+    margin: 0 0 22px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #7a706a;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: $ambed-base;
+
+    svg {
+      transition: transform 300ms ease;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid $ambed-base;
+    outline-offset: 3px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover &__icon {
+      background-color: $ambed-base;
+    }
+
+    &:hover &__cta svg {
+      transform: translateX(4px);
+    }
+  }
+}
