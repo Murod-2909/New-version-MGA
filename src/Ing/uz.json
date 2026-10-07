@@ -48,7 +48,14 @@
     "addressLabel": "Manzil",
     "directions": "Yo'nalish olish",
     "follow": "Bizni kuzating",
-    "mapTitle": "MGA Reklama xaritadagi joylashuvi"
+    "mapTitle": "MGA Reklama xaritadagi joylashuvi",
+    "intro": "Loyihangiz haqida yozing, biz narx hisob-kitobi bilan siz bilan bog'lanamiz.",
+    "tipsTitle": "Aniq narx uchun quyidagilarni yozing:",
+    "tip1": "Nima kerak: tabela turi, bosma yoki ichki bezak",
+    "tip2": "O'lcham va joy: ichkarida yoki tashqarida, shahar va manzil",
+    "tip3": "Muddat, shuningdek logotip yoki chizmangiz bo'lsa",
+    "callNow": "Qo'ng'iroq qilish",
+    "writeUs": "Bizga yozing"
   },
   "formErrorRequired":"Bu maydonni to'ldirish shart.",
   "formErrorEmail":"Iltimos, to'g'ri email manzilini kiriting.",
