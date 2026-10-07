@@ -35,6 +35,21 @@
   "sends":"Xabar yuborish",
   "toastSuccess":"Xabar muvaffaqiyatli yuborildi!",
   "toastError":"Xabarni yuborib bo'lmadi. Iltimos, qayta urinib ko'ring.",
+  "form": {
+    "name": "Ismingiz",
+    "email": "Elektron pochta",
+    "phone": "Telefon raqami",
+    "subject": "Mavzu",
+    "message": "Xabar yozing",
+    "sending": "Yuborilmoqda…",
+    "newsletterEmail": "Elektron pochtangizni kiriting"
+  },
+  "contactPage": {
+    "addressLabel": "Manzil",
+    "directions": "Yo'nalish olish",
+    "follow": "Bizni kuzating",
+    "mapTitle": "MGA Reklama xaritadagi joylashuvi"
+  },
   "formErrorRequired":"Bu maydonni to'ldirish shart.",
   "formErrorEmail":"Iltimos, to'g'ri email manzilini kiriting.",
   "address":"Toshkent sh., Elbek ko'chasi, 61",

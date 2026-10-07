@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { sendContact } from "../../reduxToolkit/messageSlice";
@@ -23,6 +23,8 @@ const InquiryForm = ({ presetSubject = "" }) => {
     message: "",
   });
   const [errors, setErrors] = useState({});
+  const [sending, setSending] = useState(false);
+  const uid = useId();
 
   // Same route pattern (e.g. one /services/:slug page linking to another) keeps this
   // component instance mounted, so useState's initial value alone won't pick up a
@@ -54,8 +56,9 @@ const InquiryForm = ({ presetSubject = "" }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validate()) return;
+    if (!validate() || sending) return;
 
+    setSending(true);
     dispatch(sendContact(form))
       .unwrap()
       .then(() => {
@@ -71,7 +74,8 @@ const InquiryForm = ({ presetSubject = "" }) => {
       })
       .catch(() => {
         toast.error(t("toastError"));
-      });
+      })
+      .finally(() => setSending(false));
   };
 
   return (
@@ -83,12 +87,20 @@ const InquiryForm = ({ presetSubject = "" }) => {
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder={`${t("form.name")} *`}
+                aria-label={t("form.name")}
+                autoComplete="name"
+                aria-invalid={errors.name ? "true" : undefined}
+                aria-describedby={errors.name ? `${uid}-name-error` : undefined}
                 className="commet-box"
                 value={form.name}
                 onChange={handleChange}
               />
-              {errors.name && <span className="input-box__error">{errors.name}</span>}
+              {errors.name && (
+                <span className="input-box__error" id={`${uid}-name-error`} role="alert">
+                  {errors.name}
+                </span>
+              )}
             </div>
           </div>
           <div className="col-xl-6">
@@ -96,12 +108,20 @@ const InquiryForm = ({ presetSubject = "" }) => {
               <input
                 type="email"
                 name="email"
-                placeholder="Email address"
+                placeholder={`${t("form.email")} *`}
+                aria-label={t("form.email")}
+                autoComplete="email"
+                aria-invalid={errors.email ? "true" : undefined}
+                aria-describedby={errors.email ? `${uid}-email-error` : undefined}
                 className="commet-box"
                 value={form.email}
                 onChange={handleChange}
               />
-              {errors.email && <span className="input-box__error">{errors.email}</span>}
+              {errors.email && (
+                <span className="input-box__error" id={`${uid}-email-error`} role="alert">
+                  {errors.email}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -109,9 +129,12 @@ const InquiryForm = ({ presetSubject = "" }) => {
           <div className="col-xl-6">
             <div className="input-box">
               <input
-                type="text"
+                type="tel"
                 name="phone"
-                placeholder="Phone Number"
+                placeholder={t("form.phone")}
+                aria-label={t("form.phone")}
+                autoComplete="tel"
+                inputMode="tel"
                 className="commet-box"
                 value={form.phone}
                 onChange={handleChange}
@@ -123,7 +146,8 @@ const InquiryForm = ({ presetSubject = "" }) => {
               <input
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder={t("form.subject")}
+                aria-label={t("form.subject")}
                 className="commet-box"
                 value={form.subject}
                 onChange={handleChange}
@@ -135,15 +159,22 @@ const InquiryForm = ({ presetSubject = "" }) => {
           <textarea
             name="message"
             className="textarea"
-            placeholder="Write a message"
+            placeholder={`${t("form.message")} *`}
+            aria-label={t("form.message")}
+            aria-invalid={errors.message ? "true" : undefined}
+            aria-describedby={errors.message ? `${uid}-message-error` : undefined}
             value={form.message}
             onChange={handleChange}
           ></textarea>
-          {errors.message && <span className="input-box__error">{errors.message}</span>}
+          {errors.message && (
+            <span className="input-box__error" id={`${uid}-message-error`} role="alert">
+              {errors.message}
+            </span>
+          )}
         </div>
         <div className="btn-box">
-          <button type="submit" className="form-btn">
-            {t("sends")}
+          <button type="submit" className="form-btn" disabled={sending} aria-busy={sending}>
+            {sending ? t("form.sending") : t("sends")}
           </button>
         </div>
       </form>

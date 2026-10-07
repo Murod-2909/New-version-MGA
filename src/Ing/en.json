@@ -35,6 +35,21 @@
   "sends":"Send a Message",
   "toastSuccess":"Message sent successfully!",
   "toastError":"Failed to send message. Please try again.",
+  "form": {
+    "name": "Your name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "subject": "Subject",
+    "message": "Write a message",
+    "sending": "Sending…",
+    "newsletterEmail": "Enter your email"
+  },
+  "contactPage": {
+    "addressLabel": "Address",
+    "directions": "Get directions",
+    "follow": "Follow us",
+    "mapTitle": "MGA Reklama location on the map"
+  },
   "formErrorRequired":"This field is required.",
   "formErrorEmail":"Please enter a valid email address.",
   "address":"61 Elbek Street, Tashkent",
