@@ -42,7 +42,12 @@
     "subject": "Mavzu",
     "message": "Xabar yozing",
     "sending": "Yuborilmoqda…",
-    "newsletterEmail": "Elektron pochtangizni kiriting"
+    "newsletterEmail": "Elektron pochtangizni kiriting",
+    "successTitle": "Rahmat!",
+    "successText": "Xabaringiz yuborildi. Tez orada siz bilan bog'lanamiz.",
+    "sendAnother": "Yana xabar yuborish",
+    "errorPhone": "Telefon raqamini to'g'ri kiriting.",
+    "defaultSubject": "Saytdan so'rov"
   },
   "contactPage": {
     "addressLabel": "Manzil",

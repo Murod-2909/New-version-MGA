@@ -42,7 +42,12 @@
     "subject": "Subject",
     "message": "Write a message",
     "sending": "Sending…",
-    "newsletterEmail": "Enter your email"
+    "newsletterEmail": "Enter your email",
+    "successTitle": "Thank you!",
+    "successText": "Your message has been sent. We will get back to you soon.",
+    "sendAnother": "Send another message",
+    "errorPhone": "Please enter a valid phone number.",
+    "defaultSubject": "Website inquiry"
   },
   "contactPage": {
     "addressLabel": "Address",

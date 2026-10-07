@@ -42,7 +42,12 @@
     "subject": "Тема",
     "message": "Напишите сообщение",
     "sending": "Отправка…",
-    "newsletterEmail": "Введите вашу почту"
+    "newsletterEmail": "Введите вашу почту",
+    "successTitle": "Спасибо!",
+    "successText": "Ваше сообщение отправлено. Мы скоро свяжемся с вами.",
+    "sendAnother": "Отправить ещё одно сообщение",
+    "errorPhone": "Введите корректный номер телефона.",
+    "defaultSubject": "Заявка с сайта"
   },
   "contactPage": {
     "addressLabel": "Адрес",
