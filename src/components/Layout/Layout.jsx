@@ -12,18 +12,12 @@ const Layout = (props) => {
   const { children } = props;
 
   const { pathname } = useLocation();
-  const [text, setText] = useState("");
-  const [speaker, setSpeaker] = useState(false);
   const [showTopBtn, setShowTopBtn] = useState(false);
 
-  const changeSpeakSwitcher = (value) => {
-    setSpeaker(value);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setShowTopBtn(window.scrollY > 100);
-    });
+    const onScroll = () => setShowTopBtn(window.scrollY > 100);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const goToTop = () => {
@@ -32,16 +26,6 @@ const Layout = (props) => {
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    document.onmouseup = () => {
-      const selectedText = window.getSelection().toString();
-      if (speaker && text !== selectedText) {
-        window.responsiveVoice.speak(selectedText, "Russian Female");
-        setText(selectedText);
-      }
-    };
-  }, [speaker]);
 
   // Bu yerda /catalogBook sahifasini tekshiramiz
   const isCatalogBookPage = stripLang(pathname) === "/catalogBook";
@@ -53,7 +37,7 @@ const Layout = (props) => {
         {/* One container for every toast (contact form, newsletter, ...) */}
         <ToastContainer position="top-right" autoClose={3500} />
         {!isCatalogBookPage && (
-          <Header speaker={speaker} changeSpeakSwitcher={changeSpeakSwitcher} />
+          <Header />
         )}
         <main className="page-content" id="main">{children}</main>
         {showTopBtn && (
