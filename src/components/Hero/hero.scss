@@ -7,10 +7,15 @@
   min-height: clamp(520px, 78vh, 760px);
   overflow: hidden;
   background: #0b1727;
+  isolation: isolate; // own stacking context: the video can never paint over the text
 
   &__media {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
 
     video,
     img {
@@ -24,7 +29,11 @@
   // Darkest behind the text (left), lighter on the right so the footage still shows.
   &__shade {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
     background:
       linear-gradient(90deg, rgba(8, 16, 28, 0.9) 0%, rgba(8, 16, 28, 0.68) 48%, rgba(8, 16, 28, 0.28) 100%),
       linear-gradient(0deg, rgba(8, 16, 28, 0.55) 0%, rgba(8, 16, 28, 0) 40%);
