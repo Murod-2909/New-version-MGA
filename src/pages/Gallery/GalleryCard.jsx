@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaImages, FaSearchPlus } from "react-icons/fa";
+import { FaImages, FaInstagram, FaSearchPlus } from "react-icons/fa";
 import PlayBadge from "../../components/PlayBadge";
+import "../../components/EmbedFrame/style.scss";
 import { isVideo, mediaPoster } from "../../data/media";
 
 // One gallery tile. Uses the small `thumbnail` the backend provides when it
@@ -13,12 +14,14 @@ const GalleryCard = ({ item, index, onOpen }) => {
   const [loaded, setLoaded] = useState(false);
   const count = 1 + (item.same_images?.length || 0);
   const video = isVideo(item);
+  const poster = mediaPoster(item);
 
   // A cached image can finish loading before React attaches onLoad.
   useEffect(() => {
     const img = imgRef.current;
+    if (!poster) setLoaded(true);
     if (img?.complete && img.naturalWidth > 0) setLoaded(true);
-  }, []);
+  }, [poster]);
 
   return (
     <button
@@ -27,15 +30,22 @@ const GalleryCard = ({ item, index, onOpen }) => {
       onClick={() => onOpen(item)}
       aria-label={`${t(video ? "galleryPage.playVideo" : "galleryPage.open")} ${index + 1}`}
     >
-      <img
-        ref={imgRef}
-        src={mediaPoster(item)}
-        alt={`${t("galleryImageAlt")} ${index + 1}`}
-        loading="lazy"
-        decoding="async"
-        onLoad={() => setLoaded(true)}
-        onError={() => setLoaded(true)}
-      />
+      {poster ? (
+        <img
+          ref={imgRef}
+          src={poster}
+          alt={`${t("galleryImageAlt")} ${index + 1}`}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
+        />
+      ) : (
+        // A pasted Instagram link without an uploaded poster.
+        <span className="embed-placeholder" aria-hidden="true">
+          <FaInstagram />
+        </span>
+      )}
       {count > 1 && (
         <span className="gallery-card__count" data-count={count} aria-hidden="true">
           <FaImages aria-hidden="true" />

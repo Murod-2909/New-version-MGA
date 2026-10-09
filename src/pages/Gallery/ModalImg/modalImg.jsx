@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import { FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import { isVideo } from "../../../data/media";
+import EmbedFrame from "../../../components/EmbedFrame";
+import { embedOf, isVideo } from "../../../data/media";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -34,6 +35,8 @@ const syncVideos = (swiper) => {
 const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
   const { t } = useTranslation();
   const closeRef = useRef(null);
+  // Instagram/YouTube players are only mounted for the slide that is showing.
+  const [activeIndex, setActiveIndex] = useState(initialSlide);
 
   useEffect(() => {
     const onKeyDown = (e) => {
@@ -52,7 +55,7 @@ const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
 
   const handleBackdropClick = (e) => {
     const onControl = e.target.closest(
-      "img, video, button, .swiper-pagination, .swiper-button-prev, .swiper-button-next"
+      "img, video, iframe, a, button, .swiper-pagination, .swiper-button-prev, .swiper-button-next"
     );
     if (!onControl) onClose();
   };
@@ -87,29 +90,39 @@ const ModalCarousel = ({ onClose, galleryImages = [], initialSlide = 0 }) => {
           rewind
           className="custom-swiper"
           onSwiper={syncVideos}
-          onSlideChange={syncVideos}
+          onSlideChange={(swiper) => {
+            syncVideos(swiper);
+            setActiveIndex(swiper.activeIndex);
+          }}
         >
-          {galleryImages.map((img, index) => (
-            <SwiperSlide key={`${index}-${img.image}`}>
-              {isVideo(img) ? (
-                <video
-                  src={img.video}
-                  poster={img.image}
-                  controls
-                  playsInline
-                  preload={index === initialSlide ? "auto" : "none"}
-                  aria-label={`${t("galleryPage.video")} ${index + 1}`}
-                />
-              ) : (
-                <img
-                  src={img.image}
-                  alt={`${t("galleryImageAlt")} ${index + 1}`}
-                  loading={index === initialSlide ? "eager" : "lazy"}
-                  decoding="async"
-                />
-              )}
-            </SwiperSlide>
-          ))}
+          {galleryImages.map((img, index) => {
+            const embed = embedOf(img);
+            return (
+              <SwiperSlide key={`${index}-${img.image}-${img.video_url ?? ""}`}>
+                {embed ? (
+                  index === activeIndex && (
+                    <EmbedFrame link={embed} title={`${t("galleryPage.video")} ${index + 1}`} />
+                  )
+                ) : isVideo(img) && img.video ? (
+                  <video
+                    src={img.video}
+                    poster={img.image}
+                    controls
+                    playsInline
+                    preload={index === initialSlide ? "auto" : "none"}
+                    aria-label={`${t("galleryPage.video")} ${index + 1}`}
+                  />
+                ) : (
+                  <img
+                    src={img.image}
+                    alt={`${t("galleryImageAlt")} ${index + 1}`}
+                    loading={index === initialSlide ? "eager" : "lazy"}
+                    decoding="async"
+                  />
+                )}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>
