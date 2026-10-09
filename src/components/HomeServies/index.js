@@ -1,12 +1,37 @@
 import React, { useEffect } from "react";
 import "./homeServies.scss";
-import { FaTools } from "react-icons/fa";
+import {
+  FaPrint,
+  FaImage,
+  FaExpandArrowsAlt,
+  FaBolt,
+  FaCogs,
+  FaCut,
+  FaFont,
+  FaFire,
+  FaDrawPolygon,
+  FaIndustry,
+} from "react-icons/fa";
 import Aos from "aos";
 
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ServiceCardBase } from "../ServiceCard";
 import { getItemSlug, getProductionSlug } from "../../data/production-content";
+
+// One icon per production capability so the cards don't all look the same;
+// items added later in the admin panel get the generic factory icon.
+const PRODUCTION_ICONS = {
+  "uv-printing": FaPrint,
+  "interior-printing": FaImage,
+  "outdoor-printing": FaExpandArrowsAlt,
+  "metal-laser-cutting-machine": FaBolt,
+  "cnc-cutting": FaCogs,
+  "laser-plexiglass-machine": FaCut,
+  "letter-bending-machine": FaFont,
+  "laser-welding": FaFire,
+  "plotter-cutting": FaDrawPolygon,
+};
 
 function HomeServices({ servicesData }) {
   const { t, i18n } = useTranslation();
@@ -52,7 +77,7 @@ function HomeServices({ servicesData }) {
                   image={item.thumbnail || item.image}
                   title={item.title}
                   description={description}
-                  icon={FaTools}
+                  icon={PRODUCTION_ICONS[curatedSlug] || FaIndustry}
                   ctaLabel={t("services.moreAboutService")}
                   ctaTo={slug ? `/production/${slug}` : "/contact"}
                   ctaState={slug ? undefined : { subject: item.title }}
