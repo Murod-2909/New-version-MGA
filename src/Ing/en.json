@@ -4,12 +4,11 @@
   "notFoundBackHome": "Back to Home",
   "galleryImageAlt": "Signage and advertising project photo",
   "galleryPage": {
-    "open": "Open photo",
     "video": "Video",
     "playVideo": "Play video",
-    "close": "Close",
-    "empty": "No photos yet.",
-    "error": "Couldn't load the gallery. Please try again later."
+    "openOnInstagram": "Open on Instagram",
+    "openOnYoutube": "Open on YouTube",
+    "close": "Close"
   },
   "partnerLogoAlt": "Partner logo",
   "referencesTitle": "References",
@@ -22,20 +21,19 @@
   },
   "about": "About",
   "serves": "Services",
-  "gallery": "Gallery",
   "contact": "Contact",
-  "servies":"Our services",
-  "call":"Call us",
-  "send":"Send email",
+  "servies": "Our services",
+  "call": "Call us",
+  "send": "Send email",
   "get": "Get in touch with us",
   "sub": "Subscribe",
-  "aboutUs":"About Us",
-  "footMenu":"Quick Menu",
-  "work":"Our Work",
-  "feel":"Feel Free to Write",
-  "sends":"Send a Message",
-  "toastSuccess":"Message sent successfully!",
-  "toastError":"Failed to send message. Please try again.",
+  "aboutUs": "About Us",
+  "footMenu": "Quick Menu",
+  "work": "Our Work",
+  "feel": "Feel Free to Write",
+  "sends": "Send a Message",
+  "toastSuccess": "Message sent successfully!",
+  "toastError": "Failed to send message. Please try again.",
   "nav": {
     "projects": "Projects"
   },
@@ -50,13 +48,10 @@
     "p1": "Since 2010, our company has been offering innovative solutions in the advertising and printing industry in Turkey. We are continuously improving ourselves to provide services that best meet the needs of our clients.",
     "p2": "In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region.",
     "p3": "Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!",
-    "teamTitle": "Our team",
     "chipSince": "Since 2010",
     "chipFactory": "2000 m² factory",
     "chipCycle": "Design • Manufacturing • Installation",
     "more": "More about us",
-    "teamPlaceholderName": "Name Surname",
-    "teamPlaceholderRole": "Position",
     "statYears": "Years in advertising",
     "statLines": "Production capabilities",
     "statPartners": "Partner brands",
@@ -111,11 +106,11 @@
     "hoursValue": "Mon–Sat, 9:00–19:00",
     "showMap": "Show map"
   },
-  "formErrorRequired":"This field is required.",
-  "formErrorEmail":"Please enter a valid email address.",
-  "address":"61 Elbek Street, Tashkent",
-  "footerText":"Innovative advertising & printing solutions since 2010 — now serving Central Asia.",
-  "desAbout":"Since 2010, our company has been offering innovative solutions in the advertising and printing industry in Turkey. We are continuously improving ourselves to provide services that best meet the needs of our clients. In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region. Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!",
+  "formErrorRequired": "This field is required.",
+  "formErrorEmail": "Please enter a valid email address.",
+  "address": "61 Elbek Street, Tashkent",
+  "footerText": "Innovative advertising & printing solutions since 2010 — now serving Central Asia.",
+  "desAbout": "Since 2010, our company has been offering innovative solutions in the advertising and printing industry in Turkey. We are continuously improving ourselves to provide services that best meet the needs of our clients. In 2022, we took our international growth a step further by establishing a modern factory in Tashkent, Uzbekistan, occupying a 2000 m² area. With our new production base, we aim to bring our high-quality manufacturing and prompt service approach to the Central Asian market, delivering professional advertising solutions to our clients in the region. Backed by a strong infrastructure and an experienced team, we always prioritize customer satisfaction and strive to play a leading role in the industry. If you have any questions or would like to learn more, feel free to contact us!",
   "seo": {
     "home": {
       "title": "Signage & Wayfinding Manufacturer in Tashkent, Uzbekistan | MGA Reklama",
@@ -128,10 +123,6 @@
     "serves": {
       "title": "Our Services | Signage, Printing & Advertising Production | MGA Reklama",
       "description": "Explore MGA Reklama's signage and advertising production services in Tashkent, Uzbekistan — from design to manufacturing and installation."
-    },
-    "gallery": {
-      "title": "Gallery | MGA Reklama Signage & Advertising Projects",
-      "description": "Browse photos of signage, wayfinding and advertising production projects manufactured by MGA Reklama in Tashkent, Uzbekistan."
     },
     "contact": {
       "title": "Contact Us | MGA Reklama, Tashkent, Uzbekistan",
@@ -155,78 +146,148 @@
         "subtitle": "Clear navigation systems for large facilities",
         "intro": "We design and manufacture wayfinding signage systems that help visitors navigate hotels, hospitals, business centers and public buildings with ease. Every system is engineered for clarity, consistency and durability.",
         "materials": "Aluminum, acrylic, stainless steel and digitally printed panels, produced in-house at our 2,000 m² factory in Tashkent.",
-        "capability": "From concept design to production and on-site installation, our team manages the full wayfinding project."
+        "capability": "From concept design to production and on-site installation, our team manages the full wayfinding project.",
+        "details": "A good wayfinding system starts with a clear hierarchy: entrance and directory signs, directional signs at decision points, and identification signs at each destination. We plan sizes, symbols, colours and text height so signs can be read from the right distance and every sign looks like part of one system.",
+        "uses": [
+          "Hotels and resorts",
+          "Hospitals and clinics",
+          "Business centres and offices",
+          "Shopping centres, universities and public buildings"
+        ]
       },
       "hotel-signage": {
         "h1": "Hotel Signage & Wayfinding",
         "subtitle": "Guest navigation and branding for hospitality projects",
         "intro": "MGA Reklama manufactures room number plates, floor directories, elevator signage and full hotel wayfinding systems that match your brand identity and elevate the guest experience.",
         "materials": "Brushed metal, brass-effect finishes, acrylic and illuminated panels.",
-        "capability": "We work directly with hotel operators and interior designers, delivering consistent signage across every floor and public area."
+        "capability": "We work directly with hotel operators and interior designers, delivering consistent signage across every floor and public area.",
+        "details": "Hotel signage shapes a guest's first impression and helps them find rooms, lifts, restaurants and amenities without asking for directions. We keep fonts, materials and finishes consistent across floors and public areas, and cover the practical items every property needs, such as room numbers, floor directories and exit signs.",
+        "uses": [
+          "Room number plates",
+          "Floor and lift directories",
+          "Restaurant, spa and conference signs",
+          "Lobby and reception branding"
+        ]
       },
       "interior-signage": {
         "h1": "Interior Signage",
         "subtitle": "Branded signage for offices, retail and public interiors",
         "intro": "We produce interior signage — reception signs, office directories, wall graphics and branded panels — that reflect your company's identity indoors.",
         "materials": "Acrylic, PVC, metal composite and printed vinyl finishes.",
-        "capability": "Custom sizes and finishes are manufactured to order and installed by our own team."
+        "capability": "Custom sizes and finishes are manufactured to order and installed by our own team.",
+        "details": "Interior signs are seen up close every day, so material, edge finish and mounting matter as much as the design. We make them to fit your interior, from a single reception logo to a full set of door plates and directories for an entire office floor.",
+        "uses": [
+          "Reception and logo walls",
+          "Door plates and department signs",
+          "Office and shop directories",
+          "Wall graphics and branded panels"
+        ]
       },
       "outdoor-signage": {
         "h1": "Outdoor Signage",
         "subtitle": "Durable exterior advertising built to withstand the elements",
         "intro": "From storefront signs to large-scale outdoor advertising structures, we design and manufacture outdoor signage engineered for Uzbekistan's climate and built to last.",
         "materials": "Weatherproof metal, acrylic, LED illumination and digitally printed surfaces.",
-        "capability": "Our factory handles structural engineering, production and installation for outdoor projects of any scale."
+        "capability": "Our factory handles structural engineering, production and installation for outdoor projects of any scale.",
+        "details": "Outdoor signs must stay bright and secure through summer heat, winter frost, wind and rain. We choose weather-resistant materials and fixings suited to Uzbekistan's climate, and design illuminated signs so the lighting can be serviced.",
+        "uses": [
+          "Shop and storefront signs",
+          "Light boxes and illuminated signs",
+          "Billboards and roadside structures",
+          "Company and building identification"
+        ]
       },
       "totem-pylon-signs": {
         "h1": "Totem & Pylon Signs",
         "subtitle": "Freestanding structures for maximum visibility",
         "intro": "Totem and pylon signs give businesses, shopping centers and fuel stations strong roadside visibility. We engineer and build freestanding structures from the ground up.",
         "materials": "Steel frames, aluminum cladding, acrylic faces and LED lighting.",
-        "capability": "Structural design, fabrication, transport and installation are all handled by our team."
+        "capability": "Structural design, fabrication, transport and installation are all handled by our team.",
+        "details": "A totem or pylon is read from a distance and from a moving car, so proportions, letter size and lighting are planned for quick reading. The structure and foundation are designed to carry wind load, and the face can carry a logo, price panels or a directory.",
+        "uses": [
+          "Fuel stations",
+          "Shopping centres and retail parks",
+          "Business parks and residential complexes",
+          "Hotels, restaurants and roadside businesses"
+        ]
       },
       "channel-letters": {
         "h1": "Channel Letters",
         "subtitle": "Illuminated dimensional lettering for storefronts",
         "intro": "Channel letters give brands a premium, three-dimensional presence. We manufacture front-lit and back-lit letters in custom sizes for storefronts, facades and interiors.",
         "materials": "Aluminum, acrylic faces and LED modules.",
-        "capability": "Every set of letters is custom-fabricated and installed by our production team."
+        "capability": "Every set of letters is custom-fabricated and installed by our production team.",
+        "details": "Channel letters are hollow three-dimensional letters with a metal or acrylic body and a translucent or solid face. Front-lit letters glow through the face, back-lit (halo) letters light the wall behind them, and unlit letters give a clean, solid look in daylight. LED modules use little power and have a long service life.",
+        "uses": [
+          "Storefront names and logos",
+          "Building facades and lobbies",
+          "Shopping-centre and hotel signs",
+          "Interior logo walls"
+        ]
       },
       "large-format-printing": {
         "h1": "Large Format Printing",
         "subtitle": "High-resolution printing for banners, wraps and displays",
         "intro": "Our large format printing services cover banners, vehicle wraps, building wraps and exhibition graphics — produced in-house for fast turnaround.",
         "materials": "Vinyl, mesh banner, canvas and rigid substrates.",
-        "capability": "In-house printing and finishing lets us deliver large runs quickly without third-party delays."
+        "capability": "In-house printing and finishing lets us deliver large runs quickly without third-party delays.",
+        "details": "Large format printers produce graphics up to several metres wide, so many jobs need fewer joins. Material and finish are chosen for the purpose: mesh for surfaces exposed to wind, vinyl for flat surfaces and vehicles, canvas and rigid boards for displays and exhibitions.",
+        "uses": [
+          "Banners and building wraps",
+          "Vehicle graphics",
+          "Exhibition and event displays",
+          "Posters and window graphics"
+        ]
       },
       "museum-signage": {
         "h1": "Museum Signage",
         "subtitle": "Interpretive and wayfinding signage for cultural institutions",
         "intro": "We manufacture interpretive panels, exhibit labels and wayfinding signage for museums and cultural spaces, balancing durability with refined presentation.",
         "materials": "Acrylic, printed panels, metal frames and UV-stable finishes.",
-        "capability": "We coordinate closely with curators and exhibition designers on custom installations."
+        "capability": "We coordinate closely with curators and exhibition designers on custom installations.",
+        "details": "Museum signs have two jobs: tell visitors what they are looking at, and stay out of the way of the exhibit. We pay attention to readability, restrained materials, low-glare finishes and fixings that do not damage walls or objects, and we can produce panels in several languages.",
+        "uses": [
+          "Exhibit labels and captions",
+          "Interpretive and information panels",
+          "Gallery and hall wayfinding",
+          "Donor, name and entrance signs"
+        ]
       },
       "facade-signage": {
         "h1": "Facade Signage",
         "subtitle": "Building-mounted and rooftop signage for maximum brand visibility",
         "intro": "Facade and rooftop signage puts your brand on the skyline. We design, engineer and install building-mounted signs sized for visibility from a distance.",
         "materials": "Aluminum composite panels, illuminated letters and structural steel mounts.",
-        "capability": "Our engineering team ensures every installation meets structural and safety requirements."
+        "capability": "Our engineering team ensures every installation meets structural and safety requirements.",
+        "details": "Facade and rooftop signs are large, heavy and exposed to wind, so structure, anchoring and maintenance access are planned together with the design. We prepare drawings, check the mounting surface and install the sign without damaging the building.",
+        "uses": [
+          "Rooftop company signs",
+          "Facade letters and logos",
+          "Illuminated building signs",
+          "Banks, hotels and business centres"
+        ]
       },
       "fit-out-interior-works": {
         "h1": "Fit-Out & Interior Works",
         "subtitle": "Complete interior build-out for retail and commercial spaces",
         "intro": "Beyond signage, MGA Reklama delivers full interior fit-out services — from partitions and cladding to custom joinery — for retail and commercial spaces.",
         "materials": "Metal framing, plexiglass, laminates and custom millwork.",
-        "capability": "One team manages design, production and installation, so fit-out projects stay on one schedule."
+        "capability": "One team manages design, production and installation, so fit-out projects stay on one schedule.",
+        "details": "Fit-out covers everything that turns an empty space into a working shop, showroom or office: partitions, wall and ceiling cladding, counters, shelving, display units and custom furniture. Because we also make the signs and branded elements, they are designed together with the interior rather than added at the end.",
+        "uses": [
+          "Shops and showrooms",
+          "Offices and reception areas",
+          "Exhibition and promotional stands",
+          "Counters, shelving and display units"
+        ]
       }
-    }
+    },
+    "usesLabel": "Where it is used"
   },
   "projects": {
     "listTitle": "Our Projects",
     "listIntro": "A closer look at the signage, wayfinding and advertising production projects we have completed.",
     "workDoneLabel": "Work Done",
-    "backToGallery": "See full photo gallery",
     "all": "All",
     "empty": "Projects will appear here soon.",
     "error": "Couldn't load the projects. Please try again later.",
@@ -251,47 +312,110 @@
       "uv-printing": {
         "short": "Direct UV printing on rigid and flexible materials.",
         "intro": "Our UV printers apply ink directly onto rigid and flexible surfaces — acrylic, PVC, wood, glass and metal — curing it instantly with UV light for a durable, scratch-resistant finish.",
-        "capability": "Ideal for signage panels, decorative wall art, promotional displays and any project that needs full-color printing directly onto a rigid material without laminating a separate print."
+        "capability": "Ideal for signage panels, decorative wall art, promotional displays and any project that needs full-color printing directly onto a rigid material without laminating a separate print.",
+        "details": "UV printing cures the ink with ultraviolet light the moment it is printed, so the image stays sharp, vivid and resistant to scratches, moisture and fading. Nothing has to dry, so printed panels can be cut, assembled and installed right away.",
+        "uses": [
+          "Acrylic and PVC signage panels",
+          "Glass, wood and metal decor",
+          "Promotional stands and displays",
+          "Wall panels and decorative art"
+        ]
       },
       "interior-printing": {
         "short": "Interior-grade printing for indoor branding and decor.",
         "intro": "We produce interior printing for office branding, retail decor, wall graphics and wayfinding elements, using materials and inks suited for indoor use.",
-        "capability": "Suitable for reception walls, meeting room graphics, retail interior branding and decorative panels."
+        "capability": "Suitable for reception walls, meeting room graphics, retail interior branding and decorative panels.",
+        "details": "Interior graphics are viewed up close, so fine detail, accurate colour and a clean finish matter. We choose inks and materials made for indoor use, so the result stays sharp and colour-accurate at close range.",
+        "uses": [
+          "Reception walls and logo panels",
+          "Meeting-room and office graphics",
+          "Shop and showroom interior branding",
+          "Decorative panels and wall art"
+        ]
       },
       "outdoor-printing": {
         "short": "Weather-resistant printing for outdoor use.",
         "intro": "Our outdoor printing uses weather-resistant inks and substrates designed to withstand sun, rain and temperature changes without fading or peeling.",
-        "capability": "Used for billboards, storefront graphics, banners and any outdoor-facing branded surface."
+        "capability": "Used for billboards, storefront graphics, banners and any outdoor-facing branded surface.",
+        "details": "Outdoor graphics face sunlight, rain, dust and temperature swings all year round. We print on weather-resistant materials with inks chosen for outdoor use, and prepare edges and fixings to suit how the piece will be mounted.",
+        "uses": [
+          "Banners and billboards",
+          "Storefront and window graphics",
+          "Hoardings and fence graphics",
+          "Event and promotional displays"
+        ]
       },
       "metal-laser-cutting-machine": {
         "short": "Precision laser cutting for metal components.",
         "intro": "Our metal laser cutting machine cuts precise shapes and lettering out of steel, aluminum and other metals, giving clean edges without manual finishing.",
-        "capability": "Used for channel letters, metal signage frames, decorative metal panels and custom brackets."
+        "capability": "Used for channel letters, metal signage frames, decorative metal panels and custom brackets.",
+        "details": "A focused laser beam cuts metal sheet along the digital drawing, giving accurate shapes, fine detail and clean edges. The same file can be repeated as often as needed, so identical parts match from the first piece to the last.",
+        "uses": [
+          "Metal letters and logos",
+          "Sign frames and brackets",
+          "Decorative metal panels and screens",
+          "Custom metal parts for installations"
+        ]
       },
       "cnc-cutting": {
         "short": "CNC-routed panels and shapes to exact dimensions.",
         "intro": "Our CNC cutting equipment routs acrylic, wood, foam and composite panels to precise dimensions, producing consistent, repeatable shapes for large orders.",
-        "capability": "Used for sign faces, dimensional letters, display stands and custom-shaped panels."
+        "capability": "Used for sign faces, dimensional letters, display stands and custom-shaped panels.",
+        "details": "A CNC router follows a digital drawing to cut, shape and engrave sheet materials. It handles large panels and thicker materials well, and repeats the same shape exactly across a whole order.",
+        "uses": [
+          "Sign faces and backing panels",
+          "Dimensional letters and logos",
+          "Display stands and exhibition elements",
+          "Panels with custom shapes and engraved details"
+        ]
       },
       "laser-plexiglass-machine": {
         "short": "Laser-cut acrylic (plexiglass) shapes and letters.",
         "intro": "Our laser plexiglass machine cuts and engraves acrylic sheets with clean, polished edges, suitable for both flat and illuminated signage.",
-        "capability": "Used for acrylic letters, light boxes, engraved plaques and decorative acrylic elements."
+        "capability": "Used for acrylic letters, light boxes, engraved plaques and decorative acrylic elements.",
+        "details": "Laser cutting melts and polishes the acrylic edge as it cuts, so letters and shapes come out smooth and clear at the edge, with fine detail that is hard to achieve by hand. The laser can also engrave the surface for plaques and decorative marking.",
+        "uses": [
+          "Acrylic letters and logos",
+          "Light-box faces and illuminated signs",
+          "Engraved plaques and name plates",
+          "Decorative acrylic elements"
+        ]
       },
       "letter-bending-machine": {
         "short": "Forming dimensional letters and profiles.",
         "intro": "Our letter bending machine shapes metal and acrylic strips into the precise profiles used for three-dimensional channel letters and border trim.",
-        "capability": "Used to build the sides (returns) of channel letters and custom dimensional lettering."
+        "capability": "Used to build the sides (returns) of channel letters and custom dimensional lettering.",
+        "details": "The sides of a three-dimensional letter are made from a strip that must follow every curve and corner of the letter. The machine bends the strip along the letter outline, giving smooth, even sides with fewer joints.",
+        "uses": [
+          "Sides (returns) of channel letters",
+          "Dimensional lettering in any typeface",
+          "Edge trim for sign panels",
+          "Logos with curves and sharp corners"
+        ]
       },
       "laser-welding": {
         "short": "Precision welding for clean, durable metal joints.",
         "intro": "Our laser welding equipment joins metal components with narrow, precise welds that need little to no finishing, keeping surfaces smooth for painting or plating.",
-        "capability": "Used to assemble channel letters, metal frames and structural signage components."
+        "capability": "Used to assemble channel letters, metal frames and structural signage components.",
+        "details": "Laser welding concentrates heat in a very small area, so the metal around the joint warps less and the seam stays narrow and neat. That makes it a good choice for thin sheet and for visible joints on letters and frames that will be painted or plated.",
+        "uses": [
+          "Joining parts of channel letters",
+          "Metal sign frames and housings",
+          "Stainless steel and aluminium assemblies",
+          "Structural parts of signage"
+        ]
       },
       "plotter-cutting": {
         "short": "Vinyl cutting for lettering, decals and graphics.",
         "intro": "Our plotter cutting equipment cuts self-adhesive vinyl into precise letters, logos and graphics for application to vehicles, windows and signage.",
-        "capability": "Used for vehicle wraps, window graphics, cut vinyl lettering and decals."
+        "capability": "Used for vehicle wraps, window graphics, cut vinyl lettering and decals.",
+        "details": "A plotter drives a small blade across self-adhesive vinyl to cut letters, logos and patterns along the digital outline. The unwanted vinyl is weeded away and the design is transferred to the surface with application tape.",
+        "uses": [
+          "Vehicle branding and graphics",
+          "Window and glass lettering",
+          "Decals, stickers and labels",
+          "Cut-vinyl lettering for signs"
+        ]
       }
     }
   }

@@ -3,7 +3,6 @@ import language from "./languageSlice";
 import servicesSlider from "./servesSlice/servicesSlider";
 import partnerSlice from "./partnerSlice/partnerSlice";
 import  sendQuestion from "./messageSlice/messageSlice";
-import gallerySlice from "./gallerySlice/gallerySlice";
 import projectsSlice from "./projectsSlice/projectsSlice";
 const store = configureStore({
     reducer: {
@@ -12,7 +11,6 @@ const store = configureStore({
         partnerSlice,
         sendQuestion,
 
-        gallerySlice,
         projectsSlice,
 
 

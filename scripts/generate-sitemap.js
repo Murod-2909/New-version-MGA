@@ -78,7 +78,6 @@ const entry = (route, changefreq, priority) => {
     entry("/serves", "monthly", "0.8"),
     ...serviceSlugs().map((s) => entry(`/services/${s}`, "monthly", "0.8")),
     ...productionSlugs().map((s) => entry(`/production/${s}`, "monthly", "0.8")),
-    entry("/gallery", "weekly", "0.7"),
     entry("/projects", "weekly", "0.8"),
     ...projects.map((s) => entry(`/projects/${encodeURIComponent(s)}`, "monthly", "0.6")),
     entry("/contact", "monthly", "0.7"),

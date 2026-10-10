@@ -57,6 +57,46 @@
     margin-bottom: 30px;
   }
 
+  // Second paragraph under the intro: how the work is done and why it matters.
+  &__details {
+    font-size: 15px;
+    line-height: 26px;
+    color: $text-muted-dark;
+    margin: -14px 0 30px;
+  }
+
+  &__uses {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 24px;
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 15px;
+      line-height: 24px;
+      color: $text-muted-dark;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #d25717;
+      }
+    }
+
+    @media (max-width: 575px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &__block {
     margin-bottom: 25px;
 

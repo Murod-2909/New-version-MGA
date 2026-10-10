@@ -57,7 +57,6 @@ const MobileMenu = ({ isOpen, onClose }) => {
             {[
               { path: "/", label: t("main") },
               { path: "/about", label: t("about") },
-              { path: "/gallery", label: t("gallery") },
               { path: "/serves", label: t("serves") },
               { path: "/projects", label: t("nav.projects") },
               { path: "/contact", label: t("contact") },

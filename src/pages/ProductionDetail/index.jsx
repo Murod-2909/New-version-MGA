@@ -63,6 +63,14 @@ const ProductionDetail = () => {
   const capability =
     !backendText && hasCurated ? t(`production.items.${curatedSlug}.capability`) : "";
 
+  // The extra curated text is shown together with the curated intro, i.e. only
+  // while the admin panel has no description of its own for the item.
+  const showCurated = !backendText && hasCurated;
+  const details = showCurated ? t(`production.items.${curatedSlug}.details`, "") : "";
+  const uses = showCurated
+    ? t(`production.items.${curatedSlug}.uses`, { returnObjects: true, defaultValue: [] })
+    : [];
+
   const otherItems = (servicesData || []).filter(
     (i) => i !== item && i.image && i.title
   );
@@ -87,11 +95,23 @@ const ProductionDetail = () => {
             <div className="service-page__content">
               <img src={item.image} alt={item.title} className="service-page__photo" />
               <p className="service-page__intro">{intro}</p>
+              {details && <p className="service-page__details">{details}</p>}
 
               {capability && (
                 <div className="service-page__block">
                   <h3 aria-level={2}>{t("services.capabilityLabel")}</h3>
                   <p>{capability}</p>
+                </div>
+              )}
+
+              {Array.isArray(uses) && uses.length > 0 && (
+                <div className="service-page__block">
+                  <h3 aria-level={2}>{t("services.usesLabel")}</h3>
+                  <ul className="service-page__uses">
+                    {uses.map((use) => (
+                      <li key={use}>{use}</li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>

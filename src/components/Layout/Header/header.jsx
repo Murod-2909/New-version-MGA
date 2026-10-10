@@ -128,7 +128,6 @@ const Header = () => {
             <ul>
               {item("/", t("main"))}
               {item("/about", t("about"))}
-              {item("/gallery", t("gallery"))}
 
               <li className={`has-dropdown${currentPath === "/serves" ? " current" : ""}`}>
                 <Link

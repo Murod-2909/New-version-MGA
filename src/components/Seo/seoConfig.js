@@ -6,7 +6,6 @@ const seoConfig = {
   "/": "home",
   "/about": "about",
   "/serves": "serves",
-  "/gallery": "gallery",
   "/contact": "contact",
 };
 

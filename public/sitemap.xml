@@ -596,33 +596,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mgareklama.com/gallery</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mgareklama.com/gallery"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mgareklama.com/ru/gallery"/>
-    <xhtml:link rel="alternate" hreflang="uz" href="https://mgareklama.com/uz/gallery"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mgareklama.com/gallery"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mgareklama.com/ru/gallery</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mgareklama.com/gallery"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mgareklama.com/ru/gallery"/>
-    <xhtml:link rel="alternate" hreflang="uz" href="https://mgareklama.com/uz/gallery"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mgareklama.com/gallery"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mgareklama.com/uz/gallery</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mgareklama.com/gallery"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://mgareklama.com/ru/gallery"/>
-    <xhtml:link rel="alternate" hreflang="uz" href="https://mgareklama.com/uz/gallery"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mgareklama.com/gallery"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://mgareklama.com/projects</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mgareklama.com/projects"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mgareklama.com/ru/projects"/>
