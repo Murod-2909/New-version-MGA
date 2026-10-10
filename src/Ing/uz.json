@@ -4,14 +4,11 @@
   "notFoundBackHome": "Bosh sahifaga qaytish",
   "galleryImageAlt": "Tabela va reklama loyihasi surati",
   "galleryPage": {
-    "open": "Rasmni ochish",
     "video": "Video",
     "playVideo": "Videoni ko'rish",
     "openOnInstagram": "Instagram'da ochish",
     "openOnYoutube": "YouTube'da ochish",
-    "close": "Yopish",
-    "empty": "Hozircha rasmlar yo'q.",
-    "error": "Galereyani yuklab bo'lmadi. Keyinroq urinib ko'ring."
+    "close": "Yopish"
   },
   "partnerLogoAlt": "Hamkor logotipi",
   "referencesTitle": "Hamkorlar",
@@ -24,7 +21,6 @@
   },
   "about": "Biz haqimizda",
   "serves": "Xizmatlar",
-  "gallery": "Galereya",
   "contact": "Aloqa",
   "servies": "Bizning xizmatlarimiz",
   "call": "Qo'ng'iroq qiling",
@@ -52,13 +48,10 @@
     "p1": "2010-yildan beri kompaniyamiz Turkiyada reklama va poligrafiya sohasida innovatsion yechimlar taqdim etib kelmoqda. Biz mijozlarimiz ehtiyojlarini eng yaxshi qondirish uchun doimiy ravishda takomillashib boramiz.",
     "p2": "2022-yilda xalqaro rivojlanishimizni yangi bosqichga olib chiqib, Toshkent shahrida 2000 m² maydonni egallagan zamonaviy zavod qurdik. Yangi ishlab chiqarish bazamiz bilan biz yuqori sifatli ishlab chiqarish va tezkor xizmat ko'rsatish yondashuvimizni Markaziy Osiyo bozoriga olib kelishni, mintaqadagi mijozlarimizga professional reklama yechimlarini taqdim etishni maqsad qilganmiz.",
     "p3": "Kuchli infratuzilma va tajribali jamoa yordamida biz doimo mijozlar mamnuniyatini birinchi o'ringa qo'yamiz va sohada yetakchi rol o'ynashga intilamiz. Savollaringiz bo'lsa yoki batafsil ma'lumot olishni istasangiz, biz bilan bog'lanishdan tortinmang!",
-    "teamTitle": "Bizning jamoa",
     "chipSince": "2010-yildan",
     "chipFactory": "2000 m² zavod",
     "chipCycle": "Dizayn • Ishlab chiqarish • O'rnatish",
     "more": "Biz haqimizda batafsil",
-    "teamPlaceholderName": "Ism Familiya",
-    "teamPlaceholderRole": "Lavozim",
     "statYears": "Yillik reklama tajribasi",
     "statLines": "Ishlab chiqarish yo'nalishlari",
     "statPartners": "Hamkor brendlar",
@@ -130,10 +123,6 @@
     "serves": {
       "title": "Xizmatlarimiz | Tabela va tashqi reklama ishlab chiqarish | MGA Reklama",
       "description": "Toshkentda tabela, tashqi reklama va yo'naltiruvchi belgilar ishlab chiqarish — loyihalashdan montajgacha. MGA Reklama."
-    },
-    "gallery": {
-      "title": "Galereya | MGA Reklama tashqi reklama va tabela loyihalari",
-      "description": "MGA Reklama tomonidan Toshkentda amalga oshirilgan tashqi reklama, tabela va navigatsiya loyihalarining fotosuratlari."
     },
     "contact": {
       "title": "Aloqa | MGA Reklama, Toshkent, O'zbekiston",
@@ -299,7 +288,6 @@
     "listTitle": "Bizning loyihalarimiz",
     "listIntro": "Biz bajargan tabela, navigatsiya va reklama ishlab chiqarish loyihalari bilan yaqindan tanishing.",
     "workDoneLabel": "Bajarilgan ishlar",
-    "backToGallery": "To'liq galereyani ko'rish",
     "all": "Hammasi",
     "empty": "Loyihalar tez orada shu yerda paydo bo'ladi.",
     "error": "Loyihalarni yuklab bo'lmadi. Keyinroq urinib ko'ring.",

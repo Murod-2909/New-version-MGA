@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import { FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import EmbedFrame from "../../../components/EmbedFrame";
-import { embedOf, isVideo } from "../../../data/media";
+import EmbedFrame from "../EmbedFrame";
+import { embedOf, isVideo } from "../../data/media";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./modalImg.scss";
+import "./style.scss";
 
 // Shared lightbox (Gallery, project pages, "our work" slider). Deliberately has
 // no autoplay: someone studying a photo shouldn't have it swapped out from

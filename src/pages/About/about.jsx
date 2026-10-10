@@ -6,13 +6,11 @@ import Partner from "../../components/Partner";
 import NewLetter from "../../components/newLetter";
 import Pession from "../../components/Pession";
 import YouTubeFacade from "../../components/YouTubeFacade";
-import TeamSection from "../../components/TeamSection";
 import Link from "../../components/LocaleLink";
 import { useTranslation } from "react-i18next";
 import { FaPencilRuler, FaIndustry, FaTools, FaArrowRight } from "react-icons/fa";
 import useAboutStats from "../../hooks/useAboutStats";
-import { getGallery } from "../../reduxToolkit/gallerySlice";
-import { mediaPoster } from "../../data/media";
+import { getProjects } from "../../reduxToolkit/projectsSlice";
 
 const VIDEO_ID = "55_3tE4tNno";
 
@@ -27,18 +25,18 @@ const STEPS = [
 const About = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const gallery = useSelector((state) => state.gallerySlice?.galleryData);
+  const projects = useSelector((state) => state.projectsSlice?.list);
 
   useEffect(() => {
-    dispatch(getGallery());
+    dispatch(getProjects());
   }, [dispatch]);
 
   const stats = useAboutStats();
 
-  // Real photos of the factory and finished work: the first gallery entries, falling
-  // back to the factory shot used on the home page.
-  const photos = (Array.isArray(gallery) ? gallery : [])
-    .map((item) => mediaPoster(item))
+  // Real photos of finished work: the covers of the first projects, falling back to
+  // the factory shot used on the home page.
+  const photos = (Array.isArray(projects) ? projects : [])
+    .map((project) => project.cover_thumbnail || project.cover)
     .filter(Boolean)
     .slice(0, PHOTO_COUNT);
   if (photos.length === 0) photos.push("/heroPoster.jpg");
@@ -76,15 +74,13 @@ const About = () => {
             ))}
           </div>
           <p className="about-photos__more">
-            <Link to="/gallery">
-              {t("projects.backToGallery")}
+            <Link to="/projects">
+              {t("projects.listTitle")}
               <FaArrowRight aria-hidden="true" />
             </Link>
           </p>
         </div>
       </section>
-
-      <TeamSection />
 
       <section className="about-process">
         <div className="container">

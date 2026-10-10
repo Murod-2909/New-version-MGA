@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowLeft, FaArrowRight, FaInstagram } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "swiper/css";
-import ModalCarousel from "../../pages/Gallery/ModalImg/modalImg";
+import ModalCarousel from "../Lightbox";
 import PlayBadge from "../PlayBadge";
 import "../EmbedFrame/style.scss";
 import { embedOf, isVideo, mediaPoster } from "../../data/media";

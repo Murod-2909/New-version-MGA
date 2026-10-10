@@ -1,5 +1,5 @@
 import React, {lazy, Suspense} from "react";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
 import ScrollTop from "./hoc/ScrollTop";
 import Layout from "./components/Layout/Layout";
 import PageLoading from "./components/PageLoading";
@@ -10,7 +10,6 @@ const Home = lazy(() => import("./pages/Home/home"));
 const About = lazy(() => import("./pages/About/about"));
 const catalogBook = lazy(() => import("./pages/CatalogBook"));
 const Serves = lazy(() => import("./pages/Serves"));
-const Gallery = lazy(() => import("./pages/Gallery/gallery"));
 const Contact = lazy(() => import("./pages/Contact/contact"));
 const ServicePage = lazy(() => import("./pages/ServicePage"));
 const ProjectsList = lazy(() => import("./pages/Projects/ProjectsList"));
@@ -27,7 +26,6 @@ const routes = [
     {path: "/serves", element: Serves},
     {path: "/services/:slug", element: ServicePage},
     {path: "/production/:slug", element: ProductionDetail},
-    {path: "/gallery", element: Gallery},
     {path: "/projects", element: ProjectsList},
     {path: "/projects/:slug", element: ProjectDetail},
     {path: "/contact", element: Contact},
@@ -49,6 +47,14 @@ const RoutesContainer = () => (
                             <Route key={`${key}-${path}`} path={path} element={<RouteComponent/>}/>
                         ));
                     })}
+                    {/* The gallery page was retired: its photos live on the projects pages. */}
+                    {LANGS.map((lang) => (
+                        <Route
+                            key={`gallery-${lang}`}
+                            path={withLang("/gallery", lang)}
+                            element={<Navigate to={withLang("/projects", lang)} replace/>}
+                        />
+                    ))}
                 </Routes>
             </Suspense>
         </Layout>

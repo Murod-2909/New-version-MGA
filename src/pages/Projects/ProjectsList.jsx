@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import Link from "../../components/LocaleLink";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import PageHero from "../../components/pageHero";
@@ -71,10 +70,6 @@ const ProjectsList = () => {
               <ProjectCard key={project.slug ?? project.id} project={project} headingLevel={2} />
             ))}
           </div>
-
-          <p className="projects-page__gallery-link">
-            <Link to="/gallery">{t("projects.backToGallery")}</Link>
-          </p>
         </div>
       </section>
 
