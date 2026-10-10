@@ -32,6 +32,8 @@ const ServicePage = () => {
   const h1 = t(`${base}.h1`);
   const subtitle = t(`${base}.subtitle`);
   const intro = t(`${base}.intro`);
+  const details = t(`${base}.details`);
+  const uses = t(`${base}.uses`, { returnObjects: true });
 
   return (
     <div className="service-page">
@@ -47,6 +49,7 @@ const ServicePage = () => {
           <div className="service-page__row">
             <div className="service-page__content">
               <p className="service-page__intro">{intro}</p>
+              {details && <p className="service-page__details">{details}</p>}
 
               <div className="service-page__block">
                 <h3 aria-level={2}>{t("services.materialsLabel")}</h3>
@@ -57,6 +60,17 @@ const ServicePage = () => {
                 <h3 aria-level={2}>{t("services.capabilityLabel")}</h3>
                 <p>{t(`${base}.capability`)}</p>
               </div>
+
+              {Array.isArray(uses) && uses.length > 0 && (
+                <div className="service-page__block">
+                  <h3 aria-level={2}>{t("services.usesLabel")}</h3>
+                  <ul className="service-page__uses">
+                    {uses.map((use) => (
+                      <li key={use}>{use}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             <div className="service-page__form">

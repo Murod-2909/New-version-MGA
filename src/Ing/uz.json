@@ -26,18 +26,18 @@
   "serves": "Xizmatlar",
   "gallery": "Galereya",
   "contact": "Aloqa",
-  "servies":"Bizning xizmatlarimiz",
-  "call":"Qo'ng'iroq qiling",
-  "send":"Email yuboring",
+  "servies": "Bizning xizmatlarimiz",
+  "call": "Qo'ng'iroq qiling",
+  "send": "Email yuboring",
   "get": "Biz bilan bog'laning",
   "sub": "Obuna bo'lish",
-  "aboutUs":"Biz haqimizda",
-  "footMenu":"Tezkor menyu",
-  "work":"Bizning ishlarimiz",
-  "feel":"Istalgan vaqtda yozing",
-  "sends":"Xabar yuborish",
-  "toastSuccess":"Xabar muvaffaqiyatli yuborildi!",
-  "toastError":"Xabarni yuborib bo'lmadi. Iltimos, qayta urinib ko'ring.",
+  "aboutUs": "Biz haqimizda",
+  "footMenu": "Tezkor menyu",
+  "work": "Bizning ishlarimiz",
+  "feel": "Istalgan vaqtda yozing",
+  "sends": "Xabar yuborish",
+  "toastSuccess": "Xabar muvaffaqiyatli yuborildi!",
+  "toastError": "Xabarni yuborib bo'lmadi. Iltimos, qayta urinib ko'ring.",
   "nav": {
     "projects": "Loyihalar"
   },
@@ -113,11 +113,11 @@
     "hoursValue": "Du–Sha, 9:00–19:00",
     "showMap": "Xaritani ko'rsatish"
   },
-  "formErrorRequired":"Bu maydonni to'ldirish shart.",
-  "formErrorEmail":"Iltimos, to'g'ri email manzilini kiriting.",
-  "address":"Toshkent sh., Elbek ko'chasi, 61",
-  "footerText":"2010-yildan beri innovatsion reklama va poligrafiya yechimlari — endi Markaziy Osiyoda ham.",
-  "desAbout":"2010-yildan beri kompaniyamiz Turkiyada reklama va poligrafiya sohasida innovatsion yechimlar taqdim etib kelmoqda. Biz mijozlarimiz ehtiyojlarini eng yaxshi qondirish uchun doimiy ravishda takomillashib boramiz. 2022-yilda xalqaro rivojlanishimizni yangi bosqichga olib chiqib, Toshkent shahrida 2000 m² maydonni egallagan zamonaviy zavod qurdik. Yangi ishlab chiqarish bazamiz bilan biz yuqori sifatli ishlab chiqarish va tezkor xizmat ko'rsatish yondashuvimizni Markaziy Osiyo bozoriga olib kelishni, mintaqadagi mijozlarimizga professional reklama yechimlarini taqdim etishni maqsad qilganmiz. Kuchli infratuzilma va tajribali jamoa yordamida biz doimo mijozlar mamnuniyatini birinchi o'ringa qo'yamiz va sohada yetakchi rol o'ynashga intilamiz. Savollaringiz bo'lsa yoki batafsil ma'lumot olishni istasangiz, biz bilan bog'lanishdan tortinmang!",
+  "formErrorRequired": "Bu maydonni to'ldirish shart.",
+  "formErrorEmail": "Iltimos, to'g'ri email manzilini kiriting.",
+  "address": "Toshkent sh., Elbek ko'chasi, 61",
+  "footerText": "2010-yildan beri innovatsion reklama va poligrafiya yechimlari — endi Markaziy Osiyoda ham.",
+  "desAbout": "2010-yildan beri kompaniyamiz Turkiyada reklama va poligrafiya sohasida innovatsion yechimlar taqdim etib kelmoqda. Biz mijozlarimiz ehtiyojlarini eng yaxshi qondirish uchun doimiy ravishda takomillashib boramiz. 2022-yilda xalqaro rivojlanishimizni yangi bosqichga olib chiqib, Toshkent shahrida 2000 m² maydonni egallagan zamonaviy zavod qurdik. Yangi ishlab chiqarish bazamiz bilan biz yuqori sifatli ishlab chiqarish va tezkor xizmat ko'rsatish yondashuvimizni Markaziy Osiyo bozoriga olib kelishni, mintaqadagi mijozlarimizga professional reklama yechimlarini taqdim etishni maqsad qilganmiz. Kuchli infratuzilma va tajribali jamoa yordamida biz doimo mijozlar mamnuniyatini birinchi o'ringa qo'yamiz va sohada yetakchi rol o'ynashga intilamiz. Savollaringiz bo'lsa yoki batafsil ma'lumot olishni istasangiz, biz bilan bog'lanishdan tortinmang!",
   "seo": {
     "home": {
       "title": "Toshkentda reklama va yo'naltiruvchi belgilar ishlab chiqarish | MGA Reklama",
@@ -157,72 +157,143 @@
         "subtitle": "Yirik obyektlar uchun navigatsiya tizimlari",
         "intro": "Biz mehmonxonalar, biznes-markazlar va jamoat binolarida tashrif buyuruvchilarga yo'l topishda yordam beruvchi yo'naltiruvchi belgilar tizimlarini loyihalaymiz va ishlab chiqaramiz.",
         "materials": "Alyuminiy, akril, zanglamaydigan po'lat va raqamli bosilgan panellar — barchasi Toshkentdagi 2000 m² zavodimizda ishlab chiqariladi.",
-        "capability": "Kontseptsiyadan tortib ishlab chiqarish va montajgacha — loyihani to'liq boshqaramiz."
+        "capability": "Konsepsiyadan tortib ishlab chiqarish va montajgacha — loyihani to'liq boshqaramiz.",
+        "details": "Yaxshi yo'naltiruvchi tizim aniq tartibdan boshlanadi: kirish va umumiy ko'rsatkichlar, yo'l tanlanadigan joylardagi yo'nalish belgilari va har bir manzildagi nomlovchi lavhalar. Biz belgilar kerakli masofadan o'qilishi va bitta tizimning qismidek ko'rinishi uchun o'lcham, piktogramma, rang va shrift balandligini rejalashtiramiz.",
+        "uses": [
+          "Mehmonxona va kurortlar",
+          "Kasalxona va klinikalar",
+          "Biznes-markazlar va ofislar",
+          "Savdo markazlari, universitetlar va jamoat binolari"
+        ]
       },
       "hotel-signage": {
         "h1": "Mehmonxona uchun tabela va navigatsiya",
         "subtitle": "Mehmonlar uchun yo'naltiruvchi belgilar",
         "intro": "MGA Reklama xona raqami lavhalari, qavat ko'rsatkichlari va mehmonxonaning brendiga mos to'liq navigatsiya tizimlarini ishlab chiqaradi.",
         "materials": "Metall, akril va yoritiladigan panellar.",
-        "capability": "Mehmonxona operatorlari va interyer dizaynerlar bilan bevosita ishlaymiz, har bir qavatda bir xil uslubni ta'minlaymiz."
+        "capability": "Mehmonxona operatorlari va interyer dizaynerlari bilan bevosita ishlaymiz, har bir qavatda bir xil uslubni ta'minlaymiz.",
+        "details": "Mehmonxonadagi belgilar mehmonning birinchi taassurotini shakllantiradi va unga xona, lift, restoran va xizmat joylarini so'ramasdan topishga yordam beradi. Biz barcha qavat va umumiy joylarda shrift, material va pardozni bir xil saqlaymiz va xona raqamlari, qavat ko'rsatkichlari va chiqish belgilari kabi zarur narsalarni ham tayyorlaymiz.",
+        "uses": [
+          "Xona raqami lavhalari",
+          "Qavat va lift ko'rsatkichlari",
+          "Restoran, spa va konferens-zal lavhalari",
+          "Lobbi va resepshn brendingi"
+        ]
       },
       "interior-signage": {
         "h1": "Ichki tabela va lavhalar",
         "subtitle": "Ofis va savdo maydonlari uchun brendlangan lavhalar",
-        "intro": "Biz resepshn lavhalari, ofis ko'rsatkichlari va brendlangan panellarni — kompaniyangiz uslubini ichki makonda aks ettiruvchi — ishlab chiqaramiz.",
+        "intro": "Biz ichki makon uchun resepshn lavhalari, ofis ko'rsatkichlari, devor grafikasi va brendlangan panellar ishlab chiqaramiz — ular kompaniyangiz uslubini xona ichida aks ettiradi.",
         "materials": "Akril, PVX, metall kompozit va bosilgan vinil.",
-        "capability": "Individual o'lcham va bezaklar buyurtma asosida ishlab chiqariladi va o'z jamoamiz tomonidan o'rnatiladi."
+        "capability": "Individual o'lcham va bezaklar buyurtma asosida ishlab chiqariladi va o'z jamoamiz tomonidan o'rnatiladi.",
+        "details": "Ichki tabelalar har kuni yaqindan ko'riladi, shuning uchun material, qirralarning pardozi va mahkamlash dizayn kabi muhim. Biz ularni interyeringizga moslab tayyorlaymiz — resepshndagi bitta logotipdan tortib butun ofis qavati uchun eshik lavhalari va ko'rsatkichlar to'plamigacha.",
+        "uses": [
+          "Resepshn va logotipli devorlar",
+          "Eshik lavhalari va bo'lim belgilari",
+          "Ofis va do'kon ko'rsatkichlari",
+          "Devor grafikasi va brendlangan panellar"
+        ]
       },
       "outdoor-signage": {
         "h1": "Tashqi reklama",
         "subtitle": "Toshkent iqlimiga bardoshli tashqi reklama",
         "intro": "Do'kon peshtoqidan tortib yirik reklama konstruksiyalarigacha — biz O'zbekiston iqlimiga mos tashqi reklamani loyihalaymiz va ishlab chiqaramiz.",
         "materials": "Namlikka chidamli metall, akril, LED yoritish va raqamli bosilgan yuzalar.",
-        "capability": "Zavodimiz har qanday miqyosdagi tashqi reklama loyihasining muhandislik, ishlab chiqarish va montajini o'z zimmasiga oladi."
+        "capability": "Zavodimiz har qanday miqyosdagi tashqi reklama loyihasining muhandislik, ishlab chiqarish va montajini o'z zimmasiga oladi.",
+        "details": "Tashqi tabelalar yozgi issiq, qishki sovuq, shamol va yomg'irda ham yorqin va mustahkam turishi kerak. Biz O'zbekiston iqlimiga mos ob-havoga chidamli material va mahkamlagichlarni tanlaymiz hamda yoritiladigan tabelalarni yoritgichga xizmat ko'rsatish mumkin bo'ladigan qilib loyihalaymiz.",
+        "uses": [
+          "Do'kon va peshtoq tabelalari",
+          "Yorug'lik qutilari va yoritiladigan tabelalar",
+          "Billbordlar va yo'l bo'yi konstruksiyalari",
+          "Kompaniya va bino nomi tabelalari"
+        ]
       },
       "totem-pylon-signs": {
         "h1": "Reklama ustunlari (totem va pilon)",
         "subtitle": "Maksimal ko'rinish uchun alohida turuvchi konstruksiyalar",
         "intro": "Reklama ustunlari biznes, savdo markazlari va yoqilg'i shoxobchalariga yo'ldan yaxshi ko'rinish beradi. Biz alohida turuvchi konstruksiyalarni noldan loyihalaymiz va quramiz.",
         "materials": "Po'lat karkas, alyuminiy qoplama, akril panellar va LED yoritish.",
-        "capability": "Konstruktiv hisob-kitob, ishlab chiqarish, tashish va montajning barchasini jamoamiz bajaradi."
+        "capability": "Konstruktiv hisob-kitob, ishlab chiqarish, tashish va montajning barchasini jamoamiz bajaradi.",
+        "details": "Stela yoki pilon uzoqdan va harakatdagi mashinadan o'qiladi, shuning uchun mutanosiblik, harf o'lchami va yoritish tez o'qilishiga mo'ljallanadi. Konstruksiya va poydevor shamol yukiga hisoblanadi, old yuzaga esa logotip, narx panellari yoki ko'rsatkich joylash mumkin.",
+        "uses": [
+          "Yoqilg'i shoxobchalari",
+          "Savdo markazlari va savdo majmualari",
+          "Biznes-parklar va turar-joy majmualari",
+          "Mehmonxona, restoran va yo'l bo'yi biznesi"
+        ]
       },
       "channel-letters": {
         "h1": "Hajmli harflar",
         "subtitle": "Peshtoqlar uchun yoritiladigan hajmli harflar",
         "intro": "Hajmli harflar brendga premium, uch o'lchamli ko'rinish beradi. Biz oldindan va orqadan yoritiladigan harflarni istalgan o'lchamda ishlab chiqaramiz.",
         "materials": "Alyuminiy, akril yuzalar va LED modullar.",
-        "capability": "Har bir harflar to'plami individual tarzda ishlab chiqariladi va jamoamiz tomonidan o'rnatiladi."
+        "capability": "Har bir harf to'plami individual tarzda ishlab chiqariladi va jamoamiz tomonidan o'rnatiladi.",
+        "details": "Hajmli harflar — metall yoki akril korpusli, shaffof yoki zich yuzali kovak uch o'lchamli harflardir. Oldindan yoritiladigan harflar yuza orqali yonadi, orqadan (halo) yoritiladigan harflar orqasidagi devorni yoritadi, yoritilmaganlari esa kunduzi toza va yaxlit ko'rinish beradi. LED modullar kam energiya sarflaydi va uzoq xizmat qiladi.",
+        "uses": [
+          "Peshtoqdagi nom va logotiplar",
+          "Bino fasadlari va lobbi",
+          "Savdo markazi va mehmonxona tabelalari",
+          "Interyerdagi logotipli devorlar"
+        ]
       },
       "large-format-printing": {
-        "h1": "Katta formatli bosma",
+        "h1": "Keng formatli bosma",
         "subtitle": "Banner va ko'rgazma uchun yuqori aniqlikdagi bosma",
-        "intro": "Bizning katta formatli bosma xizmatlarimiz bannerlar, avtomobil va bino brendlashtirishi hamda ko'rgazma grafikasini o'z ichiga oladi — barchasi o'z korxonamizda ishlab chiqariladi.",
+        "intro": "Bizning keng formatli bosma xizmatlarimiz bannerlar, avtomobil va bino brendlashtirishi hamda ko'rgazma grafikasini o'z ichiga oladi — barchasi o'z korxonamizda ishlab chiqariladi.",
         "materials": "Vinil, banner to'ri, brezent va qattiq asoslar.",
-        "capability": "O'z ishlab chiqarishimiz tufayli katta hajmdagi buyurtmalarni tezda, uchinchi tomon kechikishlarisiz bajaramiz."
+        "capability": "O'z ishlab chiqarishimiz tufayli katta hajmdagi buyurtmalarni tezda, uchinchi tomon kechikishlarisiz bajaramiz.",
+        "details": "Keng formatli printerlar kengligi bir necha metrgacha bo'lgan grafikani bosadi, shuning uchun ko'p ishlarda choklar kamroq bo'ladi. Material va pardoz maqsadga qarab tanlanadi: shamolga ochiq yuzalar uchun to'r, tekis yuzalar va avtomobillar uchun vinil, stendlar va ko'rgazmalar uchun brezent va qattiq asoslar.",
+        "uses": [
+          "Bannerlar va binolarni brendlash",
+          "Avtomobil grafikasi",
+          "Ko'rgazma va tadbir stendlari",
+          "Plakatlar va oyna grafikasi"
+        ]
       },
       "museum-signage": {
         "h1": "Muzey lavhalari",
         "subtitle": "Muzeylar uchun ma'lumot va navigatsiya lavhalari",
         "intro": "Biz muzeylar va madaniy makonlar uchun ma'lumot panellari, eksponat yorliqlari va yo'naltiruvchi lavhalarni ishlab chiqaramiz.",
         "materials": "Akril, bosilgan panellar, metall ramkalar va UV-chidamli qoplamalar.",
-        "capability": "Individual loyihalarni amalga oshirishda kuratorlar va ko'rgazma dizaynerlari bilan yaqindan hamkorlik qilamiz."
+        "capability": "Individual loyihalarni amalga oshirishda kuratorlar va ko'rgazma dizaynerlari bilan yaqindan hamkorlik qilamiz.",
+        "details": "Muzey lavhalarining ikki vazifasi bor: tashrifchiga nimani ko'rayotganini aytish va eksponatga xalaqit bermaslik. Biz o'qilishi osonligiga, bosiq materiallarga, yaltiramaydigan pardozga, devor va buyumlarga zarar yetkazmaydigan mahkamlagichlarga e'tibor beramiz hamda panellarni bir necha tilda tayyorlay olamiz.",
+        "uses": [
+          "Eksponat yorliqlari va izohlari",
+          "Ma'lumot va izohlovchi panellar",
+          "Zal va galereyalarda yo'nalish belgilari",
+          "Homiylar nomi va kirish lavhalari"
+        ]
       },
       "facade-signage": {
         "h1": "Fasad va tom usti tabelalari",
         "subtitle": "Brend ko'rinishini maksimal darajada oshiruvchi bino tabelalari",
         "intro": "Fasad va tom usti tabelalari brendingizni shahar siluetiga qo'yadi. Biz uzoqdan ko'rinadigan tabelalarni loyihalaymiz, hisoblaymiz va o'rnatamiz.",
         "materials": "Alyuminiy kompozit panellar, yoritiladigan harflar va po'lat konstruksiyalar.",
-        "capability": "Muhandislarimiz har bir montajning mustahkamlik va xavfsizlik talablariga javob berishini ta'minlaydi."
+        "capability": "Muhandislarimiz har bir montajning mustahkamlik va xavfsizlik talablariga javob berishini ta'minlaydi.",
+        "details": "Fasad va tom usti tabelalari katta, og'ir va shamolga ochiq bo'ladi, shuning uchun konstruksiya, mahkamlash va xizmat ko'rsatish uchun kirish dizayn bilan birga rejalashtiriladi. Biz chizmalarni tayyorlaymiz, o'rnatiladigan yuzani tekshiramiz va tabelani binoga zarar yetkazmasdan o'rnatamiz.",
+        "uses": [
+          "Tom ustidagi kompaniya tabelalari",
+          "Fasaddagi harf va logotiplar",
+          "Yoritiladigan bino tabelalari",
+          "Banklar, mehmonxonalar va biznes-markazlar"
+        ]
       },
       "fit-out-interior-works": {
-        "h1": "Ta'mirlash va interyer ishlari",
-        "subtitle": "Savdo va tijorat maydonlari uchun to'liq interyer ishlari",
-        "intro": "Tabelalardan tashqari, MGA Reklama savdo va tijorat maydonlari uchun to'liq interyer ishlarini — bo'linmalar, qoplamalar va individual mebeldan tortib — bajaradi.",
-        "materials": "Metall karkas, organik shisha, laminat va buyurtma asosidagi mebel.",
-        "capability": "Yagona jamoa dizayn, ishlab chiqarish va montajni boshqaradi, shuning uchun loyiha bitta jadvalda davom etadi."
+        "h1": "Interyerni jihozlash va pardozlash",
+        "subtitle": "Savdo va tijorat maydonlari uchun interyerni to'liq jihozlash",
+        "intro": "Tabelalardan tashqari, MGA Reklama savdo va tijorat maydonlarini to'liq jihozlaydi: bo'linmalar, devor qoplamalari va buyurtma mebel.",
+        "materials": "Metall karkas, pleksiglas, laminat va buyurtma asosidagi mebel.",
+        "capability": "Yagona jamoa dizayn, ishlab chiqarish va montajni boshqaradi, shuning uchun loyiha bitta jadvalda davom etadi.",
+        "details": "Jihozlash bo'sh xonani ishlaydigan do'kon, shourum yoki ofisga aylantiradigan hamma narsani o'z ichiga oladi: bo'linmalar, devor va shiftni qoplash, peshtaxtalar, javonlar, vitrinalar va buyurtma mebel. Tabela va brend elementlarini ham o'zimiz ishlab chiqarganimiz uchun ular oxirida qo'shilmasdan, interyer bilan birga loyihalanadi.",
+        "uses": [
+          "Do'konlar va shourumlar",
+          "Ofislar va resepshn hududlari",
+          "Ko'rgazma va aksiya stendlari",
+          "Peshtaxtalar, javonlar va vitrinalar"
+        ]
       }
-    }
+    },
+    "usesLabel": "Qayerda qo'llaniladi"
   },
   "projects": {
     "listTitle": "Bizning loyihalarimiz",
@@ -253,47 +324,110 @@
       "uv-printing": {
         "short": "Qattiq va egiluvchan materiallarga to'g'ridan-to'g'ri UV bosma.",
         "intro": "UV printerlarimiz bo'yoqni to'g'ridan-to'g'ri qattiq va egiluvchan yuzalarga — akril, PVX, yog'och, shisha va metallga — qo'llaydi va uni UV nur bilan darhol qotiradi, natijada chidamli, tirnalishga bardoshli qoplama hosil bo'ladi.",
-        "capability": "Reklama panellari, dekorativ devor rasmlari, aksiya stendlari va laminatsiyasiz to'g'ridan-to'g'ri qattiq materialga to'liq rangli bosma talab qiladigan har qanday loyiha uchun mos."
+        "capability": "Reklama panellari, dekorativ devor rasmlari, aksiya stendlari va laminatsiyasiz to'g'ridan-to'g'ri qattiq materialga to'liq rangli bosma talab qiladigan har qanday loyiha uchun mos.",
+        "details": "UV bosmada bo'yoq bosilgan zahoti ultrabinafsha nur bilan qotadi, shuning uchun tasvir aniq va to'yingan bo'lib qoladi, tirnalish, namlik va so'nishga bardosh beradi. Quritishni kutish shart emas: bosilgan panellarni darrov kesish, yig'ish va o'rnatish mumkin.",
+        "uses": [
+          "Akril va PVX tabela panellari",
+          "Shisha, yog'och va metalldan bezak buyumlari",
+          "Aksiya stendlari va displeylar",
+          "Devor panellari va dekorativ rasmlar"
+        ]
       },
       "interior-printing": {
         "short": "Ichki brending va bezak uchun bosma.",
-        "intro": "Biz ofis brendingi, savdo maydonlari bezagi, devor grafikasi va navigatsiya elementlari uchun ichki xonalarga mos material va bo'yoqlar bilan ichki bosma ishlarini bajaramiz.",
-        "capability": "Resepshn devorlari, muzokara xonalari grafikasi, savdo interyeri brendingi va dekorativ panellar uchun mos."
+        "intro": "Ofis brendingi, savdo maydonlari bezagi, devor grafikasi va navigatsiya elementlari uchun interyerga mos material va bo'yoqlar bilan bosma ishlarini bajaramiz.",
+        "capability": "Resepshn devorlari, muzokara xonalari grafikasi, savdo interyeri brendingi va dekorativ panellar uchun mos.",
+        "details": "Interyer grafikasi yaqindan ko'riladi, shuning uchun mayda detallar, rang aniqligi va toza pardoz muhim. Biz ichki xonalar uchun mo'ljallangan bo'yoq va materiallarni tanlaymiz, shu sabab tasvir yaqindan ham aniq va rangi to'g'ri bo'lib qoladi.",
+        "uses": [
+          "Resepshn devorlari va logotipli panellar",
+          "Muzokara xonalari va ofis grafikasi",
+          "Do'kon va shourumlar interyeri brendingi",
+          "Dekorativ panellar va devor rasmlari"
+        ]
       },
       "outdoor-printing": {
         "short": "Ochiq havo uchun ob-havoga chidamli bosma.",
-        "intro": "Bizning tashqi bosmamiz quyosh, yomg'ir va harorat o'zgarishlariga bardosh beradigan, so'nmaydigan va qavarib ketmaydigan ob-havoga chidamli bo'yoq va materiallardan foydalanadi.",
-        "capability": "Billbordlar, do'kon peshtoqi grafikasi, bannerlar va istalgan tashqi brendlangan yuzalar uchun ishlatiladi."
+        "intro": "Tashqi bosmada quyosh, yomg'ir va harorat o'zgarishiga bardosh beradigan bo'yoq va materiallar ishlatiladi, shuning uchun tasvir so'nmaydi va ko'chib tushmaydi.",
+        "capability": "Billbordlar, do'kon peshtoqi grafikasi, bannerlar va istalgan tashqi brendlangan yuzalar uchun ishlatiladi.",
+        "details": "Tashqi grafika yil bo'yi quyosh, yomg'ir, chang va harorat o'zgarishiga duch keladi. Biz ob-havoga chidamli materiallarga ko'chada ishlatishga mo'ljallangan bo'yoqlar bilan bosamiz, qirralari va mahkamlash joylarini esa o'rnatish usuliga qarab tayyorlaymiz.",
+        "uses": [
+          "Bannerlar va billbordlar",
+          "Do'kon peshtoqi va oynalari grafikasi",
+          "To'siq va devorlardagi reklama",
+          "Tadbir va aksiyalar uchun reklama"
+        ]
       },
       "metal-laser-cutting-machine": {
         "short": "Metall detallar uchun aniq lazer kesish.",
         "intro": "Metall lazer kesish stanogimiz po'lat, alyuminiy va boshqa metallardan aniq shakl va harflarni qo'lda ishlov berishsiz, toza qirralar bilan kesib chiqaradi.",
-        "capability": "Hajmli harflar, metall tabela ramkalari, dekorativ metall panellar va buyurtma asosidagi kronshteynlar uchun ishlatiladi."
+        "capability": "Hajmli harflar, metall tabela ramkalari, dekorativ metall panellar va buyurtma asosidagi kronshteynlar uchun ishlatiladi.",
+        "details": "Fokuslangan lazer nuri varaq metallni raqamli chizma bo'yicha kesadi: shakllar aniq, mayda detallar puxta, qirralar toza chiqadi. Bir xil faylni istalgancha takrorlash mumkin, shuning uchun bir xil detallar birinchisidan oxirgisigacha bir-biriga mos tushadi.",
+        "uses": [
+          "Metall harflar va logotiplar",
+          "Tabela ramkalari va kronshteynlar",
+          "Dekorativ metall panellar va ekranlar",
+          "O'rnatish uchun buyurtma metall detallar"
+        ]
       },
       "cnc-cutting": {
-        "short": "Aniq o'lchamdagi CNC bilan kesilgan panellar va shakllar.",
-        "intro": "CNC kesish uskunamiz akril, yog'och, ko'pik va kompozit panellarni aniq o'lchamlarda kesib, katta buyurtmalar uchun barqaror, takrorlanuvchi shakllarni ishlab chiqaradi.",
-        "capability": "Tabela yuzalari, hajmli harflar, ko'rgazma stendlari va nostandart shakldagi panellar uchun ishlatiladi."
+        "short": "CNC bilan aniq o'lchamda kesilgan panel va shakllar.",
+        "intro": "CNC kesish uskunamiz akril, yog'och, penoplast va kompozit panellarni aniq o'lchamlarda kesib, katta buyurtmalar uchun barqaror, takrorlanuvchi shakllarni ishlab chiqaradi.",
+        "capability": "Tabela yuzalari, hajmli harflar, ko'rgazma stendlari va nostandart shakldagi panellar uchun ishlatiladi.",
+        "details": "CNC frezer raqamli chizma bo'yicha varaq materiallarni kesadi, shakl beradi va o'yadi. U yirik panellar va qalin materiallar bilan yaxshi ishlaydi va butun buyurtma davomida bir xil shaklni aniq takrorlaydi.",
+        "uses": [
+          "Tabela yuzalari va asos panellari",
+          "Hajmli harflar va logotiplar",
+          "Stendlar va ko'rgazma elementlari",
+          "Nostandart shakldagi va o'yma bezakli panellar"
+        ]
       },
       "laser-plexiglass-machine": {
-        "short": "Organik shishadan lazer bilan kesilgan shakl va harflar.",
-        "intro": "Organik shisha lazer stanogimiz akril varaqlarni toza, sayqallangan qirralar bilan kesadi va o'yib chiqaradi — bu ham tekis, ham yoritiladigan tabelalar uchun mos.",
-        "capability": "Akril harflar, yorug'lik qutilari, o'yib yozilgan lavhalar va dekorativ akril elementlar uchun ishlatiladi."
+        "short": "Pleksiglas (akril)dan lazer bilan kesilgan shakl va harflar.",
+        "intro": "Pleksiglas lazer stanogimiz akril varaqlarni toza, sayqallangan qirralar bilan kesadi va o'yadi — bu ham tekis, ham yoritiladigan tabelalar uchun mos.",
+        "capability": "Akril harflar, yorug'lik qutilari, o'yib yozilgan lavhalar va dekorativ akril elementlar uchun ishlatiladi.",
+        "details": "Lazer kesish paytida akril qirrasini eritib sayqallaydi, shu sababli harf va shakllar silliq, tiniq qirrali va qo'lda qilish qiyin bo'lgan mayda detallar bilan chiqadi. Lazer yuzani o'yib yozish uchun ham ishlatiladi — lavhalar va dekorativ yozuvlar uchun.",
+        "uses": [
+          "Akril harflar va logotiplar",
+          "Yorug'lik qutilari yuzalari va yoritiladigan tabelalar",
+          "O'yib yozilgan lavhalar",
+          "Dekorativ akril elementlar"
+        ]
       },
       "letter-bending-machine": {
         "short": "Hajmli harflar va profillarni shakllantirish.",
-        "intro": "Harf egish stanogimiz metall va akril tasmalarni hajmli harflar va chegara list uchun ishlatiladigan aniq profillarga shakllantiradi.",
-        "capability": "Hajmli harflarning yon tomonlarini (qaytish qismlarini) va nostandart hajmli yozuvlarni shakllantirish uchun ishlatiladi."
+        "intro": "Harf bukish stanogimiz metall va akril tasmalarni hajmli harflar va chekka bortlar uchun ishlatiladigan aniq profillarga shakllantiradi.",
+        "capability": "Hajmli harflarning yon tomonlarini (qaytish qismlarini) va nostandart hajmli yozuvlarni shakllantirish uchun ishlatiladi.",
+        "details": "Hajmli harfning yon tomoni harfning har bir egri va burchagini aniq takrorlashi kerak bo'lgan tasmadan yasaladi. Stanok tasmani harf konturi bo'ylab bukadi, natijada yon tomonlar silliq va tekis chiqadi, choklar kamayadi.",
+        "uses": [
+          "Hajmli harflarning yon tomonlari (bortlari)",
+          "Istalgan shriftdagi hajmli yozuvlar",
+          "Tabela panellari uchun chekka bortlar",
+          "Egri va o'tkir burchakli logotiplar"
+        ]
       },
       "laser-welding": {
         "short": "Toza va chidamli metall birikmalar uchun aniq payvandlash.",
         "intro": "Lazer payvandlash uskunamiz metall detallarni tor, aniq chok bilan biriktiradi, deyarli qo'shimcha ishlov talab qilmaydi va yuzani bo'yash yoki qoplash uchun silliq holda saqlaydi.",
-        "capability": "Hajmli harflarni, metall ramkalarni va tabelaning konstruktiv qismlarini yig'ish uchun ishlatiladi."
+        "capability": "Hajmli harflarni, metall ramkalarni va tabelaning konstruktiv qismlarini yig'ish uchun ishlatiladi.",
+        "details": "Lazer payvandlash issiqlikni juda kichik maydonga to'playdi, shuning uchun chok atrofidagi metall kamroq qiyshayadi va chok tor hamda ozoda bo'ladi. Bu yupqa varaq va keyin bo'yaladigan yoki qoplanadigan harf va ramkalardagi ko'rinib turuvchi birikmalar uchun qulay.",
+        "uses": [
+          "Hajmli harflar qismlarini biriktirish",
+          "Metall tabela ramkalari va korpuslari",
+          "Zanglamaydigan po'lat va alyuminiy konstruksiyalar",
+          "Tabelaning konstruktiv qismlari"
+        ]
       },
       "plotter-cutting": {
         "short": "Yozuvlar, stikerlar va grafika uchun vinil kesish.",
         "intro": "Ploter kesish uskunamiz o'zi yopishadigan vinilni avtomobillar, oynalar va tabelalarga qo'llash uchun aniq harflar, logotiplar va grafikaga kesadi.",
-        "capability": "Avtomobil brendlashtirish, oyna grafikasi, kesilgan vinil yozuvlar va stikerlar uchun ishlatiladi."
+        "capability": "Avtomobil brendlashtirish, oyna grafikasi, kesilgan vinil yozuvlar va stikerlar uchun ishlatiladi.",
+        "details": "Ploter kichik pichoqni o'zi yopishadigan vinil bo'ylab yurgizib, harf, logotip va naqshlarni raqamli kontur bo'yicha kesadi. Ortiqcha vinil olib tashlanadi, tasvir esa montaj plyonkasi yordamida yuzaga ko'chiriladi.",
+        "uses": [
+          "Avtomobil brendlashtirish va grafikasi",
+          "Oyna va shishadagi yozuvlar",
+          "Stikerlar, nakleykalar va yorliqlar",
+          "Tabelalar uchun kesilgan vinil yozuvlar"
+        ]
       }
     }
   }
